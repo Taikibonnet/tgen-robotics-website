@@ -1,0 +1,412 @@
+/* Styles pour l'interface d'administration */
+
+/* En-tête d'administration */
+.admin-header {
+    text-align: center;
+    padding: 30px 0;
+    background: linear-gradient(rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.05));
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.admin-header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* Menu latéral */
+.admin-sidebar {
+    position: sticky;
+    top: 30px;
+    align-self: flex-start;
+}
+
+.admin-menu {
+    list-style: none;
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.admin-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-menu li:last-child {
+    border-bottom: none;
+}
+
+.admin-menu li:hover {
+    background: rgba(3, 169, 244, 0.1);
+}
+
+.admin-menu li.active {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.back-to-site {
+    display: block;
+    padding: 15px 20px;
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.back-to-site:hover {
+    background: rgba(3, 169, 244, 0.1);
+    color: var(--primary);
+}
+
+/* Contenu principal */
+.admin-tab {
+    display: none;
+}
+
+.admin-tab.active {
+    display: block;
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-section-header h2 {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+/* Boutons */
+.admin-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(18, 18, 18, 0.7);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-button:hover {
+    background: rgba(3, 169, 244, 0.1);
+    color: var(--primary);
+}
+
+.admin-button.primary {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    border: none;
+}
+
+.admin-button.primary:hover {
+    box-shadow: 0 5px 15px rgba(3, 169, 244, 0.3);
+    transform: translateY(-2px);
+}
+
+.admin-button.danger {
+    background: linear-gradient(90deg, #f44336, #d32f2f);
+    color: white;
+    border: none;
+}
+
+.admin-button.danger:hover {
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+    transform: translateY(-2px);
+}
+
+.admin-button.cancel {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-button.cancel:hover {
+    color: var(--primary);
+}
+
+/* Tableau d'administration */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(18, 18, 18, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-table th {
+    background: rgba(10, 10, 10, 0.8);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr:hover td {
+    background: rgba(3, 169, 244, 0.05);
+}
+
+.table-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.table-actions button {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* Formulaire d'administration */
+.admin-form {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 10, 0.5);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Liste de catégories */
+.categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(10, 10, 10, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-checkbox:hover {
+    border-color: var(--primary);
+}
+
+.category-checkbox input {
+    margin: 0;
+}
+
+/* Recherche et filtrage */
+.search-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-filter input,
+.search-filter select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 10, 0.5);
+    color: var(--text);
+    flex: 1;
+}
+
+.search-filter input:focus,
+.search-filter select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Modal de confirmation */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-content h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Style de liste des catégories dans le tableau */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.category-tag {
+    font-size: 12px;
+    padding: 3px 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Checkbox personnalisée */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Style de copyright spécifique au pied de page admin */
+.admin-copyright {
+    padding: 15px 0;
+    text-align: center;
+    color: rgba(224, 224, 224, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+    
+    .admin-menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .admin-menu li {
+        flex: 1;
+        text-align: center;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .admin-menu li:last-child {
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-table {
+        font-size: 14px;
+    }
+    
+    .admin-table th:nth-child(3),
+    .admin-table td:nth-child(3) {
+        display: none;
+    }
+    
+    .search-filter {
+        flex-direction: column;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .form-buttons button {
+        width: 100%;
+    }
+}

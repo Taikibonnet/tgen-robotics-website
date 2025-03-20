@@ -15,9 +15,11 @@
     </filter>
   </defs>
 
-  <!-- Formes géométriques de fond -->
-  <path d="M20,120 L200,40 L380,120 L200,200 Z" fill="none" stroke="#03A9F4" stroke-width="1" opacity="0.2" />
-  <path d="M60,120 L200,60 L340,120 L200,180 Z" fill="none" stroke="#03A9F4" stroke-width="1" opacity="0.2" />
+  <!-- Formes géométriques de fond - rendues plus visibles -->
+  <path d="M20,120 L200,40 L380,120 L200,200 Z" fill="none" stroke="#03A9F4" stroke-width="2" opacity="0.4" />
+  <path d="M60,120 L200,60 L340,120 L200,180 Z" fill="none" stroke="#03A9F4" stroke-width="2" opacity="0.4" />
+  <!-- Ajout d'une troisième forme pour plus de profondeur -->
+  <path d="M100,120 L200,80 L300,120 L200,160 Z" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.3" />
 
   <!-- Logo principal -->
   <g filter="url(#glow)">
@@ -38,13 +40,16 @@
     <path d="M275,130 L305,130" stroke="url(#mainGradient)" stroke-width="10" stroke-linecap="round" />
   </g>
 
-  <!-- Points lumineux -->
-  <circle cx="77.5" cy="70" r="4" fill="url(#accentGradient)" opacity="0.8" />
-  <circle cx="172.5" cy="70" r="4" fill="url(#accentGradient)" opacity="0.8" />
-  <circle cx="290" cy="70" r="4" fill="url(#accentGradient)" opacity="0.8" />
+  <!-- Points lumineux - rendus plus visibles -->
+  <circle cx="77.5" cy="70" r="5" fill="url(#accentGradient)" opacity="0.9" />
+  <circle cx="172.5" cy="70" r="5" fill="url(#accentGradient)" opacity="0.9" />
+  <circle cx="290" cy="70" r="5" fill="url(#accentGradient)" opacity="0.9" />
+  <!-- Ajout de quelques points supplémentaires pour plus d'effet -->
+  <circle cx="120" cy="75" r="3" fill="url(#accentGradient)" opacity="0.7" />
+  <circle cx="230" cy="72" r="3" fill="url(#accentGradient)" opacity="0.7" />
 
-  <!-- Ligne de séparation -->
-  <line x1="65" y1="180" x2="335" y2="180" stroke="url(#mainGradient)" stroke-width="2" opacity="0.7" />
+  <!-- Ligne de séparation - rendue plus visible -->
+  <line x1="65" y1="180" x2="335" y2="180" stroke="url(#mainGradient)" stroke-width="2.5" opacity="0.8" />
 
   <!-- Texte "ROBOTICS" -->
   <text x="200" y="210" font-family="Arial, sans-serif" font-size="24" font-weight="bold" letter-spacing="2" text-anchor="middle" fill="url(#mainGradient)">

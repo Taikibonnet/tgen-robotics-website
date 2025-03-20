@@ -78,11 +78,11 @@ nav ul li a::after {
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
     color: var(--primary);
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after, nav ul li a.active::after {
     width: 100%;
 }
 
@@ -312,6 +312,27 @@ nav ul li a:hover::after {
 
 .read-more:hover span {
     transform: translateX(5px);
+}
+
+/* Style pour le bouton "Visit our blog" */
+.view-all-news {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-news .cta-button {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.view-all-news .cta-button:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
 }
 
 footer {

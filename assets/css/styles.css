@@ -117,6 +117,13 @@ nav ul li a:hover::after, nav ul li a.active::after {
     text-shadow: 0 0 10px rgba(3, 169, 244, 0.5);
 }
 
+/* Assurer que le saut de ligne fonctionne correctement */
+.hero h1 br {
+    display: block;
+    content: "";
+    margin-bottom: 5px;
+}
+
 .hero p {
     font-size: 20px;
     max-width: 700px;

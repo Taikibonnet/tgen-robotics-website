@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - IKITA ROBOTICS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <object type="image/svg+xml" data="assets/images/logo-v2.svg" width="200" height="70">
+                    IKITA ROBOTICS
+                </object>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Catalog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <section class="admin-header">
+            <h1>Blog Administration</h1>
+            <p>Manage your blog posts and categories</p>
+        </section>
+        
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <ul class="admin-menu">
+                    <li class="active" data-tab="manage-posts">Manage Posts</li>
+                    <li data-tab="add-post">Add New Post</li>
+                    <li data-tab="manage-categories">Categories</li>
+                </ul>
+                <a href="blog.html" class="back-to-site">Back to Site</a>
+            </div>
+            
+            <div class="admin-content">
+                <!-- Tab: Manage Posts -->
+                <div id="manage-posts" class="admin-tab active">
+                    <div class="admin-section-header">
+                        <h2>Manage Posts</h2>
+                        <button id="add-post-btn" class="admin-button">Add New Post</button>
+                    </div>
+                    
+                    <div class="search-filter">
+                        <input type="text" id="search-posts" placeholder="Search posts...">
+                        <select id="filter-category">
+                            <option value="all">All Categories</option>
+                            <!-- Categories will be loaded dynamically -->
+                        </select>
+                    </div>
+                    
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Categories</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="posts-table-body">
+                            <!-- Posts will be loaded here -->
+                            <tr>
+                                <td colspan="5">Loading posts...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Tab: Add/Edit Post -->
+                <div id="add-post" class="admin-tab">
+                    <div class="admin-section-header">
+                        <h2 id="post-form-title">Add New Post</h2>
+                    </div>
+                    
+                    <form id="post-form" class="admin-form">
+                        <input type="hidden" id="post-id">
+                        
+                        <div class="form-group">
+                            <label for="post-title">Title</label>
+                            <input type="text" id="post-title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-author">Author</label>
+                            <input type="text" id="post-author" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-excerpt">Excerpt</label>
+                            <textarea id="post-excerpt" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-content">Content</label>
+                            <textarea id="post-content" rows="15" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-image">Image URL</label>
+                            <input type="text" id="post-image" placeholder="/api/placeholder/800/400" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Categories</label>
+                            <div id="categories-checkboxes" class="categories-list">
+                                <!-- Categories will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="post-featured">
+                                Featured Post
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" id="cancel-post" class="admin-button cancel">Cancel</button>
+                            <button type="submit" class="admin-button primary">Save Post</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tab: Categories -->
+                <div id="manage-categories" class="admin-tab">
+                    <div class="admin-section-header">
+                        <h2>Manage Categories</h2>
+                    </div>
+                    
+                    <div class="admin-form">
+                        <div class="form-group">
+                            <label for="category-id">ID</label>
+                            <input type="text" id="category-id" placeholder="unique-identifier">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category-name">Name</label>
+                            <input type="text" id="category-name" placeholder="Display name">
+                        </div>
+                        
+                        <button id="add-category" class="admin-button primary">Add Category</button>
+                    </div>
+                    
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Posts</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categories-table-body">
+                            <!-- Categories will be loaded here -->
+                            <tr>
+                                <td colspan="4">Loading categories...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="copyright admin-copyright">
+                © 2025 IKITA ROBOTICS. Admin Panel.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm</h3>
+            <p id="confirm-message">Are you sure you want to proceed?</p>
+            <div class="modal-buttons">
+                <button id="cancel-confirm" class="admin-button cancel">Cancel</button>
+                <button id="confirm-action" class="admin-button danger">Confirm</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/blog.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

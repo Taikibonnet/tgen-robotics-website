@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Définition du dégradé -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0cebeb" />
+      <stop offset="100%" stop-color="#20e3b2" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- T personnalisé avec barre horizontale étendue -->
+  <path d="M70,120 Q230,120 310,120 C100,120 110,150 190,160" stroke="url(#logoGradient)" stroke-width="5" fill="none" stroke-linecap="round" filter="url(#glow)" />
+  <!-- G - encore plus rapproché -->
+  <path d="M200,145 C200,135 210,130 220,130 C227,130 230,132 230,137 M200,145 C200,155 210,160 220,160 C228,160 231,158 233,153 M221,145 L233,145 M233,145 L233,153" stroke="url(#logoGradient)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)" />
+  <!-- E - encore plus rapproché -->
+  <path d="M240,130 L240,160 M240,130 L260,130 M240,145 L255,145 M240,160 L260,160" stroke="url(#logoGradient)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)" />
+  <!-- N - encore plus rapproché -->
+  <path d="M270,130 L270,160 M270,130 L290,160 M290,130 L290,160" stroke="url(#logoGradient)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#glow)" />
+  <!-- ROBOTICS text -->
+  <text x="240" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="3" text-anchor="middle" fill="url(#logoGradient)"> ROBOTICS </text>
+</svg>

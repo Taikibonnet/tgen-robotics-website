@@ -60,7 +60,7 @@ function displayArticle(article) {
     `;
     
     // Mettre à jour le titre de la page
-    document.title = `${article.title} - IKITA ROBOTICS`;
+    document.title = `${article.title} - TGen ROBOTICS`;
 }
 
 // Fonction pour trouver les articles suivants et précédents

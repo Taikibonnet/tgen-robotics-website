@@ -1,6 +1,6 @@
-# IKITA ROBOTICS Website
+# TGen ROBOTICS Website
 
-A modern, responsive website for the IKITA ROBOTICS company, featuring a sleek design with blue gradient elements and interactive features.
+A modern, responsive website for the TGen ROBOTICS company, featuring a sleek design with blue gradient elements and interactive features.
 
 ## Features
 
@@ -14,7 +14,7 @@ A modern, responsive website for the IKITA ROBOTICS company, featuring a sleek d
 ## Project Structure
 
 ```
-ikita-robotics-website/
+tgen-robotics-website/
 │
 ├── index.html                  # Main homepage
 ├── assets/
@@ -24,7 +24,7 @@ ikita-robotics-website/
 │   ├── js/
 │   │   └── main.js             # JavaScript functionality
 │   └── images/
-│       ├── logo.svg            # SVG logo
+│       ├── logo-tgen.svg       # SVG logo
 │       └── favicon.ico         # Site icon
 │
 └── README.md                   # Project documentation
@@ -66,5 +66,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Credits
 
-- Design and development: IKITA ROBOTICS Team
+- Design and development: TGen ROBOTICS Team
 - Logo design: Custom SVG creation

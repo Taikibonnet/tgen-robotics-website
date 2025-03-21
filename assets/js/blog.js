@@ -1,8 +1,8 @@
-// Système de gestion de blog pour IKITA Robotics
+// Système de gestion de blog pour TGen Robotics
 
 // Configuration du stockage local pour simuler une base de données
-const BLOG_POSTS_KEY = 'ikita_blog_posts';
-const BLOG_CATEGORIES_KEY = 'ikita_blog_categories';
+const BLOG_POSTS_KEY = 'tgen_blog_posts';
+const BLOG_CATEGORIES_KEY = 'tgen_blog_categories';
 
 // Catégories par défaut
 const DEFAULT_CATEGORIES = [
@@ -56,9 +56,9 @@ const DEFAULT_POSTS = [
     {
         id: 2,
         title: 'Breakthrough in Robot Learning Algorithms',
-        excerpt: 'New research at IKITA Robotics has led to significant improvements in how robots learn from their environments and human demonstrations.',
+        excerpt: 'New research at TGen Robotics has led to significant improvements in how robots learn from their environments and human demonstrations.',
         content: `
-            <p>In a significant breakthrough for the field of robotics, researchers at IKITA Robotics have developed a new learning algorithm that dramatically reduces the time required for robots to master complex tasks.</p>
+            <p>In a significant breakthrough for the field of robotics, researchers at TGen Robotics have developed a new learning algorithm that dramatically reduces the time required for robots to master complex tasks.</p>
             
             <h2>Learning from Demonstration</h2>
             <p>Traditional robot programming requires extensive coding for each specific task a robot needs to perform. Our new approach, however, allows robots to learn by observing human demonstrations and then generalizing that knowledge to similar situations.</p>
@@ -101,7 +101,7 @@ const DEFAULT_POSTS = [
             <h2>Adaptive Control Systems</h2>
             <p>The key innovation lies in adaptive control systems that combine multiple sensor inputs with deep learning algorithms. These systems can detect and compensate for vibrations, thermal expansion, and even air currents that might affect positioning accuracy.</p>
             
-            <p>"We're essentially giving robots the ability to 'feel' at the microscopic level," explains Dr. Li Wei, head of micro-assembly research at IKITA Robotics. "They can sense and adjust for disturbances humans can't even perceive."</p>
+            <p>"We're essentially giving robots the ability to 'feel' at the microscopic level," explains Dr. Li Wei, head of micro-assembly research at TGen Robotics. "They can sense and adjust for disturbances humans can't even perceive."</p>
             
             <h2>Real-Time Adaptation</h2>
             <p>Unlike traditional programmed robots, AI-powered assembly systems improve over time. They learn from each assembly operation, building a database of experiences that helps them anticipate and prevent potential errors.</p>

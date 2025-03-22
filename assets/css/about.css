@@ -1,0 +1,368 @@
+/* Styles for the About Us page */
+
+/* Hero section */
+.about-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(12, 235, 235, 0.1) 0%, rgba(32, 227, 178, 0.2) 100%);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, rgba(12, 235, 235, 0.1) 25%, transparent 25%, transparent 50%, rgba(12, 235, 235, 0.1) 50%, rgba(12, 235, 235, 0.1) 75%, transparent 75%, transparent),
+        linear-gradient(-45deg, rgba(32, 227, 178, 0.1) 25%, transparent 25%, transparent 50%, rgba(32, 227, 178, 0.1) 50%, rgba(32, 227, 178, 0.1) 75%, transparent 75%, transparent);
+    background-size: 60px 60px;
+    animation: move-background 15s linear infinite;
+    z-index: 0;
+}
+
+@keyframes move-background {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 60px 0, 60px 0;
+    }
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.about-hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(12, 235, 235, 0.5);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero .tagline {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: var(--light);
+}
+
+/* Intro section */
+.about-intro {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-intro p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: rgba(224, 224, 224, 0.9);
+}
+
+/* Vision & Mission section */
+.about-vision-mission {
+    padding: 60px 0;
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.vision-box, .mission-box {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-box:hover, .mission-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.2);
+    border-color: #0cebeb;
+}
+
+.vision-box h2, .mission-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vision-box p, .mission-box p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.mission-box ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.mission-box li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.mission-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #20e3b2;
+}
+
+.mission-box strong {
+    color: #0cebeb;
+}
+
+/* Why TGen section */
+.about-why-tgen {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-why-tgen h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.why-tgen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.why-tgen-item {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-tgen-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.2);
+    border-color: #0cebeb;
+}
+
+.why-tgen-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.why-tgen-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0cebeb;
+}
+
+.why-tgen-item p {
+    line-height: 1.6;
+    color: rgba(224, 224, 224, 0.8);
+}
+
+/* Impact section */
+.about-impact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-impact h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.impact-item {
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.2);
+    border-color: #0cebeb;
+}
+
+.impact-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.impact-item h3 {
+    font-size: 22px;
+    margin: 20px 0 15px;
+    color: #0cebeb;
+    padding: 0 20px;
+}
+
+.impact-item p {
+    line-height: 1.6;
+    color: rgba(224, 224, 224, 0.8);
+    padding: 0 20px 20px;
+}
+
+/* CTA section */
+.about-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(12, 235, 235, 0.1) 0%, rgba(32, 227, 178, 0.2) 100%);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.about-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-cta h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-cta p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cta-highlight {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 30px 0;
+    color: var(--light);
+}
+
+.about-cta .cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #0cebeb, #20e3b2);
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-cta .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vision-box, .mission-box {
+        padding: 30px;
+    }
+    
+    .about-hero h1 {
+        font-size: 40px;
+    }
+    
+    .about-hero .tagline {
+        font-size: 20px;
+    }
+    
+    .about-intro p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 40vh;
+    }
+    
+    .about-hero h1 {
+        font-size: 32px;
+    }
+    
+    .about-hero .tagline {
+        font-size: 18px;
+    }
+    
+    .about-intro p {
+        font-size: 18px;
+    }
+    
+    .vision-box h2, .mission-box h2, 
+    .about-why-tgen h2, .about-impact h2, 
+    .about-cta h2 {
+        font-size: 28px;
+    }
+    
+    .cta-highlight {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        min-height: 300px;
+    }
+    
+    .about-hero h1 {
+        font-size: 28px;
+    }
+    
+    .vision-box, .mission-box, 
+    .why-tgen-item, .impact-item {
+        padding: 20px;
+    }
+}

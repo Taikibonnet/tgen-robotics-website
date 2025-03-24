@@ -1,4 +1,9 @@
-// JavaScript pour l'interface d'administration
+/**
+ * Admin Dashboard for TGen ROBOTICS
+ * 
+ * This file handles the main admin interface and dashboard functionality.
+ * It includes tab management, auth checking, and statistics display.
+ */
 
 // Variables globales
 let currentPostId = null;
@@ -6,6 +11,15 @@ let confirmCallback = null;
 
 // Initialisation de la page admin
 function initAdminPage() {
+    // Vérifier si l'utilisateur est admin
+    if (!window.authUtils || !window.authUtils.isAdmin()) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Initialiser les événements de déconnexion
+    setupLogoutButtons();
+    
     // Initialiser les données du blog
     initBlogData();
     
@@ -18,8 +32,56 @@ function initAdminPage() {
     // Charger les catégories
     loadCategories();
     
+    // Charger les statistiques du tableau de bord
+    loadDashboardStats();
+    
     // Configurer les listeners
     setupEventListeners();
+}
+
+// Configure les boutons de déconnexion
+function setupLogoutButtons() {
+    const logoutBtn = document.getElementById('admin-logout');
+    const logoutBtnMobile = document.getElementById('admin-logout-mobile');
+    
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.authUtils.logout();
+        });
+    }
+    
+    if (logoutBtnMobile) {
+        logoutBtnMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.authUtils.logout();
+        });
+    }
+}
+
+// Charge les statistiques pour le tableau de bord
+function loadDashboardStats() {
+    // Nombre d'utilisateurs
+    const users = JSON.parse(localStorage.getItem('tgenUsers')) || [];
+    const userCount = users.length;
+    const userCountElement = document.getElementById('total-users');
+    if (userCountElement) userCountElement.textContent = userCount;
+    
+    // Nombre d'articles de blog
+    const posts = getAllPosts();
+    const postCount = posts.length;
+    const postCountElement = document.getElementById('total-posts');
+    if (postCountElement) postCountElement.textContent = postCount;
+    
+    // Nombre de produits
+    const products = JSON.parse(localStorage.getItem('tgenProducts')) || [];
+    const productCount = products.length;
+    const productCountElement = document.getElementById('total-products');
+    if (productCountElement) productCountElement.textContent = productCount;
+    
+    // Nombre de commandes (pour le moment, c'est fictif)
+    const orderCountElement = document.getElementById('total-orders');
+    if (orderCountElement) orderCountElement.textContent = '0';
 }
 
 // Configuration des onglets
@@ -49,8 +111,15 @@ function loadPosts() {
     const tableBody = document.getElementById('posts-table-body');
     const filterSelect = document.getElementById('filter-category');
     
+    if (!tableBody) return;
+    
     // Vider le tableau
     tableBody.innerHTML = '';
+    
+    if (posts.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="5">No posts found.</td></tr>';
+        return;
+    }
     
     // Remplir le tableau avec les articles
     posts.forEach(post => {
@@ -75,7 +144,9 @@ function loadPosts() {
     });
     
     // Mettre à jour les options de filtre
-    updateCategoryFilter(filterSelect);
+    if (filterSelect) {
+        updateCategoryFilter(filterSelect);
+    }
 }
 
 // Mise à jour du sélecteur de catégories
@@ -100,37 +171,47 @@ function loadCategories() {
     const tableBody = document.getElementById('categories-table-body');
     const checkboxesContainer = document.getElementById('categories-checkboxes');
     
-    // Vider le tableau et les checkboxes
-    tableBody.innerHTML = '';
-    checkboxesContainer.innerHTML = '';
+    if (!tableBody) return;
     
-    // Remplir le tableau avec les catégories
-    categories.forEach(category => {
-        // Compter le nombre d'articles dans cette catégorie
-        const postCount = countPostsInCategory(category.id);
-        
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${category.id}</td>
-            <td>${category.name}</td>
-            <td>${postCount}</td>
-            <td class="table-actions">
-                <button class="admin-button danger delete-category" data-id="${category.id}" ${postCount > 0 ? 'disabled' : ''}>Delete</button>
-            </td>
-        `;
-        
-        tableBody.appendChild(row);
-        
-        // Ajouter la checkbox pour le formulaire d'article
-        const checkboxWrapper = document.createElement('label');
-        checkboxWrapper.className = 'category-checkbox';
-        checkboxWrapper.innerHTML = `
-            <input type="checkbox" name="category" value="${category.id}">
-            ${category.name}
-        `;
-        
-        checkboxesContainer.appendChild(checkboxWrapper);
-    });
+    // Vider le tableau
+    tableBody.innerHTML = '';
+    
+    if (categories.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="4">No categories found.</td></tr>';
+    } else {
+        // Remplir le tableau avec les catégories
+        categories.forEach(category => {
+            // Compter le nombre d'articles dans cette catégorie
+            const postCount = countPostsInCategory(category.id);
+            
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${category.id}</td>
+                <td>${category.name}</td>
+                <td>${postCount}</td>
+                <td class="table-actions">
+                    <button class="admin-button danger delete-category" data-id="${category.id}" ${postCount > 0 ? 'disabled' : ''}>Delete</button>
+                </td>
+            `;
+            
+            tableBody.appendChild(row);
+        });
+    }
+    
+    // Ajouter les checkboxes pour le formulaire d'article
+    if (checkboxesContainer) {
+        checkboxesContainer.innerHTML = '';
+        categories.forEach(category => {
+            const checkboxWrapper = document.createElement('label');
+            checkboxWrapper.className = 'category-checkbox';
+            checkboxWrapper.innerHTML = `
+                <input type="checkbox" name="category" value="${category.id}">
+                ${category.name}
+            `;
+            
+            checkboxesContainer.appendChild(checkboxWrapper);
+        });
+    }
 }
 
 // Compter le nombre d'articles dans une catégorie
@@ -174,6 +255,15 @@ function setupEventListeners() {
     const addCategoryBtn = document.getElementById('add-category');
     if (addCategoryBtn) {
         addCategoryBtn.addEventListener('click', addCategory);
+    }
+    
+    // Formulaire de paramètres du site
+    const settingsForm = document.getElementById('settings-form');
+    if (settingsForm) {
+        settingsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            saveSiteSettings();
+        });
     }
     
     // Boutons de suppression d'article (ajoutés dynamiquement)
@@ -231,6 +321,8 @@ function setupEventListeners() {
 function resetPostForm() {
     const form = document.getElementById('post-form');
     const formTitle = document.getElementById('post-form-title');
+    
+    if (!form || !formTitle) return;
     
     form.reset();
     currentPostId = null;
@@ -322,6 +414,31 @@ function savePost() {
     document.querySelector('[data-tab="manage-posts"]').click();
 }
 
+// Sauvegarder les paramètres du site
+function saveSiteSettings() {
+    const siteName = document.getElementById('site-name').value;
+    const siteDescription = document.getElementById('site-description').value;
+    const contactEmail = document.getElementById('contact-email').value;
+    const contactPhone = document.getElementById('contact-phone').value;
+    const contactAddress = document.getElementById('contact-address').value;
+    
+    // Créer un objet de paramètres
+    const settings = {
+        siteName,
+        siteDescription,
+        contactEmail,
+        contactPhone,
+        contactAddress,
+        updatedAt: new Date().toISOString()
+    };
+    
+    // Sauvegarder dans localStorage
+    localStorage.setItem('tgenSiteSettings', JSON.stringify(settings));
+    
+    // Afficher un message de confirmation
+    alert('Site settings saved successfully!');
+}
+
 // Supprimer un article (après confirmation)
 function deletePostConfirmed(postId) {
     deletePost(postId);
@@ -356,7 +473,9 @@ function addCategory() {
     
     // Mettre à jour le filtre des articles
     const filterSelect = document.getElementById('filter-category');
-    updateCategoryFilter(filterSelect);
+    if (filterSelect) {
+        updateCategoryFilter(filterSelect);
+    }
 }
 
 // Supprimer une catégorie (après confirmation)
@@ -370,7 +489,9 @@ function deleteCategoryConfirmed(categoryId) {
     
     // Mettre à jour le filtre des articles
     const filterSelect = document.getElementById('filter-category');
-    updateCategoryFilter(filterSelect);
+    if (filterSelect) {
+        updateCategoryFilter(filterSelect);
+    }
 }
 
 // Filtrer les articles par recherche et catégorie
@@ -397,6 +518,8 @@ function filterPosts() {
     
     // Afficher les résultats
     const tableBody = document.getElementById('posts-table-body');
+    if (!tableBody) return;
+    
     tableBody.innerHTML = '';
     
     if (posts.length === 0) {
@@ -432,6 +555,8 @@ function showConfirmModal(message, callback) {
     const modal = document.getElementById('confirm-modal');
     const messageEl = document.getElementById('confirm-message');
     
+    if (!modal || !messageEl) return;
+    
     messageEl.textContent = message;
     confirmCallback = callback;
     
@@ -441,6 +566,8 @@ function showConfirmModal(message, callback) {
 // Cacher le modal de confirmation
 function hideConfirmModal() {
     const modal = document.getElementById('confirm-modal');
+    if (!modal) return;
+    
     modal.classList.remove('active');
     confirmCallback = null;
 }

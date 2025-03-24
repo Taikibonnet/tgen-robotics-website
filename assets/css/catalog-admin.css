@@ -1,6 +1,6 @@
 /* Styles pour l'interface d'administration du catalogue */
 
-/* Panel admin */
+/* Panel d'administration */
 .admin-panel {
     background: rgba(12, 235, 235, 0.1);
     border: 1px solid #0cebeb;
@@ -159,7 +159,7 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Contrôles admin sur les produits */
+/* Contrôles d'administration pour les produits */
 .product-admin-controls {
     position: absolute;
     top: 10px;
@@ -204,8 +204,8 @@
     font-size: 14px;
 }
 
-/* Faire de la place pour les contrôles admin */
-.product-card {
+/* Espace pour les contrôles d'administration */
+.admin-mode .product-card {
     position: relative;
     padding-top: 40px;
 }
@@ -330,7 +330,7 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Styles responsives */
+/* Styles adaptatifs */
 @media (max-width: 768px) {
     .admin-header {
         flex-direction: column;

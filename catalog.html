@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - TGen ROBOTICS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/catalog.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Explore TGen ROBOTICS catalog of innovative robotic solutions for industry, construction, and home automation.">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
+                    TGen ROBOTICS
+                </object>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="catalog.html" class="active">Catalog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <section class="catalog-hero">
+            <div class="catalog-hero-content">
+                <h1 class="animated">Our Robotic Solutions</h1>
+                <p class="tagline animated delay-1">Discover the perfect robotic companion for your needs</p>
+            </div>
+        </section>
+
+        <section class="catalog-filter">
+            <div class="filter-container">
+                <div class="category-filter">
+                    <span>Filter by category:</span>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">All Robots</button>
+                        <button class="filter-btn" data-category="industrial">Industrial</button>
+                        <button class="filter-btn" data-category="construction">Construction</button>
+                        <button class="filter-btn" data-category="domestic">Domestic</button>
+                        <button class="filter-btn" data-category="healthcare">Healthcare</button>
+                    </div>
+                </div>
+                <div class="search-filter">
+                    <input type="text" id="search-input" placeholder="Search robots...">
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-products">
+            <div id="catalog-grid" class="catalog-grid">
+                <!-- Products will be loaded here dynamically from catalog-data.js -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </section>
+        
+        <section class="catalog-categories">
+            <h2>Explore by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="industrial">
+                    <div class="category-image">
+                        <img src="/api/placeholder/400/300" alt="Industrial robots">
+                    </div>
+                    <div class="category-content">
+                        <h3>Industrial Robots</h3>
+                        <p>Optimize your production lines with our cutting-edge robotic solutions.</p>
+                        <button class="category-btn" data-category="industrial">View Industrial Robots</button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="construction">
+                    <div class="category-image">
+                        <img src="/api/placeholder/400/300" alt="Construction robots">
+                    </div>
+                    <div class="category-content">
+                        <h3>Construction Robots</h3>
+                        <p>Revolutionize your construction projects with our specialized robots.</p>
+                        <button class="category-btn" data-category="construction">View Construction Robots</button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="domestic">
+                    <div class="category-image">
+                        <img src="/api/placeholder/400/300" alt="Domestic robots">
+                    </div>
+                    <div class="category-content">
+                        <h3>Domestic Robots</h3>
+                        <p>Simplify your daily life with our robotic solutions for home and family.</p>
+                        <button class="category-btn" data-category="domestic">View Domestic Robots</button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="healthcare">
+                    <div class="category-image">
+                        <img src="/api/placeholder/400/300" alt="Healthcare robots">
+                    </div>
+                    <div class="category-content">
+                        <h3>Healthcare Robots</h3>
+                        <p>Support healthcare professionals and patients with our precision robots.</p>
+                        <button class="category-btn" data-category="healthcare">View Healthcare Robots</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-cta">
+            <div class="cta-content">
+                <h2>Can't find what you're looking for?</h2>
+                <p>Our team of experts is ready to help you find the perfect robotic solution for your specific needs.</p>
+                <a href="contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TGen ROBOTICS</h3>
+                    <p>Your partner in innovative robotic solutions for industry and individuals.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Robots</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=industrial">Industrial robots</a></li>
+                        <li><a href="catalog.html?category=construction">Construction robots</a></li>
+                        <li><a href="catalog.html?category=domestic">Domestic robots</a></li>
+                        <li><a href="catalog.html?category=healthcare">Healthcare robots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li><a href="mailto:tgen.robotics@gmail.com">tgen.robotics@gmail.com</a></li>
+                        <li>123 Innovation Avenue, 75001 Paris</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61574422206513" target="_blank" aria-label="Facebook">📱</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="https://www.instagram.com/tgen_robotics/" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 TGen ROBOTICS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal for product details -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-product-details" class="modal-product-details">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/catalog-data.js"></script>
+    <script src="assets/js/catalog.js"></script>
+</body>
+</html>

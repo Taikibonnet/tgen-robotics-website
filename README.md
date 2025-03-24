@@ -1,70 +1,48 @@
-# TGen ROBOTICS Website
+# TGen Robotics Website
 
-A modern, responsive website for the TGen ROBOTICS company, featuring a sleek design with blue gradient elements and interactive features.
+## Projet Web - Site vitrine d'une entreprise de robotique
 
-## Features
+## Dernières mises à jour
 
-- Fully responsive design for all device sizes
-- Modern UI with gradients and subtle animations
-- Mobile menu for smaller screens
-- Interactive elements with hover effects
-- Optimized for performance and SEO
-- Custom SVG logo with animation effects
+### Navigation et intégration du catalogue
 
-## Project Structure
+- Connexion de toutes les pages au catalogue via le menu de navigation
+- Ajout du bouton "Discover our solutions" sur toutes les pages (hero sections)
+- Configuration des liens de catégories pour filtrer automatiquement le catalogue (industrial, construction, domestic, healthcare)
+- Amélioration du responsive design pour les boutons CTA
+- Correction des liens dans les footers de toutes les pages
 
-```
-tgen-robotics-website/
-│
-├── index.html                  # Main homepage
-├── assets/
-│   ├── css/
-│   │   ├── styles.css          # Main stylesheet
-│   │   └── mobile.css          # Mobile and responsive styles
-│   ├── js/
-│   │   └── main.js             # JavaScript functionality
-│   └── images/
-│       ├── logo-tgen.svg       # SVG logo
-│       └── favicon.ico         # Site icon
-│
-└── README.md                   # Project documentation
-```
-
-## Technologies Used
+## Technologies utilisées
 
 - HTML5
-- CSS3 (with CSS variables for theming)
-- JavaScript (ES6+)
-- SVG for vector graphics and animations
+- CSS3 (avec variables CSS pour les couleurs et animations)
+- JavaScript vanilla
+- Design responsive pour mobile, tablette et desktop
 
-## Setup and Installation
+## Structure du site
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Taikibonnet/ikita-robotics-website.git
-```
+- **index.html** - Page d'accueil
+- **catalog.html** - Catalogue des robots avec filtres
+- **blog.html** - Blog avec articles sur la robotique
+- **about.html** - Présentation de l'entreprise
+- **contact.html** - Formulaire de contact et informations
 
-2. Navigate to the project directory:
-```bash
-cd ikita-robotics-website
-```
+## Fonctionnalités
 
-3. Open `index.html` in your browser or use a local server.
+- Design moderne avec animations fluides
+- Mode sombre par défaut avec palette de couleurs personnalisée
+- Navigation responsive avec menu hamburger sur mobile
+- Filtrage dynamique du catalogue par catégorie
+- Possibilité d'ajouter facilement de nouveaux produits au catalogue
+- Mode administrateur pour éditer les produits directement depuis l'interface
+- Formulaire de contact fonctionnel via FormSubmit
 
-## Future Enhancements
+## Installation et utilisation
 
-- Add additional pages (Services, Catalog, Blog, About, Contact)
-- Implement a dark/light theme toggle
-- Add a language selector for internationalization
-- Integrate a content management system
-- Add more interactive elements and animations
-- Create a contact form with validation
+1. Cloner le dépôt
+2. Ouvrir index.html dans un navigateur
+3. Pour accéder au mode administrateur dans le catalogue, double-cliquer sur le titre "Our Robotic Solutions"
 
-## License
+## Crédits
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Credits
-
-- Design and development: TGen ROBOTICS Team
-- Logo design: Custom SVG creation
+Développé par Taiki Bonnet

@@ -6,6 +6,8 @@
     <title>TGen ROBOTICS - Your partner in robotic solutions</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/cart-notification.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
 </head>
@@ -25,6 +27,33 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" id="login-link">Login</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mini-cart">
+                            <div class="mini-cart-header">
+                                <h3>Your Cart</h3>
+                            </div>
+                            <div class="mini-cart-items">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div class="mini-cart-footer">
+                                <div class="mini-cart-total-label">Total:</div>
+                                <div class="mini-cart-total">€0.00</div>
+                                <div class="mini-cart-buttons">
+                                    <a href="cart.html" class="button">View Cart</a>
+                                    <a href="checkout.html" class="button primary">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div id="mobile-menu-toggle" class="mobile-menu-toggle">
@@ -42,6 +71,8 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
         
@@ -194,5 +225,23 @@
     </footer>
     
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        // Update login link based on authentication status
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if auth utilities exist and user is logged in
+            if (window.authUtils) {
+                const user = window.authUtils.getCurrentUser();
+                const loginLink = document.getElementById('login-link');
+                
+                if (user && loginLink) {
+                    // Change login link to account link
+                    loginLink.textContent = 'My Account';
+                    loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -57,10 +57,25 @@
             <div class="auth-form-container">
                 <form id="login-form" class="auth-form active">
                     <h2>Login to Your Account</h2>
+                    
+                    <div class="form-group method-selection">
+                        <label for="login-method">Login method</label>
+                        <select id="login-method" name="login-method">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone Number</option>
+                        </select>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="login-email">Email</label>
                         <input type="email" id="login-email" name="email" required>
                     </div>
+                    
+                    <div class="form-group" style="display: none;">
+                        <label for="login-phone">Phone Number</label>
+                        <input type="tel" id="login-phone" name="phone" placeholder="e.g. +33612345678">
+                    </div>
+                    
                     <div class="form-group">
                         <label for="login-password">Password</label>
                         <input type="password" id="login-password" name="password" required>
@@ -69,25 +84,43 @@
                             <label for="show-password">Show password</label>
                         </div>
                     </div>
+                    
                     <div class="form-group remember-me">
                         <input type="checkbox" id="remember-me" name="remember">
                         <label for="remember-me">Remember me</label>
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
+                    
                     <button type="submit" class="auth-button">Login</button>
                     <div class="auth-message" id="login-message"></div>
                 </form>
                 
                 <form id="register-form" class="auth-form">
                     <h2>Create an Account</h2>
+                    
                     <div class="form-group">
                         <label for="register-name">Full Name</label>
                         <input type="text" id="register-name" name="name" required>
                     </div>
+                    
+                    <div class="form-group method-selection">
+                        <label for="register-method">Contact method</label>
+                        <select id="register-method" name="register-method">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone Number</option>
+                        </select>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="register-email">Email</label>
                         <input type="email" id="register-email" name="email" required>
                     </div>
+                    
+                    <div class="form-group" style="display: none;">
+                        <label for="register-phone">Phone Number</label>
+                        <input type="tel" id="register-phone" name="phone" placeholder="e.g. +33612345678">
+                    </div>
+                    
                     <div class="form-group">
                         <label for="register-password">Password</label>
                         <input type="password" id="register-password" name="password" required>
@@ -96,14 +129,17 @@
                             <span class="strength-text">Password strength</span>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <label for="register-confirm">Confirm Password</label>
                         <input type="password" id="register-confirm" name="confirm-password" required>
                     </div>
+                    
                     <div class="form-group terms">
                         <input type="checkbox" id="terms" name="terms" required>
                         <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
                     </div>
+                    
                     <button type="submit" class="auth-button">Create Account</button>
                     <div class="auth-message" id="register-message"></div>
                 </form>

@@ -1,0 +1,450 @@
+/* Services Page Styles */
+
+/* Hero Section */
+.services-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    margin-bottom: 60px;
+}
+
+.services-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.services-hero h1.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services-hero .tagline {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.2s;
+}
+
+.services-hero .tagline.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-cta {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: 0.4s;
+}
+
+.hero-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Services Intro */
+.services-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.services-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+    margin-bottom: 80px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.service-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-features li:before {
+    content: "✓";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+}
+
+.service-cta {
+    display: inline-block;
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.service-cta:hover {
+    background-color: #0b5ed7;
+}
+
+/* Service Plans */
+.service-plans {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    margin-bottom: 80px;
+}
+
+.service-plans h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.featured {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 2px solid #0d6efd;
+}
+
+.plan-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #0d6efd;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.plan-header {
+    background-color: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.plan-price {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.plan-features {
+    list-style-type: none;
+    padding: 30px;
+    margin: 0;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.plan-features li:before {
+    content: "✓";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.plan-cta {
+    display: block;
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.plan-cta:hover {
+    background-color: #0b5ed7;
+}
+
+.plans-note {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 60px 20px;
+    margin-bottom: 80px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.testimonial-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    scroll-snap-align: start;
+    padding: 20px;
+}
+
+.testimonial-content {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.testimonial-content:before {
+    content: """;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 4rem;
+    color: #ddd;
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.author-position {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Services CTA Section */
+.services-cta {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/api/placeholder/1200/600') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 60px;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0d6efd;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0b5ed7;
+}
+
+.cta-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: 14px 29px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services-hero .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plans-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .plan-card {
+        max-width: 100%;
+    }
+    
+    .plan-card.featured {
+        transform: scale(1);
+        order: -1;
+    }
+    
+    .plan-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .services-cta h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,306 +1,207 @@
 /**
  * TGen ROBOTICS Catalog Data
  * 
- * ADMIN INSTRUCTIONS:
+ * This file contains all product data for the catalog. 
+ * Administrators can easily modify this file to add, edit or remove products.
  * 
- * This file contains all the product data for the catalog.
- * To add, modify, or remove products, simply edit the CATALOG_PRODUCTS array below.
+ * INSTRUCTIONS FOR ADMINISTRATORS:
  * 
- * Each product is an object with the following properties:
- * - id: A unique identifier for the product (incremental number, must be unique)
- * - title: The name of the product
- * - category: The category of the product (industrial, construction, domestic, healthcare)
- * - price: The price of the product (use "Contact for pricing" for products without a fixed price)
- * - image: The path to the product image (stored in assets/images/catalog/)
- * - description: A short description for the product card
- * - detailedDescription: A more detailed description for the product modal
- * - specifications: An object containing product specifications as key-value pairs
- * - featured: Boolean value to indicate if the product should be featured
+ * 1. TO ADD A NEW PRODUCT:
+ *    - Copy an existing product object inside the CATALOG_PRODUCTS array
+ *    - Paste it before the closing bracket of the array
+ *    - Update all fields with the new product information
+ *    - Make sure to add a comma after the previous product's closing curly brace }
  * 
- * HOW TO ADD A NEW PRODUCT:
- * 1. Create a new object with all required properties
- * 2. Assign a unique id (usually the next number in sequence)
- * 3. Add the object to the CATALOG_PRODUCTS array
- * 4. Make sure to add the product image to the assets/images/catalog/ folder
+ * 2. TO EDIT A PRODUCT:
+ *    - Simply find the product by its id
+ *    - Modify any of the fields as needed
  * 
- * HOW TO REMOVE A PRODUCT:
- * 1. Simply delete the entire object from the CATALOG_PRODUCTS array
+ * 3. TO REMOVE A PRODUCT:
+ *    - Delete the entire product object including its opening { and closing } brackets
+ *    - Make sure to remove any trailing comma from the previous product
  * 
- * HOW TO MODIFY A PRODUCT:
- * 1. Find the product object you want to modify
- * 2. Change the properties you need to update
- * 3. Save the file
+ * 4. PRODUCT CATEGORIES:
+ *    - Currently supported categories: 'industrial', 'construction', 'domestic', 'healthcare'
+ *    - Use these exact category names in the 'category' field
  * 
- * IMPORTANT: Always keep the structure of the object consistent!
+ * 5. IMAGES:
+ *    - Image paths should be relative to the root directory
+ *    - For example: '/assets/images/products/product-name.jpg'
+ *    - If no image is available, use the placeholder: '/api/placeholder/400/300'
+ * 
+ * 6. PRODUCT ID:
+ *    - Each product must have a unique id
+ *    - Use a simple incremental number for new products
+ * 
+ * PRODUCT OBJECT STRUCTURE:
+ * {
+ *    id: (number),                  // Unique identifier
+ *    name: (string),                // Product name
+ *    category: (string),            // Product category: 'industrial', 'construction', 'domestic', 'healthcare'
+ *    price: (string),               // Price with currency symbol, e.g. '€2,499.99' or 'Contact for pricing'
+ *    shortDescription: (string),    // Brief description for catalog cards
+ *    longDescription: (string),     // Detailed description for product modal
+ *    image: (string),               // Main image path
+ *    featured: (boolean),           // Whether product should be highlighted
+ *    specifications: [              // Array of specification objects
+ *      { name: (string), value: (string) },    // Each specification has a name and value
+ *      ...
+ *    ]
+ * }
  */
 
-// Define the catalog products array
+// Catalog Products Array - Add, edit or remove products here
 const CATALOG_PRODUCTS = [
-    // Industrial Robots
     {
         id: 1,
-        title: "AutoAssembly Pro X5",
+        name: "AR-7500 Industrial Arm",
         category: "industrial",
-        price: "€25,000",
+        price: "€12,499.99",
+        shortDescription: "High-precision robotic arm with 6 degrees of freedom, perfect for manufacturing and assembly lines.",
+        longDescription: "The AR-7500 is our flagship industrial robotic arm, designed for maximum precision and reliability in manufacturing environments. With 6 degrees of freedom and advanced motion control algorithms, it can perform complex assembly tasks with repeatable accuracy of ±0.02mm. The integrated vision system allows for on-the-fly adjustments and quality control verification, while the hardened steel construction ensures durability even in harsh industrial conditions.",
         image: "/api/placeholder/400/300",
-        description: "Advanced assembly robot with precision control and adaptive learning capabilities.",
-        detailedDescription: "The AutoAssembly Pro X5 represents the cutting edge in automated assembly solutions. Designed for manufacturing environments requiring high precision and flexibility, this robot excels in component assembly, quality testing, and product finishing. With its advanced machine learning algorithms, the X5 continuously improves its performance over time, reducing errors and increasing throughput.",
-        specifications: {
-            "Working Radius": "1.5 meters",
-            "Maximum Payload": "25 kg",
-            "Precision": "±0.05 mm",
-            "Degrees of Freedom": "6-axis",
-            "Power Consumption": "3.2 kW",
-            "Control System": "TGen Advanced AI",
-            "Communication": "Ethernet/IP, PROFINET, EtherCAT",
-            "Programming": "Graphical interface, Python API",
-            "Certification": "ISO/TS 15066, CE, UL"
-        },
-        featured: true
+        featured: true,
+        specifications: [
+            { name: "Payload Capacity", value: "7.5 kg" },
+            { name: "Reach", value: "1850 mm" },
+            { name: "Degrees of Freedom", value: "6" },
+            { name: "Repeatability", value: "±0.02 mm" },
+            { name: "Power Consumption", value: "750W (typical)" },
+            { name: "Weight", value: "248 kg" },
+            { name: "Control System", value: "TGen ARM OS 4.2" }
+        ]
     },
     {
         id: 2,
-        title: "LogisticsBot 2000",
-        category: "industrial",
-        price: "€18,500",
+        name: "CrawlBot X2 Construction Robot",
+        category: "construction",
+        price: "€18,750.00",
+        shortDescription: "All-terrain construction robot designed for site surveying, material transport, and precision measurement.",
+        longDescription: "The CrawlBot X2 revolutionizes construction site management with its versatile capabilities. Featuring an advanced terrain-adaptive locomotion system, it can navigate uneven surfaces, stairs, and obstacles with ease. Equipped with LiDAR, multi-spectral cameras, and precision measurement tools, it creates detailed 3D maps of construction sites and tracks progress against digital plans. The modular attachment system allows for tool swapping, enabling the CrawlBot to perform tasks from material transport (up to 200kg) to precision drilling and cutting.",
         image: "/api/placeholder/400/300",
-        description: "Autonomous material handling robot for warehouse and factory environments.",
-        detailedDescription: "The LogisticsBot 2000 is designed to revolutionize internal logistics in warehouses and production facilities. This autonomous robot navigates complex environments safely while transporting materials between workstations. With its advanced obstacle detection and route optimization, the LogisticsBot 2000 significantly reduces material handling time and labor costs.",
-        specifications: {
-            "Load Capacity": "2000 kg",
-            "Operating Speed": "2.0 m/s",
-            "Battery Life": "12 hours",
-            "Charging Time": "2 hours",
-            "Navigation System": "LiDAR + Computer Vision",
-            "Safety Features": "360° obstacle detection, emergency stop",
-            "Connectivity": "Wi-Fi, 4G/5G",
-            "Fleet Management": "TGen Central Control System",
-            "Certification": "CE, ISO 3691-4"
-        },
-        featured: true
+        featured: true,
+        specifications: [
+            { name: "Payload Capacity", value: "200 kg" },
+            { name: "Operating Time", value: "8 hours" },
+            { name: "Climbing Ability", value: "45° incline" },
+            { name: "Speed", value: "5 km/h (max)" },
+            { name: "Sensor Suite", value: "LiDAR, RGB-D Camera, IMU, GPS" },
+            { name: "Control", value: "Autonomous or Remote Operation" },
+            { name: "Weather Resistance", value: "IP67 (Dust & Water Resistant)" }
+        ]
     },
     {
         id: 3,
-        title: "PrecisionWeld TG3",
-        category: "industrial",
-        price: "€32,750",
+        name: "HomeBuddy Advanced",
+        category: "domestic",
+        price: "€1,299.99",
+        shortDescription: "Multi-function home assistant robot with voice control, smart home integration, and autonomous navigation.",
+        longDescription: "The HomeBuddy Advanced is your ultimate domestic assistant, designed to make everyday life easier and more connected. Using advanced AI and natural language processing, it responds to voice commands while learning your preferences over time. Its autonomous navigation system maps your home for efficient movement, while obstacle avoidance ensures safety around pets and children. With smart home integration, HomeBuddy can control lights, thermostats, and other connected devices. The extendable arm can perform basic tasks like picking up small items, while the built-in entertainment features include music playback and interactive games.",
         image: "/api/placeholder/400/300",
-        description: "High-precision welding robot for complex manufacturing applications.",
-        detailedDescription: "The PrecisionWeld TG3 combines state-of-the-art robotics with advanced welding technology to deliver exceptional results in demanding manufacturing environments. Capable of performing TIG, MIG, and spot welding with remarkable precision, this robot is ideal for industries where weld quality is critical, such as automotive, aerospace, and precision engineering.",
-        specifications: {
-            "Welding Types": "TIG, MIG, Spot Welding",
-            "Working Envelope": "2.8 m radius",
-            "Positional Repeatability": "±0.03 mm",
-            "Welding Speed": "0.1-120 cm/min",
-            "Payload": "12 kg",
-            "Controller": "TGen WeldMaster Pro",
-            "Programming": "Teach pendant, offline programming",
-            "Cooling System": "Integrated liquid cooling",
-            "Certification": "ISO 9606, AWS D16.2, CE"
-        },
-        featured: false
+        featured: true,
+        specifications: [
+            { name: "Battery Life", value: "10 hours (active use)" },
+            { name: "Height", value: "95 cm" },
+            { name: "Weight", value: "12 kg" },
+            { name: "Voice Recognition", value: "Multiple users, 8 languages" },
+            { name: "Camera", value: "1080p HD with night vision" },
+            { name: "Connectivity", value: "Wi-Fi, Bluetooth 5.0, Zigbee" },
+            { name: "Noise Level", value: "< 50 dB" }
+        ]
     },
-
-    // Construction Robots
     {
         id: 4,
-        title: "RenovationMaster 500",
-        category: "construction",
+        name: "MediAssist Pro",
+        category: "healthcare",
         price: "Contact for pricing",
+        shortDescription: "Healthcare assistance robot for patient monitoring, medication management, and mobility support.",
+        longDescription: "The MediAssist Pro is designed to enhance healthcare facilities by providing reliable patient assistance and reducing the workload on healthcare professionals. Its advanced vital sign monitoring system can track heart rate, blood pressure, and oxygen levels non-invasively, while the medication management system ensures timely reminders and accurate dispensing. The robot's gentle mobility assistance features help patients with limited mobility move safely, while the telehealth capabilities enable remote consultations with healthcare providers. With intuitive touch controls and voice recognition, MediAssist Pro is accessible to patients of all ages and technical abilities.",
         image: "/api/placeholder/400/300",
-        description: "Multipurpose construction robot for demolition and renovation projects.",
-        detailedDescription: "The RenovationMaster 500 is a versatile construction robot designed to handle the most demanding demolition and renovation tasks with precision and safety. Equipped with interchangeable tools and a robust hydraulic system, this robot can break concrete, remove plaster, drill through walls, and much more. Its compact design allows it to operate in confined spaces where traditional equipment cannot reach.",
-        specifications: {
-            "Operating Weight": "500 kg",
-            "Power Source": "Electric (3-phase) or Diesel",
-            "Hydraulic System": "25 kW",
-            "Working Reach": "3.2 meters",
-            "Control System": "Remote control with video feedback",
-            "Noise Level": "85 dB(A)",
-            "Attachments": "Breaker, crusher, drill, gripper, bucket",
-            "Climbing Capability": "30° incline",
-            "Certification": "CE, ANSI/ASSP A10.40"
-        },
-        featured: true
+        featured: false,
+        specifications: [
+            { name: "Patient Lifting Capacity", value: "120 kg" },
+            { name: "Battery Operation", value: "24 hours" },
+            { name: "Sanitization", value: "UV-C disinfection system" },
+            { name: "Monitoring Capabilities", value: "Heart rate, BP, SpO2, Temperature" },
+            { name: "Communication", value: "2-way audio/video" },
+            { name: "Fall Detection", value: "AI-powered alert system" },
+            { name: "Certifications", value: "ISO 13485, CE Medical, FDA cleared" }
+        ]
     },
     {
         id: 5,
-        title: "BrickLayer Pro",
-        category: "construction",
-        price: "€120,000",
+        name: "PackBot Mini",
+        category: "industrial",
+        price: "€8,999.99",
+        shortDescription: "Compact warehousing robot designed for inventory management and package handling in tight spaces.",
+        longDescription: "The PackBot Mini is revolutionizing small to medium warehouse operations with its compact design and powerful capabilities. Standing just 1.2 meters tall, it can navigate narrow aisles and tight spaces while carrying up to 50kg of inventory. The integrated barcode and RFID scanners automate inventory tracking with 99.9% accuracy, while the adaptive gripper system can handle packages of various shapes and sizes. With its collaborative design, PackBot Mini works safely alongside human warehouse staff, intelligently avoiding collisions and adapting its pace to surrounding activity levels.",
         image: "/api/placeholder/400/300",
-        description: "Automated bricklaying system for residential and commercial construction.",
-        detailedDescription: "The BrickLayer Pro is revolutionizing masonry construction with its ability to lay bricks with speed and precision that surpasses human capabilities. Using advanced computer vision to map construction plans to real-world coordinates, this robot can build walls up to three times faster than traditional methods while maintaining exceptional quality standards. The system includes mortar dispensing, brick placement, and real-time quality control.",
-        specifications: {
-            "Laying Speed": "Up to 1000 bricks per hour",
-            "Compatible Materials": "Standard bricks, blocks up to 10kg",
-            "Precision": "±1.0 mm",
-            "System Dimensions": "4.2 m × 2.1 m × 3.0 m",
-            "Power Requirements": "380-480V, 32A, 3-phase",
-            "Setup Time": "4 hours",
-            "Operation": "Semi-autonomous with supervisor",
-            "Software": "TGen Construction Planner",
-            "Certification": "CE, ISO 19338"
-        },
-        featured: false
+        featured: false,
+        specifications: [
+            { name: "Height", value: "120 cm" },
+            { name: "Payload", value: "50 kg" },
+            { name: "Scanning Accuracy", value: "99.9%" },
+            { name: "Operating Time", value: "12 hours" },
+            { name: "Charging Time", value: "2 hours" },
+            { name: "Navigation", value: "Lidar + Camera Fusion" },
+            { name: "Software", value: "TGen Warehouse Management System" }
+        ]
     },
     {
         id: 6,
-        title: "SiteScanner Drone X2",
+        name: "SolarPro Cleaner",
         category: "construction",
-        price: "€8,900",
+        price: "€7,499.00",
+        shortDescription: "Autonomous solar panel cleaning robot for large-scale installations, boosting energy efficiency by up to 30%.",
+        longDescription: "The SolarPro Cleaner addresses one of the biggest maintenance challenges in solar energy: keeping panels clean to maintain optimal efficiency. This fully autonomous robot traverses solar arrays of any size, using advanced sensors to detect dirt accumulation and adapt its cleaning intensity. The water-efficient cleaning system uses 90% less water than manual methods, while the soft-touch brushes prevent panel damage. Solar farm operators typically see energy production increases of 15-30% after deployment, with the robot's AI-driven scheduling ensuring panels are cleaned at optimal intervals based on weather conditions and dust accumulation patterns.",
         image: "/api/placeholder/400/300",
-        description: "Autonomous drone for construction site mapping and progress monitoring.",
-        detailedDescription: "The SiteScanner Drone X2 is an advanced aerial mapping system designed specifically for construction projects. It autonomously captures high-resolution images and LiDAR data to create detailed 3D models of construction sites. These models can be used for progress tracking, volume calculations, and quality control. The system integrates seamlessly with BIM software to compare as-built conditions with design plans, helping identify discrepancies early in the construction process.",
-        specifications: {
-            "Flight Time": "45 minutes",
-            "Camera Resolution": "42 MP RGB + Thermal",
-            "LiDAR Accuracy": "±1.5 cm",
-            "Mapping Area": "Up to 25 hectares per flight",
-            "Wind Resistance": "Up to 12 m/s",
-            "Data Processing": "Cloud-based or local",
-            "Output Formats": "LAS, XYZ, DXF, OBJ, BIM integration",
-            "AI Features": "Progress tracking, anomaly detection",
-            "Certification": "FAA Part 107, CE"
-        },
-        featured: false
+        featured: false,
+        specifications: [
+            { name: "Cleaning Rate", value: "1000 m² per hour" },
+            { name: "Water Usage", value: "0.1L per m²" },
+            { name: "Panel Compatibility", value: "All standard formats" },
+            { name: "Incline Capability", value: "Up to 45°" },
+            { name: "Power Source", value: "Self-charging (solar)" },
+            { name: "Weather Resistance", value: "IP66" },
+            { name: "Remote Monitoring", value: "Real-time via cloud dashboard" }
+        ]
     },
-
-    // Domestic Robots
     {
         id: 7,
-        title: "HomeCare Assistant",
+        name: "KitchenChef Bot",
         category: "domestic",
-        price: "€3,499",
+        price: "€2,799.99",
+        shortDescription: "Intelligent cooking assistant robot that can prepare over 500 recipes with precision and consistency.",
+        longDescription: "The KitchenChef Bot transforms home cooking with its ability to prepare complete meals with minimal human intervention. Featuring 8 specialized cooking tools that automatically swap depending on the recipe requirements, it can chop, stir, blend, and even monitor cooking temperatures with professional precision. The 10.5-inch touchscreen guides users through recipes, while the voice control system allows for hands-free operation while handling other kitchen tasks. With weekly software updates, the recipe database continuously expands, now featuring over 500 dishes from global cuisines. The cleaning system automates post-cooking cleanup, making the entire cooking experience more enjoyable.",
         image: "/api/placeholder/400/300",
-        description: "Multifunctional home robot for cleaning, monitoring, and household assistance.",
-        detailedDescription: "The HomeCare Assistant is the ultimate domestic robot, combining cleaning capabilities with smart home integration and personal assistance features. It handles various cleaning tasks including vacuuming, mopping, and surface sanitization. With built-in cameras and sensors, it can monitor your home when you're away, and its voice-controlled interface allows for easy operation. The robot learns your preferences over time, adapting its schedule and routines to best serve your household needs.",
-        specifications: {
-            "Cleaning Coverage": "Up to 200 m²",
-            "Battery Life": "3 hours",
-            "Navigation": "SLAM + 3D mapping",
-            "Cleaning Functions": "Vacuum, mop, UV sanitize",
-            "Smart Home Integration": "Google Home, Alexa, HomeKit",
-            "Camera": "1080p with night vision",
-            "App Control": "iOS, Android",
-            "Voice Recognition": "Multi-language support",
-            "Security Features": "Intruder alert, smoke detection"
-        },
-        featured: true
+        featured: false,
+        specifications: [
+            { name: "Cooking Techniques", value: "Chopping, stirring, blending, temperature control" },
+            { name: "Recipe Database", value: "500+ recipes (expandable)" },
+            { name: "Maximum Meal Size", value: "4 servings" },
+            { name: "Tools", value: "8 auto-swappable attachments" },
+            { name: "Display", value: "10.5\" touchscreen" },
+            { name: "Connectivity", value: "Wi-Fi for recipe updates" },
+            { name: "Dishwasher Safe Parts", value: "Yes, all food-contact components" }
+        ]
     },
     {
         id: 8,
-        title: "KitchenChef Bot",
-        category: "domestic",
-        price: "€4,999",
-        image: "/api/placeholder/400/300",
-        description: "Robotic kitchen assistant capable of preparing various meals automatically.",
-        detailedDescription: "The KitchenChef Bot transforms home cooking with its ability to prepare complete meals from start to finish. Simply load the ingredients into the specialized compartments, select a recipe from the extensive database, and let the robot handle the rest. It can chop, mix, cook, and even plate your meal with chef-like precision. The system learns from feedback and can adapt recipes to your taste preferences and dietary requirements over time.",
-        specifications: {
-            "Recipe Database": "10,000+ recipes",
-            "Cooking Techniques": "Sauté, boil, steam, bake",
-            "Ingredient Capacity": "Up to 25 different ingredients",
-            "Preparation Time": "15-60 minutes depending on recipe",
-            "Cleaning": "Self-cleaning function",
-            "User Interface": "10\" touchscreen + app control",
-            "Dietary Options": "Vegetarian, vegan, gluten-free, etc.",
-            "Power Requirements": "220-240V, 16A",
-            "Certification": "CE, FDA food safety"
-        },
-        featured: false
-    },
-    {
-        id: 9,
-        title: "GardenMaster TG1",
-        category: "domestic",
-        price: "€2,799",
-        image: "/api/placeholder/400/300",
-        description: "Autonomous garden maintenance robot for lawn care and plant monitoring.",
-        detailedDescription: "The GardenMaster TG1 takes the hard work out of garden maintenance. This all-weather robot mows lawns with precision, monitors soil conditions, waters plants according to their specific needs, and even assists with seasonal garden tasks. Its advanced AI can identify different plant species and detect early signs of pests or diseases. The solar-assisted charging system extends battery life, making it ideal for larger gardens.",
-        specifications: {
-            "Lawn Coverage": "Up to 5000 m²",
-            "Cutting Height": "20-60 mm, adjustable",
-            "Slope Capability": "Up to 35%",
-            "Weather Resistance": "IP56 (all-weather)",
-            "Plant Recognition": "1000+ species database",
-            "Sensors": "Soil moisture, pH, temperature",
-            "Watering System": "Precision targeted",
-            "Battery Life": "4 hours (+ solar assistance)",
-            "Noise Level": "<58 dB"
-        },
-        featured: false
-    },
-
-    // Healthcare Robots
-    {
-        id: 10,
-        title: "CareCompanion Plus",
+        name: "PhysioBot Therapist",
         category: "healthcare",
-        price: "Contact for pricing",
+        price: "€9,999.00",
+        shortDescription: "Rehabilitation robot for physical therapy, providing consistent guidance and progress tracking for patients.",
+        longDescription: "The PhysioBot Therapist represents a breakthrough in rehabilitation technology, offering consistent, precise therapy assistance for patients recovering from injuries or surgeries. Using advanced sensors and machine vision, it monitors patient movements with sub-millimeter accuracy, providing real-time feedback and adjustments to ensure exercises are performed correctly. The adaptive resistance system automatically adjusts difficulty based on patient progress, while the built-in pain and fatigue detection prevents overexertion. Therapists can program customized rehabilitation plans remotely, receiving detailed progress reports after each session. Studies show patients using PhysioBot recover 35% faster than with traditional therapy alone.",
         image: "/api/placeholder/400/300",
-        description: "Assistive robot designed for elderly care and patient monitoring.",
-        detailedDescription: "The CareCompanion Plus provides comprehensive support for elderly individuals or patients requiring assistance. It helps with medication management, vital sign monitoring, fall detection, and provides companionship through interactive engagement. The robot can assist with mobility, remind users of appointments or medication schedules, and alert caregivers or emergency services when necessary. With its gentle approach and intuitive interface, it enhances independence while ensuring safety.",
-        specifications: {
-            "Height": "1.2 meters (adjustable)",
-            "Battery Life": "18 hours",
-            "Monitoring": "Vital signs, fall detection, activity",
-            "Assistance Features": "Medication reminders, mobility support",
-            "Communication": "Video calls, emergency alerts",
-            "Voice Interface": "Natural language processing",
-            "Navigation": "Indoor mapping, obstacle avoidance",
-            "Medical Integration": "EHR systems, telemedicine",
-            "Certification": "FDA Class II, CE Medical"
-        },
-        featured: true
-    },
-    {
-        id: 11,
-        title: "SurgicalAssist AR",
-        category: "healthcare",
-        price: "Contact for pricing",
-        image: "/api/placeholder/400/300",
-        description: "Advanced surgical assistant robot with augmented reality guidance.",
-        detailedDescription: "The SurgicalAssist AR represents the future of surgical technology, combining robotics with augmented reality to enhance surgical precision and outcomes. It provides surgeons with real-time guidance, instrument stabilization, and access to difficult-to-reach areas. The system integrates with preoperative imaging to create 3D models for planning and intraoperative navigation. Used in a variety of procedures from general surgery to specialized interventions, it reduces surgical time and improves patient recovery.",
-        specifications: {
-            "Robotic Arms": "4 independently controlled arms",
-            "Precision": "±0.1 mm",
-            "AR Resolution": "4K with depth perception",
-            "Instruments": "Interchangeable, 20+ options",
-            "3D Visualization": "Real-time with pre-op integration",
-            "Control Interface": "Haptic feedback controllers",
-            "Sterilization": "Autoclavable components",
-            "Setup Time": "<15 minutes",
-            "Certification": "FDA Class III, CE Medical, ISO 13485"
-        },
-        featured: false
-    },
-    {
-        id: 12,
-        title: "RehabiliTech Exo",
-        category: "healthcare",
-        price: "€45,000",
-        image: "/api/placeholder/400/300",
-        description: "Robotic exoskeleton for rehabilitation and mobility assistance.",
-        detailedDescription: "The RehabiliTech Exo is an advanced robotic exoskeleton designed to assist patients with mobility impairments and facilitate rehabilitation following injuries or neurological conditions. It provides precisely controlled support during walking and standing exercises, allowing therapists to adjust assistance levels as patients progress. The system collects comprehensive data on movement patterns, strength, and progress, enabling evidence-based rehabilitation programs. With its lightweight design and intuitive controls, it can be used in clinical settings or prescribed for home use.",
-        specifications: {
-            "Weight": "12 kg",
-            "Support Capacity": "Up to 100 kg",
-            "Battery Life": "6 hours active use",
-            "Adjustable Fit": "XS to XXL (155-195 cm height)",
-            "Assistance Levels": "10 progressive settings",
-            "Gait Patterns": "12 programmable patterns",
-            "Sensors": "EMG, pressure, position, acceleration",
-            "Data Analysis": "Real-time + cloud processing",
-            "Certification": "FDA Class II, CE Medical, ISO 13485"
-        },
-        featured: false
+        featured: false,
+        specifications: [
+            { name: "Movement Precision", value: "±0.5mm" },
+            { name: "Supported Exercises", value: "250+ rehabilitation movements" },
+            { name: "Patient Tracking", value: "42 skeletal points" },
+            { name: "Screen", value: "32\" rotating HD display" },
+            { name: "Resistance Levels", value: "50 adaptive settings" },
+            { name: "Sessions", value: "Cloud-stored for provider review" },
+            { name: "Certifications", value: "ISO 13485, CE Medical, FDA Class II" }
+        ]
     }
 ];
-
-/**
- * ADMIN: DO NOT MODIFY BELOW THIS LINE
- * The following code handles the functionality of the catalog
- * and should not be modified unless you know what you're doing.
- */
-
-// Functions to filter and display products will be defined in catalog.js

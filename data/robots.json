@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "name": "TGen AutoBot 2000",
+    "category": "industrial",
+    "price": "€12,499.99",
+    "shortDescription": "Robot industriel polyvalent pour l'automatisation des chaînes de production.",
+    "longDescription": "Le TGen AutoBot 2000 est notre robot industriel phare, conçu pour une précision et une fiabilité maximales dans les environnements de fabrication. Avec 6 degrés de liberté et des algorithmes avancés de contrôle du mouvement, il peut effectuer des tâches d'assemblage complexes avec une précision reproductible de ±0,02 mm. Le système de vision intégré permet des ajustements à la volée et une vérification du contrôle qualité, tandis que la construction en acier trempé assure la durabilité même dans des conditions industrielles difficiles.",
+    "image": "/api/placeholder/400/300",
+    "featured": true,
+    "specifications": [
+      { "name": "Charge utile", "value": "7,5 kg" },
+      { "name": "Portée", "value": "1850 mm" },
+      { "name": "Degrés de liberté", "value": "6" },
+      { "name": "Répétabilité", "value": "±0,02 mm" },
+      { "name": "Consommation d'énergie", "value": "750W (typique)" },
+      { "name": "Poids", "value": "248 kg" },
+      { "name": "Système de contrôle", "value": "TGen ARM OS 4.2" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "CrawlBot X2",
+    "category": "construction",
+    "price": "€18,750.00",
+    "shortDescription": "Robot de construction tout-terrain conçu pour l'arpentage de site, le transport de matériaux et les mesures de précision.",
+    "longDescription": "Le CrawlBot X2 révolutionne la gestion des chantiers de construction avec ses capacités polyvalentes. Doté d'un système de locomotion adaptatif au terrain, il peut naviguer sur des surfaces inégales, des escaliers et des obstacles avec facilité. Équipé de LiDAR, de caméras multispectrales et d'outils de mesure de précision, il crée des cartes 3D détaillées des chantiers de construction et suit les progrès par rapport aux plans numériques. Le système d'attache modulaire permet l'échange d'outils, permettant au CrawlBot d'effectuer des tâches allant du transport de matériaux (jusqu'à 200 kg) au forage et à la découpe de précision.",
+    "image": "/api/placeholder/400/300",
+    "featured": true,
+    "specifications": [
+      { "name": "Capacité de charge", "value": "200 kg" },
+      { "name": "Autonomie", "value": "8 heures" },
+      { "name": "Capacité d'escalade", "value": "Pente de 45°" },
+      { "name": "Vitesse", "value": "5 km/h (max)" },
+      { "name": "Suite de capteurs", "value": "LiDAR, Caméra RGB-D, IMU, GPS" },
+      { "name": "Contrôle", "value": "Autonome ou télécommandé" },
+      { "name": "Résistance aux intempéries", "value": "IP67 (Résistant à la poussière et à l'eau)" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "HomeBuddy Advanced",
+    "category": "domestic",
+    "price": "€1,299.99",
+    "shortDescription": "Robot domestique multifonction avec contrôle vocal, intégration domotique et navigation autonome.",
+    "longDescription": "Le HomeBuddy Advanced est votre assistant domestique ultime, conçu pour faciliter la vie quotidienne et la rendre plus connectée. Utilisant l'IA avancée et le traitement du langage naturel, il répond aux commandes vocales tout en apprenant vos préférences au fil du temps. Son système de navigation autonome cartographie votre maison pour des déplacements efficaces, tandis que l'évitement d'obstacles assure la sécurité autour des animaux domestiques et des enfants. Avec l'intégration domotique, HomeBuddy peut contrôler les lumières, les thermostats et d'autres appareils connectés. Le bras extensible peut effectuer des tâches de base comme ramasser de petits objets, tandis que les fonctionnalités de divertissement intégrées comprennent la lecture de musique et des jeux interactifs.",
+    "image": "/api/placeholder/400/300",
+    "featured": true,
+    "specifications": [
+      { "name": "Autonomie", "value": "10 heures (utilisation active)" },
+      { "name": "Hauteur", "value": "95 cm" },
+      { "name": "Poids", "value": "12 kg" },
+      { "name": "Reconnaissance vocale", "value": "Utilisateurs multiples, 8 langues" },
+      { "name": "Caméra", "value": "1080p HD avec vision nocturne" },
+      { "name": "Connectivité", "value": "Wi-Fi, Bluetooth 5.0, Zigbee" },
+      { "name": "Niveau sonore", "value": "< 50 dB" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "MediAssist Pro",
+    "category": "healthcare",
+    "price": "Contactez-nous pour le prix",
+    "shortDescription": "Robot d'assistance médicale pour la surveillance des patients, la gestion des médicaments et l'aide à la mobilité.",
+    "longDescription": "Le MediAssist Pro est conçu pour améliorer les établissements de santé en fournissant une assistance fiable aux patients et en réduisant la charge de travail des professionnels de la santé. Son système avancé de surveillance des signes vitaux peut suivre la fréquence cardiaque, la tension artérielle et le taux d'oxygène de manière non invasive, tandis que le système de gestion des médicaments assure des rappels ponctuels et une distribution précise. Les fonctionnalités d'assistance à la mobilité en douceur du robot aident les patients à mobilité réduite à se déplacer en toute sécurité, tandis que les capacités de télésanté permettent des consultations à distance avec des prestataires de soins de santé. Avec des commandes tactiles intuitives et la reconnaissance vocale, MediAssist Pro est accessible aux patients de tous âges et de toutes capacités techniques.",
+    "image": "/api/placeholder/400/300",
+    "featured": false,
+    "specifications": [
+      { "name": "Capacité de levage patient", "value": "120 kg" },
+      { "name": "Autonomie de batterie", "value": "24 heures" },
+      { "name": "Désinfection", "value": "Système de désinfection UV-C" },
+      { "name": "Capacités de surveillance", "value": "Fréquence cardiaque, TA, SpO2, Température" },
+      { "name": "Communication", "value": "Audio/vidéo bidirectionnelle" },
+      { "name": "Détection de chute", "value": "Système d'alerte alimenté par IA" },
+      { "name": "Certifications", "value": "ISO 13485, CE Medical, FDA approuvé" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "PackBot Mini",
+    "category": "industrial",
+    "price": "€8,999.99",
+    "shortDescription": "Robot compact d'entrepôt conçu pour la gestion des stocks et la manipulation de colis dans les espaces restreints.",
+    "longDescription": "Le PackBot Mini révolutionne les opérations de petits et moyens entrepôts avec sa conception compacte et ses puissantes capacités. Ne mesurant que 1,2 mètre de haut, il peut naviguer dans les allées étroites et les espaces restreints tout en transportant jusqu'à 50 kg de stock. Les scanners de codes-barres et RFID intégrés automatisent le suivi des stocks avec une précision de 99,9%, tandis que le système de préhension adaptatif peut manipuler des colis de différentes formes et tailles. Avec sa conception collaborative, PackBot Mini travaille en toute sécurité aux côtés du personnel d'entrepôt humain, évitant intelligemment les collisions et adaptant son rythme aux niveaux d'activité environnants.",
+    "image": "/api/placeholder/400/300",
+    "featured": false,
+    "specifications": [
+      { "name": "Hauteur", "value": "120 cm" },
+      { "name": "Charge utile", "value": "50 kg" },
+      { "name": "Précision de numérisation", "value": "99,9%" },
+      { "name": "Autonomie", "value": "12 heures" },
+      { "name": "Temps de recharge", "value": "2 heures" },
+      { "name": "Navigation", "value": "Fusion Lidar + Caméra" },
+      { "name": "Logiciel", "value": "Système TGen de gestion d'entrepôt" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "SolarPro Cleaner",
+    "category": "construction",
+    "price": "€7,499.00",
+    "shortDescription": "Robot autonome de nettoyage de panneaux solaires pour installations à grande échelle, augmentant l'efficacité énergétique jusqu'à 30%.",
+    "longDescription": "Le SolarPro Cleaner répond à l'un des plus grands défis de maintenance dans l'énergie solaire : maintenir les panneaux propres pour conserver une efficacité optimale. Ce robot entièrement autonome traverse les installations solaires de toute taille, utilisant des capteurs avancés pour détecter l'accumulation de saleté et adapter son intensité de nettoyage. Le système de nettoyage économe en eau utilise 90% moins d'eau que les méthodes manuelles, tandis que les brosses douces évitent d'endommager les panneaux. Les exploitants de fermes solaires constatent généralement des augmentations de production d'énergie de 15 à 30% après déploiement, la planification pilotée par IA du robot garantissant que les panneaux sont nettoyés à des intervalles optimaux basés sur les conditions météorologiques et les modèles d'accumulation de poussière.",
+    "image": "/api/placeholder/400/300",
+    "featured": false,
+    "specifications": [
+      { "name": "Taux de nettoyage", "value": "1000 m² par heure" },
+      { "name": "Utilisation d'eau", "value": "0,1L par m²" },
+      { "name": "Compatibilité des panneaux", "value": "Tous formats standard" },
+      { "name": "Capacité d'inclinaison", "value": "Jusqu'à 45°" },
+      { "name": "Source d'alimentation", "value": "Auto-recharge (solaire)" },
+      { "name": "Résistance aux intempéries", "value": "IP66" },
+      { "name": "Surveillance à distance", "value": "En temps réel via tableau de bord cloud" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "KitchenChef Bot",
+    "category": "domestic",
+    "price": "€2,799.99",
+    "shortDescription": "Robot assistant de cuisine intelligent capable de préparer plus de 500 recettes avec précision et constance.",
+    "longDescription": "Le KitchenChef Bot transforme la cuisine domestique avec sa capacité à préparer des repas complets avec une intervention humaine minimale. Doté de 8 outils de cuisine spécialisés qui s'échangent automatiquement en fonction des exigences de la recette, il peut hacher, remuer, mélanger et même surveiller les températures de cuisson avec une précision professionnelle. L'écran tactile de 10,5 pouces guide les utilisateurs à travers les recettes, tandis que le système de contrôle vocal permet une utilisation mains libres pendant l'exécution d'autres tâches de cuisine. Avec des mises à jour logicielles hebdomadaires, la base de données de recettes s'étend continuellement, proposant maintenant plus de 500 plats de cuisines du monde entier. Le système de nettoyage automatise le rangement post-cuisson, rendant l'expérience culinaire plus agréable.",
+    "image": "/api/placeholder/400/300",
+    "featured": false,
+    "specifications": [
+      { "name": "Techniques culinaires", "value": "Hachage, agitation, mélange, contrôle de température" },
+      { "name": "Base de données de recettes", "value": "500+ recettes (extensible)" },
+      { "name": "Taille maximale des repas", "value": "4 portions" },
+      { "name": "Outils", "value": "8 accessoires auto-interchangeables" },
+      { "name": "Écran", "value": "Tactile 10,5 pouces" },
+      { "name": "Connectivité", "value": "Wi-Fi pour mises à jour de recettes" },
+      { "name": "Pièces lavables au lave-vaisselle", "value": "Oui, tous les composants en contact avec les aliments" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "PhysioBot Therapist",
+    "category": "healthcare",
+    "price": "€9,999.00",
+    "shortDescription": "Robot de rééducation pour physiothérapie, fournissant des conseils cohérents et un suivi des progrès pour les patients.",
+    "longDescription": "Le PhysioBot Therapist représente une avancée dans la technologie de réadaptation, offrant une assistance thérapeutique constante et précise aux patients en convalescence après des blessures ou des chirurgies. Utilisant des capteurs avancés et la vision par machine, il surveille les mouvements du patient avec une précision submillimétrique, fournissant un retour en temps réel et des ajustements pour garantir que les exercices sont effectués correctement. Le système de résistance adaptative ajuste automatiquement la difficulté en fonction des progrès du patient, tandis que la détection intégrée de la douleur et de la fatigue évite le surmenage. Les thérapeutes peuvent programmer des plans de réadaptation personnalisés à distance, recevant des rapports détaillés de progression après chaque séance. Des études montrent que les patients utilisant PhysioBot récupèrent 35% plus rapidement qu'avec la thérapie traditionnelle seule.",
+    "image": "/api/placeholder/400/300",
+    "featured": false,
+    "specifications": [
+      { "name": "Précision de mouvement", "value": "±0,5mm" },
+      { "name": "Exercices supportés", "value": "250+ mouvements de réadaptation" },
+      { "name": "Suivi patient", "value": "42 points squelettiques" },
+      { "name": "Écran", "value": "Écran HD rotatif 32 pouces" },
+      { "name": "Niveaux de résistance", "value": "50 réglages adaptatifs" },
+      { "name": "Sessions", "value": "Stockées dans le cloud pour examen par les soignants" },
+      { "name": "Certifications", "value": "ISO 13485, CE Medical, FDA Classe II" }
+    ]
+  }
+]

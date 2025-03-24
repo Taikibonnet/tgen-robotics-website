@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - TGen ROBOTICS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/account.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Manage your TGen ROBOTICS account, view orders, update your profile, and more.">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
+                    TGen ROBOTICS
+                </object>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="disabled">Services</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="account.html" class="active" id="account-nav-link">My Account</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="cart-icon" id="cart-icon">
+                <span class="cart-count" id="cart-count">0</span>
+                🛒
+            </div>
+        </header>
+        
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="disabled">Services</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+        
+        <div class="account-container">
+            <div class="account-sidebar">
+                <div class="account-user-info">
+                    <div class="user-avatar">
+                        <span id="user-initials">UN</span>
+                    </div>
+                    <h3 id="user-name">User Name</h3>
+                    <p id="user-email">user@example.com</p>
+                </div>
+                
+                <nav class="account-nav">
+                    <ul>
+                        <li><a href="#" class="active" data-section="dashboard">Dashboard</a></li>
+                        <li><a href="#" data-section="orders">My Orders</a></li>
+                        <li><a href="#" data-section="cart">Shopping Cart</a></li>
+                        <li><a href="#" data-section="wishlist">Wishlist</a></li>
+                        <li><a href="#" data-section="profile">Profile Settings</a></li>
+                        <li><a href="#" data-section="password">Change Password</a></li>
+                        <li><a href="#" id="logout-btn" class="logout-btn">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="account-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="account-section active">
+                    <h2>My Dashboard</h2>
+                    <div class="dashboard-overview">
+                        <div class="dashboard-card">
+                            <div class="card-icon">📦</div>
+                            <div class="card-content">
+                                <h3>My Orders</h3>
+                                <p id="orders-count">0 orders</p>
+                                <a href="#" data-section="orders" class="card-link">View Orders</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-icon">🛒</div>
+                            <div class="card-content">
+                                <h3>Shopping Cart</h3>
+                                <p id="cart-item-count">0 items</p>
+                                <a href="#" data-section="cart" class="card-link">View Cart</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-card">
+                            <div class="card-icon">❤️</div>
+                            <div class="card-content">
+                                <h3>Wishlist</h3>
+                                <p id="wishlist-count">0 items</p>
+                                <a href="#" data-section="wishlist" class="card-link">View Wishlist</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <div class="activity-list" id="activity-list">
+                            <p class="no-activity">No recent activity found.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Orders Section -->
+                <section id="orders" class="account-section">
+                    <h2>My Orders</h2>
+                    <div class="orders-list" id="orders-list">
+                        <p class="no-orders">You haven't placed any orders yet.</p>
+                    </div>
+                </section>
+                
+                <!-- Cart Section -->
+                <section id="cart" class="account-section">
+                    <h2>Shopping Cart</h2>
+                    <div class="cart-list" id="cart-items">
+                        <p class="empty-cart">Your cart is empty.</p>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">€0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping:</span>
+                            <span id="cart-shipping">€0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="cart-total">€0.00</span>
+                        </div>
+                        
+                        <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </section>
+                
+                <!-- Wishlist Section -->
+                <section id="wishlist" class="account-section">
+                    <h2>My Wishlist</h2>
+                    <div class="wishlist-items" id="wishlist-items">
+                        <p class="empty-wishlist">Your wishlist is empty.</p>
+                    </div>
+                </section>
+                
+                <!-- Profile Settings Section -->
+                <section id="profile" class="account-section">
+                    <h2>Profile Settings</h2>
+                    <form id="profile-form" class="profile-form">
+                        <div class="form-group">
+                            <label for="profile-name">Full Name</label>
+                            <input type="text" id="profile-name" name="name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-email">Email Address</label>
+                            <input type="email" id="profile-email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-phone">Phone Number</label>
+                            <input type="tel" id="profile-phone" name="phone">
+                        </div>
+                        
+                        <h3>Delivery Address</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="profile-street">Street Address</label>
+                                <input type="text" id="profile-street" name="street">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="profile-city">City</label>
+                                <input type="text" id="profile-city" name="city">
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="profile-zip">Postal Code</label>
+                                <input type="text" id="profile-zip" name="postal_code">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="profile-country">Country</label>
+                                <select id="profile-country" name="country">
+                                    <option value="">Select a country</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </section>
+                
+                <!-- Change Password Section -->
+                <section id="password" class="account-section">
+                    <h2>Change Password</h2>
+                    <form id="password-form" class="password-form">
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" name="current_password" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password" name="new_password" required>
+                            <div class="password-strength">
+                                <div class="strength-meter"></div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password" name="confirm_password" required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="save-btn">Update Password</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            
+            <div class="cart-items" id="sidebar-cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="sidebar-cart-total">€0.00</span>
+                </div>
+                
+                <div class="cart-actions">
+                    <a href="#" data-section="cart" class="view-cart-btn">View Cart</a>
+                    <button id="sidebar-checkout-btn" class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cart Overlay -->
+        <div class="cart-overlay" id="cart-overlay"></div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TGen ROBOTICS</h3>
+                    <p>Your partner in innovative robotic solutions for industry and individuals.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="disabled">Services</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Robots</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=industrial">Industrial robots</a></li>
+                        <li><a href="catalog.html?category=construction">Construction robots</a></li>
+                        <li><a href="catalog.html?category=domestic">Domestic robots</a></li>
+                        <li><a href="catalog.html?category=healthcare">Healthcare robots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li><a href="mailto:tgen.robotics@gmail.com">tgen.robotics@gmail.com</a></li>
+                        <li>123 Innovation Avenue, 75001 Paris</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61574422206513" target="_blank" aria-label="Facebook">📱</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="https://www.instagram.com/tgen_robotics/" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 TGen ROBOTICS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/account.js"></script>
+</body>
+</html>

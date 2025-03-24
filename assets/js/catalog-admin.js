@@ -135,13 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
         isAdminMode = enable;
         adminPanel.style.display = enable ? 'block' : 'none';
         
-        // Reset working data when entering admin mode
+        // Add/remove admin-mode class to body
         if (enable) {
-            workingProductsData = [...CATALOG_PRODUCTS];
+            document.body.classList.add('admin-mode');
+            workingProductsData = [...CATALOG_PRODUCTS]; // Reset working data
+        } else {
+            document.body.classList.remove('admin-mode');
         }
         
         // Re-render products to add/remove admin controls
         renderProductsWithAdminControls();
+        
+        // Show/hide admin hint
+        const adminHint = document.querySelector('.admin-hint');
+        if (adminHint) {
+            adminHint.style.display = enable ? 'none' : 'block';
+        }
     }
 
     // Show form for adding a new product
@@ -203,3 +212,293 @@ document.addEventListener('DOMContentLoaded', () => {
         
         currentProductId = product.id;
     }
+
+    // Hide product form
+    function hideProductForm() {
+        adminPanel.querySelector('#productForm').style.display = 'none';
+        currentProductId = null;
+    }
+
+    // Handle product form submission
+    function handleProductFormSubmit(event) {
+        event.preventDefault();
+        
+        // Gather form data
+        const formData = {
+            name: adminPanel.querySelector('#productName').value,
+            category: adminPanel.querySelector('#productCategory').value,
+            price: adminPanel.querySelector('#productPrice').value,
+            image: adminPanel.querySelector('#productImage').value || '/api/placeholder/400/300',
+            shortDescription: adminPanel.querySelector('#productShortDesc').value,
+            longDescription: adminPanel.querySelector('#productLongDesc').value,
+            featured: adminPanel.querySelector('input[name="productFeatured"]:checked').value === 'true',
+            specifications: parseSpecifications(adminPanel.querySelector('#productSpecs').value)
+        };
+        
+        if (currentProductId) {
+            // Update existing product
+            updateProduct(currentProductId, formData);
+        } else {
+            // Add new product
+            addProduct(formData);
+        }
+        
+        // Hide form
+        hideProductForm();
+        
+        // Re-render products
+        renderProductsWithAdminControls();
+    }
+
+    // Parse specifications from text area
+    function parseSpecifications(specsText) {
+        const specs = [];
+        const lines = specsText.split('\n');
+        
+        lines.forEach(line => {
+            line = line.trim();
+            if (!line) return;
+            
+            const separatorIndex = line.indexOf(':');
+            if (separatorIndex > 0) {
+                const name = line.substring(0, separatorIndex).trim();
+                const value = line.substring(separatorIndex + 1).trim();
+                if (name && value) {
+                    specs.push({ name, value });
+                }
+            }
+        });
+        
+        return specs;
+    }
+
+    // Add a new product
+    function addProduct(productData) {
+        // Generate a new ID (max ID + 1)
+        const maxId = workingProductsData.reduce((max, product) => 
+            Math.max(max, product.id), 0);
+        
+        const newProduct = {
+            id: maxId + 1,
+            ...productData
+        };
+        
+        // Add to working data
+        workingProductsData.push(newProduct);
+        
+        // Show success message
+        alert(`Le robot "${newProduct.name}" a été ajouté avec succès!`);
+    }
+
+    // Update an existing product
+    function updateProduct(productId, productData) {
+        const index = workingProductsData.findIndex(p => p.id === parseInt(productId));
+        if (index === -1) return;
+        
+        // Update product while keeping its ID
+        workingProductsData[index] = {
+            ...workingProductsData[index],
+            ...productData
+        };
+        
+        // Show success message
+        alert(`Le robot "${productData.name}" a été mis à jour avec succès!`);
+    }
+
+    // Delete a product
+    function deleteProduct(productId) {
+        const confirmDelete = confirm("Êtes-vous sûr de vouloir supprimer ce robot du catalogue?");
+        if (!confirmDelete) return;
+        
+        const index = workingProductsData.findIndex(p => p.id === productId);
+        if (index === -1) return;
+        
+        const deletedName = workingProductsData[index].name;
+        
+        // Remove from working data
+        workingProductsData.splice(index, 1);
+        
+        // Re-render products
+        renderProductsWithAdminControls();
+        
+        // Show success message
+        alert(`Le robot "${deletedName}" a été supprimé avec succès!`);
+    }
+
+    // Export products to JSON
+    function exportProducts() {
+        // Format JSON with indentation
+        const jsonString = JSON.stringify(workingProductsData, null, 2);
+        
+        // Create a modal to show the export data
+        const exportModal = document.createElement('div');
+        exportModal.className = 'export-modal';
+        exportModal.innerHTML = `
+            <div class="export-modal-content">
+                <span class="close-export-modal">&times;</span>
+                <h2>Exporter les Données</h2>
+                <p>Pour sauvegarder les modifications, copiez ce code JSON et mettez à jour le fichier <strong>catalog-data.js</strong></p>
+                <div class="export-instructions">
+                    <ol>
+                        <li>Copiez le contenu ci-dessous (utilisez Ctrl+A puis Ctrl+C)</li>
+                        <li>Ouvrez le fichier <strong>assets/js/catalog-data.js</strong> dans votre dépôt GitHub</li>
+                        <li>Remplacez le contenu de l'array <strong>CATALOG_PRODUCTS</strong> par ce nouveau contenu</li>
+                    </ol>
+                </div>
+                <div class="json-container">
+                    <pre>${jsonString}</pre>
+                </div>
+                <div class="export-buttons">
+                    <button id="copyJsonBtn" class="export-btn copy-btn">Copier le JSON</button>
+                    <button id="closeExportBtn" class="export-btn close-btn">Fermer</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(exportModal);
+        
+        // Show the modal
+        exportModal.style.display = 'flex';
+        
+        // Add event listener to close button
+        const closeExportBtn = exportModal.querySelector('.close-export-modal');
+        closeExportBtn.addEventListener('click', () => {
+            document.body.removeChild(exportModal);
+        });
+        
+        // Add event listener to copy button
+        const copyJsonBtn = exportModal.querySelector('#copyJsonBtn');
+        copyJsonBtn.addEventListener('click', () => {
+            const jsonContainer = exportModal.querySelector('pre');
+            const range = document.createRange();
+            range.selectNode(jsonContainer);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            copyJsonBtn.textContent = 'Copié!';
+            setTimeout(() => {
+                copyJsonBtn.textContent = 'Copier le JSON';
+            }, 2000);
+        });
+        
+        // Add event listener to close button
+        const closeBtn = exportModal.querySelector('#closeExportBtn');
+        closeBtn.addEventListener('click', () => {
+            document.body.removeChild(exportModal);
+        });
+        
+        // Close modal when clicking outside
+        exportModal.addEventListener('click', (event) => {
+            if (event.target === exportModal) {
+                document.body.removeChild(exportModal);
+            }
+        });
+    }
+
+    // Render products with admin controls
+    function renderProductsWithAdminControls() {
+        // Prevent interference with normal catalog rendering
+        const originalCatalogProducts = window.CATALOG_PRODUCTS;
+        window.CATALOG_PRODUCTS = workingProductsData;
+        
+        // Call original render function if it exists
+        if (typeof renderProducts === 'function') {
+            renderProducts();
+        } else {
+            // Fallback if original render function is not available
+            renderProductsDefault();
+        }
+        
+        // Restore original catalog data
+        window.CATALOG_PRODUCTS = originalCatalogProducts;
+        
+        // Add admin controls to products
+        if (isAdminMode) {
+            addAdminControlsToProducts();
+        }
+    }
+
+    // Fallback render function
+    function renderProductsDefault() {
+        catalogGrid.innerHTML = '';
+        
+        workingProductsData.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.dataset.productId = product.id;
+            
+            productCard.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-category">${product.category}</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-price">${product.price}</div>
+                    <p class="product-description">${product.shortDescription}</p>
+                    <div class="product-actions">
+                        <button class="view-details-btn" data-product-id="${product.id}">View Details</button>
+                        <button class="inquiry-btn" data-product-id="${product.id}">Inquire</button>
+                    </div>
+                </div>
+            `;
+            
+            catalogGrid.appendChild(productCard);
+        });
+    }
+
+    // Add admin controls to products
+    function addAdminControlsToProducts() {
+        const productCards = catalogGrid.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            const productId = parseInt(card.dataset.productId);
+            
+            // Create admin controls container
+            const adminControls = document.createElement('div');
+            adminControls.className = 'product-admin-controls';
+            
+            // Add edit and delete buttons
+            adminControls.innerHTML = `
+                <button class="admin-control-btn edit-btn" data-id="${productId}">
+                    <span class="control-icon">✏️</span> Éditer
+                </button>
+                <button class="admin-control-btn delete-btn" data-id="${productId}">
+                    <span class="control-icon">🗑️</span> Supprimer
+                </button>
+            `;
+            
+            // Add to card as first child
+            card.insertBefore(adminControls, card.firstChild);
+            
+            // Add event listeners
+            const editBtn = adminControls.querySelector('.edit-btn');
+            const deleteBtn = adminControls.querySelector('.delete-btn');
+            
+            editBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                showEditProductForm(productId);
+            });
+            
+            deleteBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                deleteProduct(productId);
+            });
+        });
+    }
+});
+
+// Styles pour l'interface admin
+document.addEventListener('DOMContentLoaded', () => {
+    // Style for admin hint
+    const adminHint = document.querySelector('.admin-hint');
+    if (adminHint) {
+        adminHint.style.color = 'rgba(255, 255, 255, 0.6)';
+        adminHint.style.fontSize = '0.8rem';
+        adminHint.style.fontStyle = 'italic';
+        adminHint.style.marginTop = '10px';
+    }
+});

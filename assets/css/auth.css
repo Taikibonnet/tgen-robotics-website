@@ -1,0 +1,292 @@
+/* Styles for the Authentication pages (Login/Register) */
+
+.auth-container {
+    max-width: 500px;
+    margin: 40px auto 60px;
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(12, 235, 235, 0.15);
+    border-color: var(--primary);
+}
+
+/* Tabs for switching between login and register */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-tab:hover {
+    background: rgba(12, 235, 235, 0.05);
+}
+
+.auth-tab.active {
+    background: linear-gradient(to bottom, rgba(12, 235, 235, 0.1), transparent);
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
+
+/* Forms */
+.auth-form-container {
+    padding: 30px;
+    position: relative;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-form h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(10, 10, 10, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: var(--light);
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(12, 235, 235, 0.2);
+}
+
+/* Password visibility toggle */
+.password-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.password-toggle input {
+    margin-right: 8px;
+}
+
+.password-toggle label {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* Remember me and forgot password */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.remember-me label {
+    display: inline;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Password strength meter */
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-meter {
+    height: 5px;
+    background: #333;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.strength-meter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.strength-meter.weak::before {
+    width: 33%;
+    background: #ff4d4d;
+}
+
+.strength-meter.medium::before {
+    width: 66%;
+    background: #ffcc00;
+}
+
+.strength-meter.strong::before {
+    width: 100%;
+    background: #00cc66;
+}
+
+.strength-text {
+    display: block;
+    font-size: 12px;
+    color: var(--text);
+    margin-top: 5px;
+}
+
+/* Terms and conditions */
+.terms {
+    display: flex;
+    align-items: flex-start;
+}
+
+.terms input {
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+.terms label {
+    display: inline;
+    font-size: 14px;
+    margin-bottom: 0;
+    color: var(--text);
+}
+
+.terms a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Submit button */
+.auth-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(12, 235, 235, 0.3);
+}
+
+/* Auth messages (errors/success) */
+.auth-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.auth-message.error {
+    background: rgba(255, 77, 77, 0.2);
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+    opacity: 1;
+}
+
+.auth-message.success {
+    background: rgba(0, 204, 102, 0.2);
+    border: 1px solid #00cc66;
+    color: #00cc66;
+    opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 30px 15px 50px;
+    }
+    
+    .auth-form-container {
+        padding: 20px;
+    }
+    
+    .remember-me {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .forgot-password {
+        margin-top: 10px;
+    }
+}

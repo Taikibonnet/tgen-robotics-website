@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - IKITA ROBOTICS</title>
+    <title>Admin Panel - TGen ROBOTICS</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="stylesheet" href="assets/css/blog.css">
@@ -14,18 +14,19 @@
     <div class="container">
         <header>
             <div class="logo">
-                <object type="image/svg+xml" data="assets/images/logo-v2.svg" width="200" height="70">
-                    IKITA ROBOTICS
+                <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
+                    TGen ROBOTICS
                 </object>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Catalog</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="admin-logout">Logout</a></li>
                 </ul>
             </nav>
             <div id="mobile-menu-toggle" class="mobile-menu-toggle">
@@ -38,34 +39,75 @@
         <nav id="mobile-nav" class="mobile-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Catalog</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="admin-logout-mobile">Logout</a></li>
             </ul>
         </nav>
         
         <section class="admin-header">
-            <h1>Blog Administration</h1>
-            <p>Manage your blog posts and categories</p>
+            <h1>Admin Dashboard</h1>
+            <p>Manage your website content, products, and users</p>
         </section>
         
         <div class="admin-container">
             <div class="admin-sidebar">
                 <ul class="admin-menu">
-                    <li class="active" data-tab="manage-posts">Manage Posts</li>
-                    <li data-tab="add-post">Add New Post</li>
-                    <li data-tab="manage-categories">Categories</li>
+                    <li class="active" data-tab="manage-dashboard">Dashboard</li>
+                    <li data-tab="manage-posts">Blog Posts</li>
+                    <li data-tab="manage-users">User Management</li>
+                    <li data-tab="manage-products">Products</li>
+                    <li data-tab="site-settings">Settings</li>
                 </ul>
-                <a href="blog.html" class="back-to-site">Back to Site</a>
+                <a href="index.html" class="back-to-site">Back to Site</a>
             </div>
             
             <div class="admin-content">
-                <!-- Tab: Manage Posts -->
-                <div id="manage-posts" class="admin-tab active">
+                <!-- Tab: Dashboard -->
+                <div id="manage-dashboard" class="admin-tab active">
                     <div class="admin-section-header">
-                        <h2>Manage Posts</h2>
+                        <h2>Dashboard</h2>
+                    </div>
+                    
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <h3>Users</h3>
+                            <p class="stat-number" id="total-users">0</p>
+                            <p class="stat-label">Registered accounts</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>Products</h3>
+                            <p class="stat-number" id="total-products">0</p>
+                            <p class="stat-label">Active products</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>Blog Posts</h3>
+                            <p class="stat-number" id="total-posts">0</p>
+                            <p class="stat-label">Published posts</p>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <h3>Orders</h3>
+                            <p class="stat-number" id="total-orders">0</p>
+                            <p class="stat-label">Total orders</p>
+                        </div>
+                    </div>
+                    
+                    <div class="welcome-message">
+                        <h3>Welcome to the Admin Panel</h3>
+                        <p>From here you can manage all aspects of your TGen ROBOTICS website. Use the menu on the left to navigate between different sections.</p>
+                    </div>
+                </div>
+                
+                <!-- Tab: Manage Posts -->
+                <div id="manage-posts" class="admin-tab">
+                    <div class="admin-section-header">
+                        <h2>Manage Blog Posts</h2>
                         <button id="add-post-btn" class="admin-button">Add New Post</button>
                     </div>
                     
@@ -151,42 +193,114 @@
                     </form>
                 </div>
                 
-                <!-- Tab: Categories -->
-                <div id="manage-categories" class="admin-tab">
+                <!-- Tab: User Management -->
+                <div id="manage-users" class="admin-tab">
                     <div class="admin-section-header">
-                        <h2>Manage Categories</h2>
+                        <h2>User Management</h2>
+                        <button id="add-user-btn" class="admin-button">Add New User</button>
                     </div>
                     
-                    <div class="admin-form">
-                        <div class="form-group">
-                            <label for="category-id">ID</label>
-                            <input type="text" id="category-id" placeholder="unique-identifier">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="category-name">Name</label>
-                            <input type="text" id="category-name" placeholder="Display name">
-                        </div>
-                        
-                        <button id="add-category" class="admin-button primary">Add Category</button>
+                    <div class="search-filter">
+                        <input type="text" id="user-search" placeholder="Search users...">
+                        <select id="role-filter">
+                            <option value="all">All Roles</option>
+                            <option value="admin">Admin</option>
+                            <option value="customer">Customer</option>
+                        </select>
                     </div>
                     
                     <table class="admin-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Name</th>
-                                <th>Posts</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Role</th>
+                                <th>Registered</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="categories-table-body">
-                            <!-- Categories will be loaded here -->
+                        <tbody id="users-table-body">
+                            <!-- Users will be loaded here -->
                             <tr>
-                                <td colspan="4">Loading categories...</td>
+                                <td colspan="6">Loading users...</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                
+                <!-- Tab: Products -->
+                <div id="manage-products" class="admin-tab">
+                    <div class="admin-section-header">
+                        <h2>Product Management</h2>
+                        <button id="add-product-btn" class="admin-button">Add New Product</button>
+                    </div>
+                    
+                    <div class="search-filter">
+                        <input type="text" id="product-search" placeholder="Search products...">
+                        <select id="product-category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="domestic">Domestic</option>
+                            <option value="construction">Construction</option>
+                            <option value="healthcare">Healthcare</option>
+                        </select>
+                    </div>
+                    
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="products-table-body">
+                            <tr>
+                                <td colspan="5">Loading products...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Tab: Settings -->
+                <div id="site-settings" class="admin-tab">
+                    <div class="admin-section-header">
+                        <h2>Site Settings</h2>
+                    </div>
+                    
+                    <form id="settings-form" class="admin-form">
+                        <div class="form-group">
+                            <label for="site-name">Site Name</label>
+                            <input type="text" id="site-name" value="TGen ROBOTICS">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-description">Site Description</label>
+                            <textarea id="site-description" rows="2">Your partner in innovative robotic solutions for industry and individuals.</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Contact Email</label>
+                            <input type="email" id="contact-email" value="tgen.robotics@gmail.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Contact Phone</label>
+                            <input type="tel" id="contact-phone" value="+33 1 23 45 67 89">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-address">Contact Address</label>
+                            <input type="text" id="contact-address" value="123 Innovation Avenue, 75001 Paris">
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="admin-button primary">Save Settings</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -195,7 +309,7 @@
     <footer>
         <div class="container">
             <div class="copyright admin-copyright">
-                © 2025 IKITA ROBOTICS. Admin Panel.
+                © 2025 TGen ROBOTICS. Admin Panel.
             </div>
         </div>
     </footer>
@@ -212,8 +326,56 @@
         </div>
     </div>
     
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New User</h3>
+                <button id="close-modal" class="close-modal">&times;</button>
+            </div>
+            
+            <form id="user-form" class="admin-form">
+                <div class="form-group">
+                    <label for="user-name">Full Name *</label>
+                    <input type="text" id="user-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" placeholder="e.g. +33612345678">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-role">Role *</label>
+                    <select id="user-role" required>
+                        <option value="customer">Customer</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-password">Password *</label>
+                    <input type="password" id="user-password" required>
+                </div>
+                
+                <div class="message" id="user-message"></div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="admin-button primary">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
     <script src="assets/js/blog.js"></script>
     <script src="assets/js/admin.js"></script>
+    <script src="assets/js/admin-users.js"></script>
 </body>
 </html>

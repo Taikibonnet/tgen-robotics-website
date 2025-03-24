@@ -63,6 +63,10 @@
     color: var(--light);
 }
 
+.hero-cta {
+    margin-top: 20px;
+}
+
 /* Main contact section */
 .contact-main {
     padding: 60px 0;

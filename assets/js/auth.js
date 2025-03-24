@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 1;
         
         // Check for numbers
-        if (password.match(/\\d/)) strength += 1;
+        if (password.match(/\d/)) strength += 1;
         
         // Check for special characters
-        if (password.match(/[^a-zA-Z\\d]/)) strength += 1;
+        if (password.match(/[^a-zA-Z\d]/)) strength += 1;
         
         // Update the meter
         if (strength <= 2) {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 identifier = document.getElementById('login-email').value;
                 
                 // Validate email format
-                const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(identifier)) {
                     showMessage(loginMessage, 'Please enter a valid email address', 'error');
                     return;
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 email = document.getElementById('register-email').value;
                 
                 // Validate email format
-                const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email)) {
                     showMessage(registerMessage, 'Please enter a valid email address', 'error');
                     return;
@@ -428,7 +428,7 @@ window.authUtils = {
             const adminUser = {
                 id: 'admin_' + Math.random().toString(36).substr(2, 9),
                 name: 'Administrator',
-                email: 'admin@tgen-robotics.com',
+                email: 'tgen.robotics@gmail.com',
                 phone: '',
                 password: 'Admin123!',
                 role: 'admin',

@@ -2,7 +2,7 @@
  * TGen ROBOTICS Catalog Functionality
  * 
  * This file contains all the JavaScript functionality for the catalog page:
- * - Rendering products from catalog-data.js
+ * - Rendering products from catalog-data.js or data/robots.json
  * - Filtering products by category
  * - Searching products
  * - Product details modal
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial state
     let currentCategory = 'all';
     let currentSearchTerm = '';
+    let catalogProducts = [];
 
     // Initialize the catalog
     initCatalog();
@@ -77,7 +78,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize the catalog
-    function initCatalog() {
+    async function initCatalog() {
+        // First try to load data from robots.json
+        try {
+            const response = await fetch('data/robots.json');
+            if (response.ok) {
+                const data = await response.json();
+                catalogProducts = data;
+                console.log('Products loaded from robots.json');
+            } else {
+                throw new Error('robots.json not found');
+            }
+        } catch (error) {
+            console.log('Could not load from robots.json, using catalog-data.js instead');
+            // Fallback to catalog-data.js if available
+            if (typeof CATALOG_PRODUCTS !== 'undefined') {
+                catalogProducts = CATALOG_PRODUCTS;
+            } else {
+                console.error('No product data available');
+                catalogProducts = [];
+            }
+        }
+
+        // Make the catalog products available globally
+        window.CATALOG_PRODUCTS = catalogProducts;
+        
         // Check if we have a category in the URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const categoryParam = urlParams.get('category');
@@ -102,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         catalogGrid.innerHTML = '';
 
         // Filter products based on category and search term
-        let filteredProducts = CATALOG_PRODUCTS;
+        let filteredProducts = catalogProducts;
 
         // Filter by category if not 'all'
         if (currentCategory !== 'all') {
@@ -171,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function createProductCard(product) {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
+        productCard.dataset.productId = product.id;
+        
         productCard.innerHTML = `
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}">

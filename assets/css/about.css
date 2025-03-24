@@ -66,6 +66,10 @@
     color: var(--light);
 }
 
+.about-hero .hero-cta {
+    margin-top: 20px;
+}
+
 /* Intro section */
 .about-intro {
     padding: 60px 0;
@@ -284,6 +288,14 @@
     color: var(--light);
 }
 
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .about-cta .cta-button {
     display: inline-block;
     padding: 15px 40px;
@@ -292,13 +304,19 @@
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
-    margin-top: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-cta .cta-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(12, 235, 235, 0.3);
+}
+
+/* Hero CTA */
+.hero-cta {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 /* Responsive styles */
@@ -321,6 +339,11 @@
     
     .about-intro p {
         font-size: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

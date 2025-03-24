@@ -1,0 +1,113 @@
+<!-- 
+  HEADER TEMPLATE WITH CART FUNCTIONALITY
+  
+  Copy and paste this HTML into each page's header to maintain consistent navigation with cart functionality.
+  
+  Requirements:
+  1. Include cart.css and cart-notification.css in the head of your HTML
+  2. Include auth.js and cart.js in your scripts
+  3. Include the login status script at the bottom of your page
+-->
+
+<header>
+    <div class="logo">
+        <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
+            TGen ROBOTICS
+        </object>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="services.html" id="nav-services">Services</a></li>
+            <li><a href="catalog.html" id="nav-catalog">Catalog</a></li>
+            <li><a href="blog.html" id="nav-blog">Blog</a></li>
+            <li><a href="about.html" id="nav-about">About Us</a></li>
+            <li><a href="contact.html" id="nav-contact">Contact</a></li>
+            <li><a href="login.html" id="login-link">Login</a></li>
+            <li>
+                <a href="cart.html" class="cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="mini-cart">
+                    <div class="mini-cart-header">
+                        <h3>Your Cart</h3>
+                    </div>
+                    <div class="mini-cart-items">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+                    <div class="mini-cart-footer">
+                        <div class="mini-cart-total-label">Total:</div>
+                        <div class="mini-cart-total">€0.00</div>
+                        <div class="mini-cart-buttons">
+                            <a href="cart.html" class="button">View Cart</a>
+                            <a href="checkout.html" class="button primary">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+    </ul>
+</nav>
+
+<!-- 
+  LOGIN STATUS SCRIPT
+  
+  Place this at the end of the body to update the login link based on authentication status
+-->
+<!--
+<script>
+    // Update login link based on authentication status
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if auth utilities exist and user is logged in
+        if (window.authUtils) {
+            const user = window.authUtils.getCurrentUser();
+            const loginLink = document.getElementById('login-link');
+            
+            if (user && loginLink) {
+                // Change login link to account link
+                loginLink.textContent = 'My Account';
+                loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
+            }
+        }
+        
+        // Set active navigation item
+        const currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === '' || currentPage === 'index.html') {
+            document.getElementById('nav-home')?.classList.add('active');
+        } else if (currentPage === 'services.html') {
+            document.getElementById('nav-services')?.classList.add('active');
+        } else if (currentPage === 'catalog.html') {
+            document.getElementById('nav-catalog')?.classList.add('active');
+        } else if (currentPage === 'blog.html') {
+            document.getElementById('nav-blog')?.classList.add('active');
+        } else if (currentPage === 'about.html') {
+            document.getElementById('nav-about')?.classList.add('active');
+        } else if (currentPage === 'contact.html') {
+            document.getElementById('nav-contact')?.classList.add('active');
+        }
+    });
+</script>
+-->

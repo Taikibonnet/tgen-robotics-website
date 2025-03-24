@@ -330,6 +330,16 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Indice administrateur */
+.admin-hint {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
 /* Styles adaptatifs */
 @media (max-width: 768px) {
     .admin-header {

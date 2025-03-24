@@ -147,7 +147,7 @@ Ajoutez ce HTML juste avant la fermeture de la balise `</body>` pour activer les
 ## Informations importantes pour l'administrateur
 
 ### Accès administrateur
-- **Email** : admin@tgen-robotics.com
+- **Email** : tgen.robotics@gmail.com
 - **Mot de passe** : Admin123!
 
 ### Fonctionnalités administrateur

@@ -7,6 +7,7 @@
  * - Searching products
  * - Product details modal
  * - Category navigation
+ * - Add to cart functionality
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productModal = document.getElementById('product-modal');
     const closeModal = document.querySelector('.close-modal');
     const modalProductDetails = document.getElementById('modal-product-details');
+    const cartNotification = document.getElementById('cart-notification');
 
     // Initial state
     let currentCategory = 'all';
@@ -198,6 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
         productCard.className = 'product-card';
         productCard.dataset.productId = product.id;
         
+        // Convert price string to a number for cart functionality
+        // Price format is typically "€12,500.00" 
+        const numericPrice = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+        
         productCard.innerHTML = `
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}">
@@ -209,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="product-description">${product.shortDescription}</p>
                 <div class="product-actions">
                     <button class="view-details-btn" data-product-id="${product.id}">View Details</button>
-                    <button class="inquiry-btn" data-product-id="${product.id}">Inquire</button>
+                    <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
                 </div>
             </div>
         `;
@@ -220,10 +226,25 @@ document.addEventListener('DOMContentLoaded', () => {
             openProductModal(product);
         });
 
-        // Add event listener to inquiry button
-        const inquiryBtn = productCard.querySelector('.inquiry-btn');
-        inquiryBtn.addEventListener('click', () => {
-            window.location.href = `contact.html?product=${product.id}`;
+        // Add event listener to add to cart button
+        const addToCartBtn = productCard.querySelector('.add-to-cart-btn');
+        addToCartBtn.addEventListener('click', () => {
+            // Create a cart-ready product object
+            const cartProduct = {
+                id: product.id,
+                name: product.name,
+                price: numericPrice,
+                image: product.image,
+                category: product.category
+            };
+            
+            // Add to cart using Cart module from cart.js
+            if (window.Cart) {
+                window.Cart.addItem(cartProduct);
+                showCartNotification();
+            } else {
+                console.error('Cart module not found');
+            }
         });
 
         return productCard;
@@ -238,6 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${spec.value}</td>
             </tr>
         `).join('');
+
+        // Convert price string to a number for cart functionality
+        const numericPrice = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
 
         // Populate modal with product details
         modalProductDetails.innerHTML = `
@@ -256,16 +280,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     </table>
                 </div>
                 <div class="modal-product-actions">
-                    <button class="inquiry-btn-lg" data-product-id="${product.id}">Inquire About This Product</button>
+                    <button class="add-to-cart-btn-lg" data-product-id="${product.id}">Add to Cart</button>
                     <button class="contact-btn">Contact Sales Team</button>
                 </div>
             </div>
         `;
 
         // Add event listeners to modal buttons
-        const inquiryBtnLg = modalProductDetails.querySelector('.inquiry-btn-lg');
-        inquiryBtnLg.addEventListener('click', () => {
-            window.location.href = `contact.html?product=${product.id}`;
+        const addToCartBtnLg = modalProductDetails.querySelector('.add-to-cart-btn-lg');
+        addToCartBtnLg.addEventListener('click', () => {
+            // Create a cart-ready product object
+            const cartProduct = {
+                id: product.id,
+                name: product.name,
+                price: numericPrice,
+                image: product.image,
+                category: product.category
+            };
+            
+            // Add to cart using Cart module from cart.js
+            if (window.Cart) {
+                window.Cart.addItem(cartProduct);
+                showCartNotification();
+                
+                // Close the modal
+                productModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            } else {
+                console.error('Cart module not found');
+            }
         });
 
         const contactBtn = modalProductDetails.querySelector('.contact-btn');
@@ -276,5 +319,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Display the modal
         productModal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+    
+    // Show cart notification when product is added
+    function showCartNotification() {
+        if (!cartNotification) return;
+        
+        // Show notification
+        cartNotification.classList.add('active');
+        
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            cartNotification.classList.remove('active');
+        }, 3000);
     }
 });

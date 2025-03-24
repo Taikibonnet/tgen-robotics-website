@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmPassword = document.getElementById('register-confirm');
     const strengthMeter = document.querySelector('.strength-meter');
     const strengthText = document.querySelector('.strength-text');
+    const loginMethodSelect = document.getElementById('login-method');
+    const phoneInput = document.getElementById('login-phone');
+    const emailInput = document.getElementById('login-email');
+    const registerEmailInput = document.getElementById('register-email');
+    const registerPhoneInput = document.getElementById('register-phone');
+    const registerMethodSelect = document.getElementById('register-method');
+
+    // Initialize login and register method toggles
+    initializeMethodToggles();
 
     // Switch between login and register tabs
     authTabs.forEach(tab => {
@@ -39,10 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             // Clear messages
-            loginMessage.textContent = '';
-            loginMessage.className = 'auth-message';
-            registerMessage.textContent = '';
-            registerMessage.className = 'auth-message';
+            if (loginMessage) loginMessage.textContent = '';
+            if (loginMessage) loginMessage.className = 'auth-message';
+            if (registerMessage) registerMessage.textContent = '';
+            if (registerMessage) registerMessage.className = 'auth-message';
         });
     });
 
@@ -77,10 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 1;
         
         // Check for numbers
-        if (password.match(/\d/)) strength += 1;
+        if (password.match(/\\d/)) strength += 1;
         
         // Check for special characters
-        if (password.match(/[^a-zA-Z\d]/)) strength += 1;
+        if (password.match(/[^a-zA-Z\\d]/)) strength += 1;
         
         // Update the meter
         if (strength <= 2) {
@@ -100,18 +109,39 @@ document.addEventListener('DOMContentLoaded', () => {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const email = document.getElementById('login-email').value;
+            const loginMethod = document.getElementById('login-method').value;
             const password = document.getElementById('login-password').value;
             const rememberMe = document.getElementById('remember-me').checked;
             
+            let identifier;
+            if (loginMethod === 'email') {
+                identifier = document.getElementById('login-email').value;
+                
+                // Validate email format
+                const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                if (!emailRegex.test(identifier)) {
+                    showMessage(loginMessage, 'Please enter a valid email address', 'error');
+                    return;
+                }
+            } else {
+                identifier = document.getElementById('login-phone').value;
+                
+                // Validate phone format (simple validation, can be enhanced)
+                const phoneRegex = /^\+?[0-9]{10,15}$/;
+                if (!phoneRegex.test(identifier)) {
+                    showMessage(loginMessage, 'Please enter a valid phone number', 'error');
+                    return;
+                }
+            }
+            
             // Validate inputs
-            if (!email || !password) {
+            if (!identifier || !password) {
                 showMessage(loginMessage, 'Please fill in all fields', 'error');
                 return;
             }
             
             // Attempt login
-            login(email, password, rememberMe);
+            login(identifier, password, rememberMe, loginMethod);
         });
     }
 
@@ -121,13 +151,36 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             const name = document.getElementById('register-name').value;
-            const email = document.getElementById('register-email').value;
+            const registerMethod = document.getElementById('register-method').value;
             const password = document.getElementById('register-password').value;
             const confirmPass = document.getElementById('register-confirm').value;
             const termsAgreed = document.getElementById('terms').checked;
             
+            let email = '';
+            let phone = '';
+            
+            if (registerMethod === 'email') {
+                email = document.getElementById('register-email').value;
+                
+                // Validate email format
+                const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    showMessage(registerMessage, 'Please enter a valid email address', 'error');
+                    return;
+                }
+            } else {
+                phone = document.getElementById('register-phone').value;
+                
+                // Validate phone format
+                const phoneRegex = /^\+?[0-9]{10,15}$/;
+                if (!phoneRegex.test(phone)) {
+                    showMessage(registerMessage, 'Please enter a valid phone number', 'error');
+                    return;
+                }
+            }
+            
             // Validate inputs
-            if (!name || !email || !password || !confirmPass) {
+            if (!name || (!email && !phone) || !password || !confirmPass) {
                 showMessage(registerMessage, 'Please fill in all fields', 'error');
                 return;
             }
@@ -142,13 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Validate email format
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showMessage(registerMessage, 'Please enter a valid email address', 'error');
-                return;
-            }
-            
             // Validate password strength
             if (password.length < 8) {
                 showMessage(registerMessage, 'Password must be at least 8 characters long', 'error');
@@ -156,20 +202,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Register the user
-            register(name, email, password);
+            register(name, email, phone, password);
         });
     }
 
     // Login function
-    function login(email, password, rememberMe) {
+    function login(identifier, password, rememberMe, method) {
         // Get users from localStorage
         const users = JSON.parse(localStorage.getItem('tgenUsers')) || [];
         
-        // Find the user
-        const user = users.find(u => u.email === email);
+        // Find the user by email or phone
+        let user;
+        if (method === 'email') {
+            user = users.find(u => u.email === identifier);
+        } else {
+            user = users.find(u => u.phone === identifier);
+        }
         
         if (!user) {
-            showMessage(loginMessage, 'Email not found', 'error');
+            showMessage(loginMessage, method === 'email' ? 'Email not found' : 'Phone number not found', 'error');
             return;
         }
         
@@ -184,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             userId: user.id,
             name: user.name,
             email: user.email,
+            phone: user.phone,
             role: user.role || 'customer',
             loggedIn: true,
             timestamp: new Date().getTime()
@@ -201,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirect to appropriate page based on role
         setTimeout(() => {
             if (user.role === 'admin') {
-                window.location.href = 'admin-dashboard.html';
+                window.location.href = 'admin.html';
             } else {
                 window.location.href = 'account.html';
             }
@@ -209,13 +261,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Registration function
-    function register(name, email, password) {
+    function register(name, email, phone, password) {
         // Get existing users
         const users = JSON.parse(localStorage.getItem('tgenUsers')) || [];
         
         // Check if email already exists
-        if (users.some(user => user.email === email)) {
+        if (email && users.some(user => user.email === email)) {
             showMessage(registerMessage, 'Email is already registered', 'error');
+            return;
+        }
+        
+        // Check if phone already exists
+        if (phone && users.some(user => user.phone === phone)) {
+            showMessage(registerMessage, 'Phone number is already registered', 'error');
             return;
         }
         
@@ -223,7 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const newUser = {
             id: generateUserId(),
             name,
-            email,
+            email: email || '',
+            phone: phone || '',
             password,
             role: 'customer', // Default role
             cart: [],
@@ -247,6 +306,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+    // Method toggle initialization
+    function initializeMethodToggles() {
+        // Handle login method change
+        if (loginMethodSelect) {
+            loginMethodSelect.addEventListener('change', function() {
+                toggleLoginMethod(this.value);
+            });
+            
+            // Initialize with current value
+            toggleLoginMethod(loginMethodSelect.value);
+        }
+        
+        // Handle register method change
+        if (registerMethodSelect) {
+            registerMethodSelect.addEventListener('change', function() {
+                toggleRegisterMethod(this.value);
+            });
+            
+            // Initialize with current value
+            toggleRegisterMethod(registerMethodSelect.value);
+        }
+    }
+
+    // Toggle login method between email and phone
+    function toggleLoginMethod(method) {
+        if (!emailInput || !phoneInput) return;
+        
+        if (method === 'email') {
+            emailInput.parentElement.style.display = '';
+            phoneInput.parentElement.style.display = 'none';
+            phoneInput.value = '';
+        } else {
+            emailInput.parentElement.style.display = 'none';
+            phoneInput.parentElement.style.display = '';
+            emailInput.value = '';
+        }
+    }
+
+    // Toggle register method between email and phone
+    function toggleRegisterMethod(method) {
+        if (!registerEmailInput || !registerPhoneInput) return;
+        
+        if (method === 'email') {
+            registerEmailInput.parentElement.style.display = '';
+            registerPhoneInput.parentElement.style.display = 'none';
+            registerPhoneInput.value = '';
+        } else {
+            registerEmailInput.parentElement.style.display = 'none';
+            registerPhoneInput.parentElement.style.display = '';
+            registerEmailInput.value = '';
+        }
+    }
+
     // Helper functions
     function showMessage(element, message, type) {
         element.textContent = message;
@@ -265,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (session && session.loggedIn) {
             // User is already logged in, redirect to appropriate page
             if (session.role === 'admin') {
-                window.location.href = 'admin-dashboard.html';
+                window.location.href = 'admin.html';
             } else {
                 window.location.href = 'account.html';
             }
@@ -273,5 +385,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Run initial check
-    checkLoggedIn();
+    if (window.location.pathname.includes('login.html')) {
+        checkLoggedIn();
+    }
+});
+
+// Add utility functions to window scope for other scripts to use
+window.authUtils = {
+    // Check if a user is logged in and return the session
+    getCurrentUser: function() {
+        const session = JSON.parse(localStorage.getItem('tgenUserSession')) || 
+                        JSON.parse(sessionStorage.getItem('tgenUserSession'));
+        
+        if (session && session.loggedIn) {
+            return session;
+        }
+        return null;
+    },
+    
+    // Check if the current user is an admin
+    isAdmin: function() {
+        const user = this.getCurrentUser();
+        return user && user.role === 'admin';
+    },
+    
+    // Logout the current user
+    logout: function() {
+        localStorage.removeItem('tgenUserSession');
+        sessionStorage.removeItem('tgenUserSession');
+        window.location.href = 'login.html';
+    },
+    
+    // Create an admin account if it doesn't exist
+    initializeAdmin: function() {
+        const users = JSON.parse(localStorage.getItem('tgenUsers')) || [];
+        
+        // Check if admin exists
+        const adminExists = users.some(user => user.role === 'admin');
+        
+        if (!adminExists) {
+            // Create admin account
+            const adminUser = {
+                id: 'admin_' + Math.random().toString(36).substr(2, 9),
+                name: 'Administrator',
+                email: 'admin@tgen-robotics.com',
+                phone: '',
+                password: 'Admin123!',
+                role: 'admin',
+                createdAt: new Date().toISOString()
+            };
+            
+            users.push(adminUser);
+            localStorage.setItem('tgenUsers', JSON.stringify(users));
+            console.log('Admin account created');
+        }
+    }
+};
+
+// Initialize admin account on page load
+document.addEventListener('DOMContentLoaded', () => {
+    window.authUtils.initializeAdmin();
 });

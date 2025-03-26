@@ -14,11 +14,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://img.freepik.com/premium-photo/future-artificial-intelligence-robot-cyborg_31965-6980.jpg');
+    background-image: url('https://img.freepik.com/premium-ai-image/interpretation-creation-adam-with-human-hand-robotic-fingers-reaching-towards-each-other_252025-5153.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.75; /* Adjust transparency of the background image */
+    opacity: 0.85; /* Adjust transparency of the background image */
     z-index: 0;
     filter: blur(1px); /* Slightly blur the image to enhance text readability */
 }

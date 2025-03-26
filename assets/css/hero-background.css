@@ -14,11 +14,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/tgen-robotics-website/assets/images/hero-background.jpg');
+    background-image: url('https://img.freepik.com/premium-photo/future-artificial-intelligence-robot-cyborg_31965-6980.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.9; /* Adjust transparency of the background image */
+    opacity: 0.8; /* Adjust transparency of the background image */
     z-index: 0;
 }
 
@@ -44,14 +44,14 @@
     color: #ffffff;
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero p {
     color: #f0f0f0;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 .hero .cta-button {

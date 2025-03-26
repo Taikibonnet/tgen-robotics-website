@@ -1,95 +1,20 @@
-/* Hero Background Styles - High-tech gradient approach */
-
+/* Reset hero styles to basic */
 .hero {
-    position: relative;
-    overflow: hidden;
     padding: 150px 20px;
-    background-color: #001a33; /* Dark blue background as fallback */
     text-align: center;
 }
 
-/* Main background with gradient */
-.hero:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #001a33 0%, #003366 50%, #0d6efd 100%);
-    z-index: 0;
-}
-
-/* Tech grid pattern overlay */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(13, 110, 253, 0.05) 25%, rgba(13, 110, 253, 0.05) 26%, transparent 27%, transparent 74%, rgba(13, 110, 253, 0.05) 75%, rgba(13, 110, 253, 0.05) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(13, 110, 253, 0.05) 25%, rgba(13, 110, 253, 0.05) 26%, transparent 27%, transparent 74%, rgba(13, 110, 253, 0.05) 75%, rgba(13, 110, 253, 0.05) 76%, transparent 77%, transparent);
-    background-size: 50px 50px;
-    z-index: 1;
-}
-
-/* Light dots to simulate digital connections */
-.hero-overlay:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 0.5%, transparent 0.7%),
-        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 0.5%, transparent 0.7%);
-    z-index: 1;
-}
-
-/* Simulated robot-human connection with light beam */
-.hero:after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 2px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1), transparent);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 
-        0 0 10px 1px rgba(255, 255, 255, 0.5),
-        0 0 20px 2px rgba(13, 110, 253, 0.3);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .hero h1 {
-    color: #ffffff;
-    font-size: 3.2rem;
+    color: #333;
+    font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 700;
 }
 
 .hero p {
-    color: #f0f0f0;
-    font-size: 1.3rem;
+    color: #555;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.5;
 }
 
@@ -101,42 +26,13 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
-    font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero .cta-button:after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        135deg,
-        transparent 0%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.1) 50%,
-        rgba(255, 255, 255, 0.1) 55%,
-        transparent 55%,
-        transparent 100%
-    );
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    transition: transform 0.6s;
-    z-index: -1;
 }
 
 .hero .cta-button:hover {
     background-color: #0b5ed7;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(13, 110, 253, 0.5);
-}
-
-.hero .cta-button:hover:after {
-    transform: translateX(0) translateY(0) rotate(45deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

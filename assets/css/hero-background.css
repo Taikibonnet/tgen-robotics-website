@@ -1,1 +1,90 @@
-/* Hero Background Styles - Removed */
+/* Hero Background Styles */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 150px 20px;
+    background-color: #001a33; /* Dark blue background as fallback */
+    text-align: center;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://img.freepik.com/premium-photo/ai-robot-human-hands-touching-technology-interface-circuit-digital-data-ai-artificial-intelligence-machine-learning-binary-code-generative-ai_150455-22799.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 26, 51, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+
+.hero p {
+    color: #f0f0f0;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.5;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0d6efd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero .cta-button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(13, 110, 253, 0.5);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}

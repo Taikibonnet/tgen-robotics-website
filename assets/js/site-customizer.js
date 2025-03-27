@@ -127,32 +127,74 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">Page d'accueil</label>
-                    <input type="text" id="hero-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="hero-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="hero-bg-upload" accept="image/*" style="display: none;">
+                        <button id="hero-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="hero-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">Catalogue</label>
-                    <input type="text" id="catalog-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="catalog-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="catalog-bg-upload" accept="image/*" style="display: none;">
+                        <button id="catalog-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="catalog-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">Services</label>
-                    <input type="text" id="services-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="services-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="services-bg-upload" accept="image/*" style="display: none;">
+                        <button id="services-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="services-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">Blog</label>
-                    <input type="text" id="blog-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="blog-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="blog-bg-upload" accept="image/*" style="display: none;">
+                        <button id="blog-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="blog-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">À propos</label>
-                    <input type="text" id="about-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="about-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="about-bg-upload" accept="image/*" style="display: none;">
+                        <button id="about-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="about-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; color: var(--text);">Contact</label>
-                    <input type="text" id="contact-bg" placeholder="URL de l'image" style="width: 100%; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                        <input type="text" id="contact-bg" placeholder="URL de l'image" style="flex-grow: 1; padding: 8px; background: rgba(10, 10, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text); border-radius: 5px;">
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <input type="file" id="contact-bg-upload" accept="image/*" style="display: none;">
+                        <button id="contact-bg-upload-btn" style="width: 100%; padding: 8px; background: rgba(3, 169, 244, 0.1); border: 1px solid rgba(3, 169, 244, 0.3); color: var(--primary); border-radius: 5px; cursor: pointer; margin-top: 5px;">Choisir un fichier</button>
+                    </div>
+                    <div id="contact-bg-preview" style="width: 100%; height: 80px; margin-top: 5px; background-size: cover; background-position: center; border-radius: 5px; display: none;"></div>
                 </div>
             </div>
             
@@ -188,12 +230,85 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleCustomizerPanel(false);
         });
         
+        // Initialiser les gestionnaires d'événements pour les uploads de fichiers
+        initFileUploads();
+        
         // Charger les valeurs actuelles
         loadCurrentValues();
         
         // Événements pour les boutons
         document.getElementById('save-customizations').addEventListener('click', saveChanges);
         document.getElementById('reset-customizations').addEventListener('click', resetCustomizations);
+    }
+    
+    /**
+     * Initialise les gestionnaires d'événements pour les uploads de fichiers
+     */
+    function initFileUploads() {
+        // Pages à configurer
+        const pages = ['hero', 'catalog', 'services', 'blog', 'about', 'contact'];
+        
+        pages.forEach(page => {
+            const uploadBtn = document.getElementById(`${page}-bg-upload-btn`);
+            const fileInput = document.getElementById(`${page}-bg-upload`);
+            const preview = document.getElementById(`${page}-bg-preview`);
+            const urlInput = document.getElementById(`${page}-bg`);
+            
+            if (!uploadBtn || !fileInput) return;
+            
+            // Ouvrir le sélecteur de fichier au clic sur le bouton
+            uploadBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            // Gérer la sélection de fichier
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files && fileInput.files[0]) {
+                    const file = fileInput.files[0];
+                    
+                    // Vérifier la taille du fichier
+                    if (file.size > 5 * 1024 * 1024) { // 5MB
+                        showNotification('L\'image est trop grande. Taille maximale: 5MB', 3000, true);
+                        fileInput.value = '';
+                        return;
+                    }
+                    
+                    // Créer un aperçu de l'image
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        if (preview) {
+                            preview.style.backgroundImage = `url('${e.target.result}')`;
+                            preview.style.display = 'block';
+                        }
+                        
+                        // Stocker temporairement la donnée de l'image (base64)
+                        fileInput.dataset.imageData = e.target.result;
+                        
+                        // Mettre à jour le champ URL avec un message indiquant que l'image sera utilisée
+                        urlInput.value = `data:uploaded:${file.name}`;
+                        urlInput.style.color = '#4CAF50';
+                    };
+                    reader.readAsDataURL(file);
+                    
+                    // Changer le texte du bouton pour indiquer que le fichier est sélectionné
+                    uploadBtn.textContent = `Fichier: ${file.name.length > 15 ? file.name.substring(0, 15) + '...' : file.name}`;
+                }
+            });
+            
+            // Surveiller les changements dans le champ URL
+            urlInput.addEventListener('input', () => {
+                // Si l'utilisateur saisit quelque chose manuellement, réinitialiser la prévisualisation et les données d'image
+                if (!urlInput.value.startsWith('data:uploaded:')) {
+                    fileInput.value = '';
+                    uploadBtn.textContent = 'Choisir un fichier';
+                    if (preview) {
+                        preview.style.display = 'none';
+                    }
+                    delete fileInput.dataset.imageData;
+                    urlInput.style.color = '';
+                }
+            });
+        });
     }
     
     /**
@@ -235,7 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * Sauvegarde les modifications
      */
     function saveChanges() {
-        const customizations = {
+        // Préparation des données de personnalisation
+        const customizationData = {
             backgrounds: {
                 hero: document.getElementById('hero-bg').value,
                 catalog: document.getElementById('catalog-bg').value,
@@ -254,14 +370,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         
+        // Traitement des images téléchargées
+        const pages = ['hero', 'catalog', 'services', 'blog', 'about', 'contact'];
+        let hasUploads = false;
+        
+        pages.forEach(page => {
+            const fileInput = document.getElementById(`${page}-bg-upload`);
+            // Si une image a été téléchargée, utiliser directement les données base64
+            if (fileInput && fileInput.dataset.imageData && customizationData.backgrounds[page].startsWith('data:uploaded:')) {
+                customizationData.backgrounds[page] = fileInput.dataset.imageData;
+                hasUploads = true;
+            }
+        });
+        
         // Enregistrer les personnalisations
-        saveCustomizations(customizations);
+        saveCustomizations(customizationData);
         
         // Appliquer les changements
-        applyCustomizations(customizations);
+        applyCustomizations(customizationData);
         
         // Notification de succès
         showNotification('Les personnalisations ont été enregistrées avec succès !');
+        
+        // Information supplémentaire si des images ont été téléchargées
+        if (hasUploads) {
+            showNotification('Les images téléchargées sont stockées dans votre navigateur et ne seront visibles que par vous.', 6000);
+        }
     }
     
     /**
@@ -274,6 +408,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Supprimer les personnalisations stockées
         localStorage.removeItem('tgenSiteCustomizations');
+        
+        // Réinitialiser les éléments d'interface
+        const pages = ['hero', 'catalog', 'services', 'blog', 'about', 'contact'];
+        pages.forEach(page => {
+            const fileInput = document.getElementById(`${page}-bg-upload`);
+            const uploadBtn = document.getElementById(`${page}-bg-upload-btn`);
+            const preview = document.getElementById(`${page}-bg-preview`);
+            
+            if (fileInput) fileInput.value = '';
+            if (uploadBtn) uploadBtn.textContent = 'Choisir un fichier';
+            if (preview) preview.style.display = 'none';
+            if (fileInput) delete fileInput.dataset.imageData;
+        });
         
         // Recharger les valeurs par défaut
         loadCurrentValues();
@@ -356,13 +503,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Affiche une notification
      */
-    function showNotification(message) {
+    function showNotification(message, duration = 3000, isError = false) {
         // Créer la notification
         const notification = document.createElement('div');
         notification.className = 'site-customizer-notification';
         notification.innerHTML = `
             <div class="notification-content">
-                <div class="notification-icon">✓</div>
+                <div class="notification-icon">${isError ? '❌' : '✓'}</div>
                 <div class="notification-message">${message}</div>
             </div>
         `;
@@ -383,9 +530,9 @@ document.addEventListener('DOMContentLoaded', () => {
         notification.style.transform = 'translateY(20px)';
         notification.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         
-        // Icône de succès
+        // Icône de succès ou d'erreur
         const icon = notification.querySelector('.notification-icon');
-        icon.style.color = '#4CAF50';
+        icon.style.color = isError ? '#f44336' : '#4CAF50';
         icon.style.marginRight = '10px';
         icon.style.fontSize = '20px';
         
@@ -398,16 +545,18 @@ document.addEventListener('DOMContentLoaded', () => {
             notification.style.transform = 'translateY(0)';
         }, 10);
         
-        // Supprimer après 3 secondes
+        // Supprimer après le délai spécifié
         setTimeout(() => {
             notification.style.opacity = '0';
             notification.style.transform = 'translateY(20px)';
             
             // Supprimer l'élément après la fin de l'animation
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
             }, 300);
-        }, 3000);
+        }, duration);
     }
     
     // Appliquer les personnalisations au chargement

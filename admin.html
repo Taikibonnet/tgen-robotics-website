@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="stylesheet" href="assets/css/blog.css">
     <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/site-customizer.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -101,6 +102,7 @@
                     <div class="welcome-message">
                         <h3>Welcome to the Admin Panel</h3>
                         <p>From here you can manage all aspects of your TGen ROBOTICS website. Use the menu on the left to navigate between different sections.</p>
+                        <p>To customize the site's appearance, use the customizer tool that's accessible on all pages when logged in as an admin. Look for the ✨ button in the bottom right corner.</p>
                     </div>
                 </div>
                 
@@ -301,6 +303,17 @@
                             <button type="submit" class="admin-button primary">Save Settings</button>
                         </div>
                     </form>
+                    
+                    <div class="admin-section-header" style="margin-top: 40px;">
+                        <h2>Site Appearance</h2>
+                    </div>
+                    
+                    <div class="appearance-settings admin-form">
+                        <p>Use the site customizer tool to change backgrounds and colors. The customizer is accessible from any page when logged in as an admin.</p>
+                        <div class="form-buttons">
+                            <button type="button" id="open-customizer" class="admin-button primary">Open Site Customizer</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -377,5 +390,21 @@
     <script src="assets/js/blog.js"></script>
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/admin-users.js"></script>
+    <script src="assets/js/site-customizer.js"></script>
+    <script>
+        // Ouvrir le customizer depuis les paramètres
+        document.addEventListener('DOMContentLoaded', function() {
+            const openCustomizerBtn = document.getElementById('open-customizer');
+            if (openCustomizerBtn) {
+                openCustomizerBtn.addEventListener('click', function() {
+                    // Simuler un clic sur le bouton du customizer
+                    const customizerBtn = document.getElementById('customizer-button');
+                    if (customizerBtn) {
+                        customizerBtn.click();
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

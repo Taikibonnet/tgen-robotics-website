@@ -13,6 +13,11 @@
     position: relative;
 }
 
+/* Cette règle fait disparaître le fond temporaire du body quand il y a une image de fond */
+body:has(.hero[style*="background-image"]) {
+    background-image: none !important;
+}
+
 .catalog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

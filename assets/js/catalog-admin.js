@@ -6,14 +6,17 @@
  * - Editing existing products
  * - Deleting products
  * - Exporting changes to JSON
- * 
- * To access admin mode: Double-click on the catalog title
- * Default admin password: admin123
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Check if user is admin
+    const user = window.authUtils ? window.authUtils.getCurrentUser() : null;
+    const isUserAdmin = user && user.role === 'admin';
+
+    // Don't initialize admin features if not admin
+    if (!isUserAdmin) return;
+    
     // DOM Elements
-    const catalogTitle = document.querySelector('.catalog-hero h1');
     const adminPanel = document.createElement('div');
     const catalogGrid = document.getElementById('catalog-grid');
     
@@ -24,16 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create the admin panel
     initAdminPanel();
-
-    // Listen for double click on catalog title to activate admin mode
-    catalogTitle.addEventListener('dblclick', () => {
-        const adminPassword = prompt("Entrez le mot de passe administrateur:");
-        if (adminPassword === "admin123") { // Change this to your preferred password
-            toggleAdminMode(true);
-        } else if (adminPassword !== null) {
-            alert("Mot de passe incorrect.");
-        }
-    });
+    
+    // Automatically enable admin mode for admins
+    toggleAdminMode(true);
 
     // Initialize the admin panel
     function initAdminPanel() {
@@ -145,12 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Re-render products to add/remove admin controls
         renderProductsWithAdminControls();
-        
-        // Show/hide admin hint
-        const adminHint = document.querySelector('.admin-hint');
-        if (adminHint) {
-            adminHint.style.display = enable ? 'none' : 'block';
-        }
     }
 
     // Show form for adding a new product
@@ -488,17 +478,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 deleteProduct(productId);
             });
         });
-    }
-});
-
-// Styles pour l'interface admin
-document.addEventListener('DOMContentLoaded', () => {
-    // Style for admin hint
-    const adminHint = document.querySelector('.admin-hint');
-    if (adminHint) {
-        adminHint.style.color = 'rgba(255, 255, 255, 0.6)';
-        adminHint.style.fontSize = '0.8rem';
-        adminHint.style.fontStyle = 'italic';
-        adminHint.style.marginTop = '10px';
     }
 });

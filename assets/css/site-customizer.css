@@ -7,7 +7,7 @@
 .hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../images/backgrounds/hero-bg.jpg');
+        url('https://i.imgur.com/TZDg5HS.jpg');
     background-size: cover;
     background-position: center;
     position: relative;

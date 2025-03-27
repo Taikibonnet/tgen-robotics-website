@@ -1,0 +1,88 @@
+/* 
+ * Personnalisation du site TGen ROBOTICS
+ * Ce fichier permet d'ajouter facilement des images de fond et des styles personnalisés
+ */
+
+/* Images de fond personnalisées */
+.hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/backgrounds/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.catalog-hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/catalog-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.services-hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/services-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/blog-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/about-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('../images/backgrounds/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Style personnalisé pour la page d'accueil */
+.custom-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-feature-grid {
+    /* Personnalisation de la grille de fonctionnalités */
+}
+
+/* Style personnalisé pour les cartes de produits */
+.custom-product-card {
+    /* Style de carte de produit personnalisé */
+}
+
+/* Style personnalisé pour les sections spéciales */
+.custom-section {
+    /* Style pour les sections personnalisées */
+}
+
+/* Media queries pour les personnalisations responsive */
+@media (max-width: 768px) {
+    /* Personnalisations pour mobiles */
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    /* Personnalisations pour tablettes */
+}
+
+@media (min-width: 1201px) {
+    /* Personnalisations pour grands écrans */
+}

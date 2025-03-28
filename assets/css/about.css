@@ -14,21 +14,16 @@
     background: linear-gradient(135deg, rgba(12, 235, 235, 0.1) 0%, rgba(32, 227, 178, 0.2) 100%);
     border-radius: 10px;
     margin-top: 30px;
+    /* Ajouter un fond d'image à la place du motif croisé */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/U6jQGR7.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
+/* Supprimer complètement le motif croisé */
 .about-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(45deg, rgba(12, 235, 235, 0.1) 25%, transparent 25%, transparent 50%, rgba(12, 235, 235, 0.1) 50%, rgba(12, 235, 235, 0.1) 75%, transparent 75%, transparent),
-        linear-gradient(-45deg, rgba(32, 227, 178, 0.1) 25%, transparent 25%, transparent 50%, rgba(32, 227, 178, 0.1) 50%, rgba(32, 227, 178, 0.1) 75%, transparent 75%, transparent);
-    background-size: 60px 60px;
-    animation: move-background 15s linear infinite;
-    z-index: 0;
+    display: none !important;
+    content: none !important;
 }
 
 @keyframes move-background {

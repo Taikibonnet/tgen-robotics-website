@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TGen ROBOTICS - Your partner in robotic solutions</title>
+    <!-- Chargement du script de nettoyage en premier pour éviter tout flash de motif croisé -->
+    <script src="assets/js/force-clean-bg.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="stylesheet" href="assets/css/cart-notification.css">
     <link rel="stylesheet" href="assets/css/site-customizer.css">
+    <!-- Ajouter le CSS de force après les autres pour qu'il ait priorité -->
+    <link rel="stylesheet" href="assets/css/force-no-pattern.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
     <style>
-        /* Styles supplémentaires pour garantir la suppression du motif croisé */
+        /* Styles en ligne pour assurer la suppression du motif croisé immédiatement */
+        html, body {
+            background-image: none !important;
+            background-color: #121212 !important;
+        }
+        
         body::before,
         body::after,
         .cross-pattern,
@@ -26,8 +35,17 @@
             visibility: hidden !important;
         }
         
-        body {
-            background-image: none !important;
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/TZDg5HS.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        *::before, *::after {
+            display: none !important;
+            content: normal !important;
         }
     </style>
 </head>
@@ -257,6 +275,7 @@
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/site-customizer.js"></script>
     <script src="assets/js/custom-background.js"></script>
+    <script src="assets/js/force-clean-bg.js"></script>
     <script>
         // Update login link based on authentication status
         document.addEventListener('DOMContentLoaded', function() {
@@ -272,8 +291,30 @@
                 }
             }
             
-            // Assurez-vous que le fond croisé est supprimé
-            document.body.style.backgroundImage = 'none !important';
+            // Assurer que le fond croisé est supprimé - forçage supplémentaire
+            document.body.style.backgroundImage = 'none';
+            document.documentElement.style.backgroundImage = 'none';
+            
+            // Appliquer l'image de fond correcte sur la section hero
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/TZDg5HS.jpg')";
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
+                heroSection.style.zIndex = '1';
+            }
+            
+            // Suppression directe de tous les pseudo-éléments problématiques
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+                *::before, *::after {
+                    display: none !important;
+                    content: normal !important;
+                    background: none !important;
+                    background-image: none !important;
+                }
+            `;
+            document.head.appendChild(styleElement);
         });
     </script>
 </body>

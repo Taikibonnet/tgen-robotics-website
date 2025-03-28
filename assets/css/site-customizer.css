@@ -28,6 +28,33 @@ body::after {
 /* Assurer que le corps de page n'ajoute pas d'arrière-plan supplémentaire */
 body {
     background-image: none !important;
+    position: relative;
+}
+
+/* Suppression de tout effet qui pourrait ajouter un motif croisé sur le body */
+body::before,
+body::after,
+.cross-pattern,
+.background-pattern,
+.grid-pattern,
+.pattern-overlay {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Assurer que les sections avec fond utilisent bien leur image de fond et rien d'autre */
+.hero,
+.catalog-hero,
+.services-hero,
+.blog-hero,
+.about-hero,
+.contact-hero {
+    position: relative;
+    z-index: 1;
 }
 
 .catalog-hero {

@@ -14,13 +14,9 @@
     background: linear-gradient(135deg, rgba(12, 235, 235, 0.1) 0%, rgba(32, 227, 178, 0.2) 100%);
     border-radius: 10px;
     margin-top: 30px;
-    /* Ajouter un fond d'image à la place du motif croisé */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/zVgVXXY.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
-/* Supprimer complètement le motif croisé */
+/* Suppression du motif croisé */
 .catalog-hero::before {
     display: none !important;
     content: none !important;

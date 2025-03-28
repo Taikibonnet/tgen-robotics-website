@@ -3,33 +3,15 @@
  * Ce fichier permet d'ajouter facilement des images de fond et des styles personnalisés
  */
 
-/* Images de fond personnalisées */
+/* Images de fond permanentes */
 .hero {
-    /* Laissez cette règle vide pour permettre les personnalisations
-    background-image: url('...');
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/backgrounds/hero-bg.jpg');
     background-size: cover;
-    background-position: center; */
+    background-position: center;
+    position: relative;
 }
-
-/* Ne pas supprimer le motif de fond par défaut
-body:has(.hero[style*="background-image"]) {
-    background-image: none !important;
-}
-*/
-
-/* Ne pas supprimer le motif croisé
-body::before,
-body::after {
-    display: none !important;
-    content: none !important;
-}
-*/
-
-/* Conserver l'arrière-plan par défaut
-body {
-    background-image: none !important;
-}
-*/
 
 .catalog-hero {
     background-image: 
@@ -71,6 +53,13 @@ body {
     background-position: center;
 }
 
+/* Personnaliser ici pour modifier le fond selon la page */
+body.home .hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/backgrounds/hero-bg.jpg');
+}
+
 /* Style personnalisé pour la page d'accueil */
 .custom-hero-content {
     max-width: 800px;
@@ -95,6 +84,14 @@ body {
 /* Media queries pour les personnalisations responsive */
 @media (max-width: 768px) {
     /* Personnalisations pour mobiles */
+    .hero, 
+    .catalog-hero,
+    .services-hero,
+    .blog-hero,
+    .about-hero,
+    .contact-hero {
+        background-attachment: scroll;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
@@ -103,4 +100,12 @@ body {
 
 @media (min-width: 1201px) {
     /* Personnalisations pour grands écrans */
+    .hero, 
+    .catalog-hero,
+    .services-hero,
+    .blog-hero,
+    .about-hero,
+    .contact-hero {
+        background-attachment: fixed;
+    }
 }

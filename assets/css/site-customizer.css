@@ -3,41 +3,70 @@
  * Ce fichier permet d'ajouter facilement des images de fond et des styles personnalisés
  */
 
-/* Images de fond personnalisées */
+/* NETTOYAGE COMPLET DU FOND CROISÉ - SOLUTION RADICALE */
+/* Supprimer tous les éléments qui pourraient créer un fond */
+html, body, .container, .hero, .features, .robot-showcase, .news-section, footer,
+body::before, body::after, div::before, div::after, section::before, section::after {
+    background-image: none !important;
+}
+
+/* Images de fond personnalisées - Réappliquées après nettoyage */
 .hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://i.imgur.com/TZDg5HS.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
+        url('https://i.imgur.com/TZDg5HS.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
-/* Cette règle fait disparaître le fond temporaire du body quand il y a une image de fond */
-body:has(.hero[style*="background-image"]) {
-    background-image: none !important;
-}
-
-/* Suppression complète du motif croisé */
+/* Suppression absolue de tous les pseudo-éléments qui pourraient créer un motif */
 body::before,
-body::after {
+body::after,
+.container::before,
+.container::after,
+.hero::before,
+.hero::after,
+section::before,
+section::after,
+header::before,
+header::after,
+footer::before,
+footer::after,
+div::before,
+div::after {
     display: none !important;
     content: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: static !important;
 }
 
 /* Assurer que le corps de page n'ajoute pas d'arrière-plan supplémentaire */
-body {
+html, body {
     background-image: none !important;
-    position: relative;
+    background-color: var(--dark) !important;
+    position: relative !important;
 }
 
-/* Suppression de tout effet qui pourrait ajouter un motif croisé sur le body */
-body::before,
-body::after,
+/* Suppression complète de toutes les classes connues qui pourraient ajouter un motif */
 .cross-pattern,
 .background-pattern,
 .grid-pattern,
-.pattern-overlay {
+.pattern-overlay,
+.background-overlay,
+.bg-pattern,
+.bg-grid,
+.bg-dots,
+.bg-lines,
+.pattern,
+.overlay,
+.grid {
     display: none !important;
     content: none !important;
     background: none !important;
@@ -46,55 +75,55 @@ body::after,
     visibility: hidden !important;
 }
 
-/* Assurer que les sections avec fond utilisent bien leur image de fond et rien d'autre */
-.hero,
-.catalog-hero,
-.services-hero,
-.blog-hero,
-.about-hero,
-.contact-hero {
-    position: relative;
-    z-index: 1;
-}
-
+/* Catalogue et autres sections avec images de fond */
 .catalog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/catalog-bg.jpg');
-    background-size: cover;
-    background-position: center;
+        url('../images/backgrounds/catalog-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .services-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/services-bg.jpg');
-    background-size: cover;
-    background-position: center;
+        url('../images/backgrounds/services-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .blog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/blog-bg.jpg');
-    background-size: cover;
-    background-position: center;
+        url('../images/backgrounds/blog-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .about-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/about-bg.jpg');
-    background-size: cover;
-    background-position: center;
+        url('../images/backgrounds/about-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 .contact-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/contact-bg.jpg');
-    background-size: cover;
-    background-position: center;
+        url('../images/backgrounds/contact-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /* Style personnalisé pour la page d'accueil */
@@ -102,25 +131,31 @@ body::after,
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2; /* Assurer que le contenu est au-dessus des images de fond */
 }
 
-.custom-feature-grid {
-    /* Personnalisation de la grille de fonctionnalités */
+/* Pour les sections avec fond sombre et pas d'image */
+.features,
+.robot-showcase,
+.news-section {
+    background-color: var(--dark) !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
-/* Style personnalisé pour les cartes de produits */
-.custom-product-card {
-    /* Style de carte de produit personnalisé */
-}
-
-/* Style personnalisé pour les sections spéciales */
-.custom-section {
-    /* Style pour les sections personnalisées */
+footer {
+    background: rgba(10, 10, 10, 0.9) !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /* Media queries pour les personnalisations responsive */
 @media (max-width: 768px) {
     /* Personnalisations pour mobiles */
+    .hero, .catalog-hero, .services-hero, .blog-hero, .about-hero, .contact-hero {
+        background-attachment: scroll !important;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {

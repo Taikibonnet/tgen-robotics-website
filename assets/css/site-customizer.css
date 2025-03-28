@@ -3,127 +3,80 @@
  * Ce fichier permet d'ajouter facilement des images de fond et des styles personnalisés
  */
 
-/* NETTOYAGE COMPLET DU FOND CROISÉ - SOLUTION RADICALE */
-/* Supprimer tous les éléments qui pourraient créer un fond */
-html, body, .container, .hero, .features, .robot-showcase, .news-section, footer,
-body::before, body::after, div::before, div::after, section::before, section::after {
-    background-image: none !important;
-}
-
-/* Images de fond personnalisées - Réappliquées après nettoyage */
+/* Images de fond personnalisées */
 .hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://i.imgur.com/TZDg5HS.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('https://i.imgur.com/TZDg5HS.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Suppression absolue de tous les pseudo-éléments qui pourraient créer un motif */
+/* Cette règle fait disparaître le fond temporaire du body quand il y a une image de fond */
+body:has(.hero[style*="background-image"]) {
+    background-image: none !important;
+}
+
+/* Suppression du motif croisé uniquement (pas toutes les images de fond) */
 body::before,
-body::after,
-.container::before,
-.container::after,
-.hero::before,
-.hero::after,
-section::before,
-section::after,
-header::before,
-header::after,
-footer::before,
-footer::after,
-div::before,
-div::after {
+body::after {
     display: none !important;
     content: none !important;
-    background: none !important;
-    background-image: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
-    position: static !important;
 }
 
 /* Assurer que le corps de page n'ajoute pas d'arrière-plan supplémentaire */
-html, body {
-    background-image: none !important;
-    background-color: var(--dark) !important;
-    position: relative !important;
+body {
+    background-color: var(--dark);
+    color: var(--text);
 }
 
-/* Suppression complète de toutes les classes connues qui pourraient ajouter un motif */
-.cross-pattern,
-.background-pattern,
-.grid-pattern,
-.pattern-overlay,
-.background-overlay,
-.bg-pattern,
-.bg-grid,
-.bg-dots,
-.bg-lines,
-.pattern,
-.overlay,
-.grid {
+/* Suppression des motifs croisés spécifiques */
+.catalog-hero::before,
+.about-hero::before {
     display: none !important;
     content: none !important;
-    background: none !important;
-    background-image: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
 }
 
-/* Catalogue et autres sections avec images de fond */
+/* Ajout d'images de fond pour les pages spécifiques */
 .catalog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/catalog-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('https://i.imgur.com/zVgVXXY.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .services-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/services-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('../images/backgrounds/services-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .blog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/blog-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('../images/backgrounds/blog-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .about-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/about-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('https://i.imgur.com/U6jQGR7.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .contact-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('../images/backgrounds/contact-bg.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: relative !important;
-    z-index: 1 !important;
+        url('../images/backgrounds/contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Style personnalisé pour la page d'accueil */
@@ -131,31 +84,11 @@ html, body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    position: relative;
-    z-index: 2; /* Assurer que le contenu est au-dessus des images de fond */
-}
-
-/* Pour les sections avec fond sombre et pas d'image */
-.features,
-.robot-showcase,
-.news-section {
-    background-color: var(--dark) !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-footer {
-    background: rgba(10, 10, 10, 0.9) !important;
-    position: relative !important;
-    z-index: 1 !important;
 }
 
 /* Media queries pour les personnalisations responsive */
 @media (max-width: 768px) {
     /* Personnalisations pour mobiles */
-    .hero, .catalog-hero, .services-hero, .blog-hero, .about-hero, .contact-hero {
-        background-attachment: scroll !important;
-    }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {

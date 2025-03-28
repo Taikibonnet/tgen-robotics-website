@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="assets/css/site-customizer.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
+    <style>
+        /* Styles supplémentaires pour garantir la suppression du motif croisé */
+        body::before,
+        body::after,
+        .cross-pattern,
+        .background-pattern,
+        .grid-pattern,
+        .pattern-overlay {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+            background-image: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        
+        body {
+            background-image: none !important;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -236,6 +256,7 @@
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/site-customizer.js"></script>
+    <script src="assets/js/custom-background.js"></script>
     <script>
         // Update login link based on authentication status
         document.addEventListener('DOMContentLoaded', function() {
@@ -250,6 +271,9 @@
                     loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
                 }
             }
+            
+            // Assurez-vous que le fond croisé est supprimé
+            document.body.style.backgroundImage = 'none !important';
         });
     </script>
 </body>

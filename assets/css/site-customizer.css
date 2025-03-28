@@ -5,30 +5,31 @@
 
 /* Images de fond personnalisées */
 .hero {
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://i.imgur.com/TZDg5HS.jpg');
+    /* Laissez cette règle vide pour permettre les personnalisations
+    background-image: url('...');
     background-size: cover;
-    background-position: center;
-    position: relative;
+    background-position: center; */
 }
 
-/* Cette règle fait disparaître le fond temporaire du body quand il y a une image de fond */
+/* Ne pas supprimer le motif de fond par défaut
 body:has(.hero[style*="background-image"]) {
     background-image: none !important;
 }
+*/
 
-/* Suppression complète du motif croisé */
+/* Ne pas supprimer le motif croisé
 body::before,
 body::after {
     display: none !important;
     content: none !important;
 }
+*/
 
-/* Assurer que le corps de page n'ajoute pas d'arrière-plan supplémentaire */
+/* Conserver l'arrière-plan par défaut
 body {
     background-image: none !important;
 }
+*/
 
 .catalog-hero {
     background-image: 

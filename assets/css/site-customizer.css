@@ -18,6 +18,18 @@ body:has(.hero[style*="background-image"]) {
     background-image: none !important;
 }
 
+/* Suppression complète du motif croisé */
+body::before,
+body::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Assurer que le corps de page n'ajoute pas d'arrière-plan supplémentaire */
+body {
+    background-image: none !important;
+}
+
 .catalog-hero {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

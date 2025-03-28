@@ -1,0 +1,84 @@
+/**
+ * Style de suppression forcée de tous les motifs de fond
+ * Ce fichier est chargé en dernier et assure qu'aucun motif croisé n'interfère 
+ * avec les images de fond
+ */
+
+/* Suppression radicale de tous les arrière-plans en dehors des sections spécifiques */
+html, body {
+    background: var(--dark) !important;
+    background-image: none !important;
+    background-color: var(--dark) !important;
+}
+
+/* Suppression des pseudo-éléments générateurs de motifs */
+*::before,
+*::after {
+    display: none !important;
+    content: normal !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+/* Permet uniquement les images de fond sur les éléments héros */
+.hero {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://i.imgur.com/TZDg5HS.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Utilisation d'un z-index élevé pour s'assurer que le contenu est visible */
+.hero > *,
+.catalog-hero > *,
+.services-hero > *,
+.blog-hero > *,
+.about-hero > *,
+.contact-hero > * {
+    position: relative;
+    z-index: 10;
+}
+
+/* Styles spécifiques pour les pseudo-éléments problématiques connus */
+.cross-background,
+.pattern-background,
+.cross-pattern,
+.background-pattern,
+.grid-pattern,
+.pattern-overlay,
+.background-overlay,
+.bg-pattern,
+.bg-grid,
+.bg-dots,
+.bg-lines,
+.pattern,
+.overlay,
+.grid,
+[class*="pattern"],
+[class*="overlay"],
+[class*="background"],
+[class*="grid"],
+[class*="cross"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+/* Style d'urgence appliqué via JavaScript */
+.force-no-pattern {
+    background: none !important;
+    background-image: none !important;
+}
+
+.force-hero-bg {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://i.imgur.com/TZDg5HS.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}

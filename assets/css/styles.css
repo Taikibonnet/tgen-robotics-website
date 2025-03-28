@@ -19,7 +19,7 @@ body {
     color: var(--text);
     overflow-x: hidden;
     /* Suppression du motif croisé pour éviter qu'il n'interfère avec les images de fond */
-    background-image: none;
+    background-image: none !important;
 }
 
 .container {

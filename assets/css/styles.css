@@ -469,4 +469,35 @@ footer {
         width: 150px;
         max-height: 50px;
     }
+    /* Fond pour la page d'accueil (mains robotiques) */
+.home-background {
+    background-image: url('/tgen-robotics-website/assets/images/backgrounds/robot-hands.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Valeur inférieure au z-index -1 utilisé dans body::before */
+    opacity: 0.9; /* Ajuster selon vos préférences */
+}
+
+/* Fond pour la page catalogue (robot avec ampoule) */
+.catalog-background {
+    background-image: url('/tgen-robotics-website/assets/images/backgrounds/robot-lightbulb.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Valeur inférieure au z-index -1 utilisé dans body::before */
+    opacity: 0.9; /* Ajuster selon vos préférences */
+}
 }

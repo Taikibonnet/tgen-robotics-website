@@ -1,1 +1,74 @@
-/* Empty file */
+/* Backgrounds for TGen Robotics Website */
+
+/* Common styles for all backgrounds */
+.page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+
+/* Overlay for better readability */
+.page-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Home page background */
+.home-background {
+    background-image: url('../images/backgrounds/robot-human-hand.jpg');
+}
+
+/* Catalog page background */
+.catalog-background {
+    background-image: url('../images/backgrounds/robot-lightbulb.jpg');
+}
+
+/* Services page background */
+.services-background {
+    background-image: url('../images/backgrounds/services-bg.jpg');
+}
+
+/* Blog page background */
+.blog-background {
+    background-image: url('../images/backgrounds/blog-bg.jpg');
+}
+
+/* About page background */
+.about-background {
+    background-image: url('../images/backgrounds/about-bg.jpg');
+}
+
+/* Contact page background */
+.contact-background {
+    background-image: url('../images/backgrounds/contact-bg.jpg');
+}
+
+/* Add a special effect on hover for interactive sections */
+.hero:hover ~ .page-background, 
+.robot-showcase:hover ~ .page-background,
+.features:hover ~ .page-background,
+.news-section:hover ~ .page-background {
+    opacity: 0.9;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .page-background {
+        background-attachment: scroll; /* Better performance on mobile */
+    }
+}

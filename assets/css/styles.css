@@ -471,7 +471,7 @@ footer {
     }
     /* Fond pour la page d'accueil (mains robotiques) */
 .home-background {
-    background-image: url('/tgen-robotics-website/assets/images/backgrounds/robot-hands.jpg');
+    background-image: url('/tgen-robotics-website/assets/images/backgrounds/robot-human-hand.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

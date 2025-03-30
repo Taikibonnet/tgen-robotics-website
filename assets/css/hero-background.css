@@ -38,8 +38,12 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
+/* Simple dark background for services - no images, no gradients */
+.services-background {
+    background-color: #121212;
+}
+
 /* Simple gradient background for other pages */
-.services-background,
 .blog-background,
 .about-background,
 .contact-background {

@@ -38,24 +38,28 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
-/* Services page background - Robot mechanic (Image 1) */
+/* Services page background */
 .services-background {
-    background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop');
+    background-color: #121212;
+    background-image: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.1));
 }
 
-/* Blog page background - UNIQUEMENT le fichier spécifié */
+/* Blog page background */
 .blog-background {
-    background-image: url('../images/backgrounds/blog-image-livre.jpg');
+    background-color: #121212;
+    background-image: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.1));
 }
 
-/* About page background - UNIQUEMENT le fichier spécifié */
+/* About page background */
 .about-background {
-    background-image: url('../images/backgrounds/apropos-tends-livre.jpg');
+    background-color: #121212;
+    background-image: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.1));
 }
 
 /* Contact page background */
 .contact-background {
-    background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+    background-color: #121212;
+    background-image: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.1));
 }
 
 /* Add a special effect on hover for interactive sections */

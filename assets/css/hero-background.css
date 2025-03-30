@@ -38,9 +38,9 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
-/* Services page background - utilisation d'un arrière-plan coloré en attendant l'image */
+/* Services page background */
 .services-background {
-    background-image: linear-gradient(135deg, #0a3d62, #3c6382);
+    background-image: url('../images/backgrounds/service-fast-solutions.jpg');
 }
 
 /* Blog page background */

@@ -7,14 +7,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="stylesheet" href="assets/css/services.css">
-    <link rel="stylesheet" href="assets/css/site-customizer.css">
     <link rel="stylesheet" href="assets/css/hero-background.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Explore TGen ROBOTICS professional services including robot customization, implementation, maintenance, and training for businesses of all sizes.">
-    <!-- Force no cache -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
 </head>
 <body>
     <!-- Background element -->
@@ -35,33 +30,6 @@
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="login.html" id="login-link">Login</a></li>
-                    <li>
-                        <a href="cart.html" class="cart-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <span class="cart-count">0</span>
-                        </a>
-                        <div class="mini-cart">
-                            <div class="mini-cart-header">
-                                <h3>Your Cart</h3>
-                            </div>
-                            <div class="mini-cart-items">
-                                <!-- Cart items will be loaded here -->
-                            </div>
-                            <div class="mini-cart-footer">
-                                <div class="mini-cart-total-label">Total:</div>
-                                <div class="mini-cart-total">€0.00</div>
-                                <div class="mini-cart-buttons">
-                                    <a href="cart.html" class="button">View Cart</a>
-                                    <a href="checkout.html" class="button primary">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </nav>
             <div id="mobile-menu-toggle" class="mobile-menu-toggle">
@@ -79,11 +47,9 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
-        
+
         <section class="services-hero">
             <div class="services-hero-content">
                 <h1 class="animated">Our Services</h1>
@@ -100,90 +66,93 @@
             </div>
         </section>
 
-        <section class="services-grid">
-            <div class="service-card animated delay-1">
-                <div class="service-icon">🔍</div>
-                <h2>Consultation & Analysis</h2>
-                <p>Our robotics specialists will assess your current processes and identify opportunities for automation and optimization. We'll develop a detailed plan tailored to your specific needs and objectives.</p>
-                <ul class="service-features">
-                    <li>Process analysis and workflow optimization</li>
-                    <li>ROI calculation and benefit forecasting</li>
-                    <li>Feasibility studies and risk assessment</li>
-                    <li>Custom solution planning</li>
-                </ul>
-                <a href="contact.html?service=consultation" class="service-cta">Request Consultation</a>
-            </div>
-
-            <div class="service-card animated delay-2">
-                <div class="service-icon">⚙️</div>
-                <h2>Design & Customization</h2>
-                <p>We don't believe in one-size-fits-all solutions. Our engineering team designs and customizes robots to match your specific requirements, whether you need modifications to existing systems or entirely new solutions.</p>
-                <ul class="service-features">
-                    <li>Custom robotic system design</li>
-                    <li>Hardware adaptation and modification</li>
-                    <li>Software customization and integration</li>
-                    <li>Prototyping and testing</li>
-                </ul>
-                <a href="contact.html?service=customization" class="service-cta">Discuss Your Project</a>
-            </div>
-
-            <div class="service-card animated delay-3">
-                <div class="service-icon">🔧</div>
-                <h2>Implementation & Integration</h2>
-                <p>Our skilled technicians handle the installation and integration of your robotic systems, ensuring seamless connection with your existing infrastructure and minimizing disruption to your operations.</p>
-                <ul class="service-features">
-                    <li>On-site installation and setup</li>
-                    <li>System integration with existing infrastructure</li>
-                    <li>Network configuration and security setup</li>
-                    <li>Performance testing and validation</li>
-                </ul>
-                <a href="contact.html?service=implementation" class="service-cta">Start Implementation</a>
-            </div>
-
-            <div class="service-card animated delay-1">
-                <div class="service-icon">👨‍🏫</div>
-                <h2>Training & Support</h2>
-                <p>We provide comprehensive training for your team to ensure they can operate and manage your robotic systems effectively. Our support specialists are always available to assist you with any questions or issues.</p>
-                <ul class="service-features">
-                    <li>Operator and administrator training</li>
-                    <li>Documentation and user manuals</li>
-                    <li>Technical support hotline</li>
-                    <li>Knowledge base and online resources</li>
-                </ul>
-                <a href="contact.html?service=training" class="service-cta">Book Training</a>
-            </div>
-
-            <div class="service-card animated delay-2">
-                <div class="service-icon">🔄</div>
-                <h2>Maintenance & Updates</h2>
-                <p>Keep your robotic systems running at peak performance with our maintenance services. We offer preventive maintenance, repairs, and regular software updates to ensure reliability and efficiency.</p>
-                <ul class="service-features">
-                    <li>Scheduled preventive maintenance</li>
-                    <li>Emergency repair services</li>
-                    <li>Software updates and improvements</li>
-                    <li>Performance monitoring and optimization</li>
-                </ul>
-                <a href="contact.html?service=maintenance" class="service-cta">Schedule Maintenance</a>
-            </div>
-
-            <div class="service-card animated delay-3">
-                <div class="service-icon">📈</div>
-                <h2>Scaling & Expansion</h2>
-                <p>As your business grows, we help you scale your robotic solutions accordingly. Whether you need additional units, expanded capabilities, or integration with new systems, we've got you covered.</p>
-                <ul class="service-features">
-                    <li>System expansion planning</li>
-                    <li>Capacity scaling and optimization</li>
-                    <li>Multi-site deployment</li>
-                    <li>Integration with additional systems</li>
-                </ul>
-                <a href="contact.html?service=scaling" class="service-cta">Plan Your Expansion</a>
+        <section class="services-offerings">
+            <h2>What We Offer</h2>
+            <div class="offerings-grid">
+                <div class="offering-item animated delay-1">
+                    <div class="offering-icon">🔍</div>
+                    <h3>Consultation & Analysis</h3>
+                    <p>Our robotics specialists will assess your current processes and identify opportunities for automation and optimization. We'll develop a detailed plan tailored to your specific needs and objectives.</p>
+                    <ul class="offering-features">
+                        <li><strong>Process analysis</strong> and workflow optimization</li>
+                        <li><strong>ROI calculation</strong> and benefit forecasting</li>
+                        <li><strong>Feasibility studies</strong> and risk assessment</li>
+                        <li><strong>Custom solution</strong> planning</li>
+                    </ul>
+                    <a href="contact.html?service=consultation" class="offering-cta">Request Consultation</a>
+                </div>
+                
+                <div class="offering-item animated delay-2">
+                    <div class="offering-icon">⚙️</div>
+                    <h3>Design & Customization</h3>
+                    <p>We don't believe in one-size-fits-all solutions. Our engineering team designs and customizes robots to match your specific requirements, whether you need modifications to existing systems or entirely new solutions.</p>
+                    <ul class="offering-features">
+                        <li><strong>Custom robotic</strong> system design</li>
+                        <li><strong>Hardware adaptation</strong> and modification</li>
+                        <li><strong>Software customization</strong> and integration</li>
+                        <li><strong>Prototyping</strong> and testing</li>
+                    </ul>
+                    <a href="contact.html?service=customization" class="offering-cta">Discuss Your Project</a>
+                </div>
+                
+                <div class="offering-item animated delay-3">
+                    <div class="offering-icon">🔧</div>
+                    <h3>Implementation & Integration</h3>
+                    <p>Our skilled technicians handle the installation and integration of your robotic systems, ensuring seamless connection with your existing infrastructure and minimizing disruption to your operations.</p>
+                    <ul class="offering-features">
+                        <li><strong>On-site installation</strong> and setup</li>
+                        <li><strong>System integration</strong> with existing infrastructure</li>
+                        <li><strong>Network configuration</strong> and security setup</li>
+                        <li><strong>Performance testing</strong> and validation</li>
+                    </ul>
+                    <a href="contact.html?service=implementation" class="offering-cta">Start Implementation</a>
+                </div>
+                
+                <div class="offering-item animated delay-1">
+                    <div class="offering-icon">👨‍🏫</div>
+                    <h3>Training & Support</h3>
+                    <p>We provide comprehensive training for your team to ensure they can operate and manage your robotic systems effectively. Our support specialists are always available to assist you with any questions or issues.</p>
+                    <ul class="offering-features">
+                        <li><strong>Operator and administrator</strong> training</li>
+                        <li><strong>Documentation</strong> and user manuals</li>
+                        <li><strong>Technical support</strong> hotline</li>
+                        <li><strong>Knowledge base</strong> and online resources</li>
+                    </ul>
+                    <a href="contact.html?service=training" class="offering-cta">Book Training</a>
+                </div>
+                
+                <div class="offering-item animated delay-2">
+                    <div class="offering-icon">🔄</div>
+                    <h3>Maintenance & Updates</h3>
+                    <p>Keep your robotic systems running at peak performance with our maintenance services. We offer preventive maintenance, repairs, and regular software updates to ensure reliability and efficiency.</p>
+                    <ul class="offering-features">
+                        <li><strong>Scheduled preventive</strong> maintenance</li>
+                        <li><strong>Emergency repair</strong> services</li>
+                        <li><strong>Software updates</strong> and improvements</li>
+                        <li><strong>Performance monitoring</strong> and optimization</li>
+                    </ul>
+                    <a href="contact.html?service=maintenance" class="offering-cta">Schedule Maintenance</a>
+                </div>
+                
+                <div class="offering-item animated delay-3">
+                    <div class="offering-icon">📈</div>
+                    <h3>Scaling & Expansion</h3>
+                    <p>As your business grows, we help you scale your robotic solutions accordingly. Whether you need additional units, expanded capabilities, or integration with new systems, we've got you covered.</p>
+                    <ul class="offering-features">
+                        <li><strong>System expansion</strong> planning</li>
+                        <li><strong>Capacity scaling</strong> and optimization</li>
+                        <li><strong>Multi-site</strong> deployment</li>
+                        <li><strong>Integration</strong> with additional systems</li>
+                    </ul>
+                    <a href="contact.html?service=scaling" class="offering-cta">Plan Your Expansion</a>
+                </div>
             </div>
         </section>
 
-        <section class="service-plans">
+        <section class="services-plans">
             <h2>Service Plans</h2>
-            <div class="plans-container">
-                <div class="plan-card">
+            <div class="plans-grid">
+                <div class="plan-item animated delay-1">
                     <div class="plan-header">
                         <h3>Basic Support</h3>
                         <div class="plan-price">Starting at €500/month</div>
@@ -198,7 +167,7 @@
                     <a href="contact.html?plan=basic" class="plan-cta">Get Started</a>
                 </div>
 
-                <div class="plan-card featured">
+                <div class="plan-item featured animated delay-2">
                     <div class="plan-badge">Most Popular</div>
                     <div class="plan-header">
                         <h3>Professional</h3>
@@ -215,7 +184,7 @@
                     <a href="contact.html?plan=professional" class="plan-cta">Get Started</a>
                 </div>
 
-                <div class="plan-card">
+                <div class="plan-item animated delay-3">
                     <div class="plan-header">
                         <h3>Enterprise</h3>
                         <div class="plan-price">Starting at €2,500/month</div>
@@ -236,10 +205,10 @@
             <p class="plans-note">All plans can be customized to meet your specific needs. Contact us for a personalized quote.</p>
         </section>
 
-        <section class="testimonials">
+        <section class="services-testimonials">
             <h2>What Our Clients Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide">
+            <div class="testimonials-grid">
+                <div class="testimonial-item animated delay-1">
                     <div class="testimonial-content">
                         <p>"The TGen Robotics team exceeded our expectations at every stage. Their maintenance service is exceptional, ensuring our production never stops due to robotic failures."</p>
                         <div class="testimonial-author">
@@ -251,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-slide">
+                <div class="testimonial-item animated delay-2">
                     <div class="testimonial-content">
                         <p>"The training provided by TGen Robotics was comprehensive and practical. Our team was up and running with the new systems in record time, with minimal disruption to our operations."</p>
                         <div class="testimonial-author">
@@ -263,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-slide">
+                <div class="testimonial-item animated delay-3">
                     <div class="testimonial-content">
                         <p>"The customization service from TGen Robotics transformed our production line. They understood our unique challenges and delivered a solution that perfectly matched our requirements."</p>
                         <div class="testimonial-author">
@@ -279,12 +248,13 @@
         </section>
 
         <section class="services-cta">
-            <div class="cta-content">
+            <div class="services-cta-content">
                 <h2>Ready to Transform Your Business?</h2>
                 <p>Our team is ready to help you implement the perfect robotic solution for your unique needs.</p>
+                <p class="cta-highlight">The future of automation is here. Let us guide you through the journey of digital transformation.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="cta-button">Contact Us Today</a>
-                    <a href="catalog.html" class="cta-secondary">Browse Our Solutions</a>
+                    <a href="catalog.html" class="cta-button">Browse Our Solutions</a>
                 </div>
             </div>
         </section>
@@ -339,24 +309,5 @@
     </footer>
     
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/auth.js"></script>
-    <script src="assets/js/cart.js"></script>
-    <script src="assets/js/site-customizer.js"></script>
-    <script>
-        // Update login link based on authentication status
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if auth utilities exist and user is logged in
-            if (window.authUtils) {
-                const user = window.authUtils.getCurrentUser();
-                const loginLink = document.getElementById('login-link');
-                
-                if (user && loginLink) {
-                    // Change login link to account link
-                    loginLink.textContent = 'My Account';
-                    loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
-                }
-            }
-        });
-    </script>
 </body>
 </html>

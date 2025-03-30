@@ -38,9 +38,10 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
-/* Services page background */
+/* Services page background - no image, just a dark background */
 .services-background {
-    background-image: url('../images/backgrounds/service-fast-solutions.jpg');
+    background-color: #121212;
+    background-image: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(0, 229, 255, 0.1));
 }
 
 /* Blog page background */

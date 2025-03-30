@@ -38,24 +38,24 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
-/* Services page background */
+/* Services page background - Robot mechanic (Image 1) */
 .services-background {
-    background-image: url('../images/backgrounds/services-bg.jpg');
+    background-image: url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg');
 }
 
-/* Blog page background */
+/* Blog page background - Book with designs (Image 2) */
 .blog-background {
-    background-image: url('../images/backgrounds/blog-bg.jpg');
+    background-image: url('https://images.pexels.com/photos/3747139/pexels-photo-3747139.jpeg');
 }
 
-/* About page background */
+/* About page background - Illuminated book (Image 3) */
 .about-background {
-    background-image: url('../images/backgrounds/about-bg.jpg');
+    background-image: url('https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg');
 }
 
 /* Contact page background */
 .contact-background {
-    background-image: url('../images/backgrounds/contact-bg.jpg');
+    background-image: url('https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg');
 }
 
 /* Add a special effect on hover for interactive sections */

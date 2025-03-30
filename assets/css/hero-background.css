@@ -43,12 +43,12 @@
     background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop');
 }
 
-/* Blog page background - Utilisez le fichier spécifié */
+/* Blog page background - UNIQUEMENT le fichier spécifié */
 .blog-background {
     background-image: url('../images/backgrounds/blog-image-livre.jpg');
 }
 
-/* About page background - Utilisez le fichier spécifié */
+/* About page background - UNIQUEMENT le fichier spécifié */
 .about-background {
     background-image: url('../images/backgrounds/apropos-tends-livre.jpg');
 }

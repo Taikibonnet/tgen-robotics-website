@@ -28,34 +28,34 @@
     z-index: -1;
 }
 
-/* Home page background */
+/* Home page background - Keep existing image if it works */
 .home-background {
     background-image: url('../images/backgrounds/robot-human-hand.jpg');
 }
 
-/* Catalog page background */
+/* Catalog page background - Keep existing image if it works */
 .catalog-background {
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
 /* Services page background - Robot mechanic (Image 1) */
 .services-background {
-    background-image: url('https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg');
+    background-image: url('https://img.freepik.com/free-photo/medium-shot-robot-using-tool_23-2150639138.jpg');
 }
 
 /* Blog page background - Book with designs (Image 2) */
 .blog-background {
-    background-image: url('https://images.pexels.com/photos/3747139/pexels-photo-3747139.jpeg');
+    background-image: url('https://img.freepik.com/free-photo/digital-tablet-with-cybersecurity-screen-closeup_53876-108599.jpg');
 }
 
 /* About page background - Illuminated book (Image 3) */
 .about-background {
-    background-image: url('https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg');
+    background-image: url('https://img.freepik.com/free-photo/book-with-education-blueprint-background_53876-108644.jpg');
 }
 
 /* Contact page background */
 .contact-background {
-    background-image: url('https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg');
+    background-image: url('https://img.freepik.com/free-photo/businessman-touching-blue-binary-code-dark-background_53876-124248.jpg');
 }
 
 /* Add a special effect on hover for interactive sections */

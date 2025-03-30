@@ -40,22 +40,22 @@
 
 /* Services page background - Robot mechanic (Image 1) */
 .services-background {
-    background-image: url('https://img.freepik.com/free-photo/medium-shot-robot-using-tool_23-2150639138.jpg');
+    background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop');
 }
 
 /* Blog page background - Book with designs (Image 2) */
 .blog-background {
-    background-image: url('https://img.freepik.com/free-photo/digital-tablet-with-cybersecurity-screen-closeup_53876-108599.jpg');
+    background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=2787&auto=format&fit=crop');
 }
 
 /* About page background - Illuminated book (Image 3) */
 .about-background {
-    background-image: url('https://img.freepik.com/free-photo/book-with-education-blueprint-background_53876-108644.jpg');
+    background-image: url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=2069&auto=format&fit=crop');
 }
 
 /* Contact page background */
 .contact-background {
-    background-image: url('https://img.freepik.com/free-photo/businessman-touching-blue-binary-code-dark-background_53876-124248.jpg');
+    background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
 }
 
 /* Add a special effect on hover for interactive sections */

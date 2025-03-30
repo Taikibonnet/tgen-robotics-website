@@ -38,9 +38,9 @@
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
 
-/* Services page background - using robot-lightbulb.jpg temporarily */
+/* Services page background - using robot-human-hand.jpg temporarily to avoid duplicate with catalog */
 .services-background {
-    background-image: url('../images/backgrounds/robot-lightbulb.jpg');
+    background-image: url('../images/backgrounds/robot-human-hand.jpg');
 }
 
 /* Blog page background */

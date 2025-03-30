@@ -2,12 +2,15 @@
 
 /* Hero Section */
 .services-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') no-repeat center center;
-    background-size: cover;
+    /* Retiré l'arrière-plan qui masquait le fond général */
+    /* Utilisation d'une couleur de fond semi-transparente */
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     text-align: center;
     padding: 120px 20px;
     margin-bottom: 60px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* effet de flou */
 }
 
 .services-hero-content {
@@ -60,6 +63,11 @@
     max-width: 900px;
     margin: 0 auto 60px;
     padding: 0 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .services-intro p {
@@ -77,13 +85,14 @@
 }
 
 .service-card {
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.8);
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(30px);
+    backdrop-filter: blur(5px);
 }
 
 .service-card.visible {
@@ -149,9 +158,11 @@
 
 /* Service Plans */
 .service-plans {
-    background-color: #f5f5f5;
+    background-color: rgba(245, 245, 245, 0.7);
     padding: 60px 20px;
     margin-bottom: 80px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
 }
 
 .service-plans h2 {
@@ -170,7 +181,7 @@
 }
 
 .plan-card {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -208,7 +219,7 @@
 }
 
 .plan-header {
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.7);
     padding: 30px;
     text-align: center;
     border-bottom: 1px solid #eee;
@@ -275,12 +286,16 @@
 .testimonials {
     padding: 60px 20px;
     margin-bottom: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
 }
 
 .testimonials h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
+    color: white;
 }
 
 .testimonial-slider {
@@ -300,11 +315,12 @@
 }
 
 .testimonial-content {
-    background-color: #f9f9f9;
+    background-color: rgba(249, 249, 249, 0.8);
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
+    backdrop-filter: blur(5px);
 }
 
 .testimonial-content:before {
@@ -351,12 +367,15 @@
 
 /* Services CTA Section */
 .services-cta {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/api/placeholder/1200/600') no-repeat center center;
-    background-size: cover;
+    /* Retiré l'arrière-plan qui masquait le fond général */
+    /* Utilisation d'une couleur de fond semi-transparente */
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     text-align: center;
     padding: 80px 20px;
     margin-bottom: 60px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
 }
 
 .cta-content {

@@ -53,10 +53,15 @@
 
 .mobile-nav ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .mobile-nav ul li {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .mobile-nav ul li a {
@@ -67,10 +72,31 @@
     transition: color 0.3s ease;
     display: block;
     padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav ul li a:hover {
     color: var(--primary);
+}
+
+.mobile-nav ul li:last-child a {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav ul li:last-child a .cart-count {
+    margin-left: 10px;
+    background-color: var(--primary);
+    color: var(--dark);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* Animation pour les éléments qui apparaissent au défilement */
@@ -117,6 +143,16 @@
     
     .logo svg {
         max-width: 150px;
+    }
+    
+    /* Ajustements pour le menu mobile en mode portrait */
+    .mobile-nav ul {
+        padding: 0;
+    }
+    
+    .mobile-nav ul li {
+        text-align: left;
+        padding: 0;
     }
 }
 

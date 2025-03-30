@@ -28,12 +28,12 @@
     z-index: -1;
 }
 
-/* Home page background - Keep existing image if it works */
+/* Home page background */
 .home-background {
     background-image: url('../images/backgrounds/robot-human-hand.jpg');
 }
 
-/* Catalog page background - Keep existing image if it works */
+/* Catalog page background */
 .catalog-background {
     background-image: url('../images/backgrounds/robot-lightbulb.jpg');
 }
@@ -43,14 +43,14 @@
     background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop');
 }
 
-/* Blog page background - Book with designs (Image 2) */
+/* Blog page background - Utilisez le fichier spécifié */
 .blog-background {
-    background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=2787&auto=format&fit=crop');
+    background-image: url('../images/backgrounds/blog-image-livre.jpg');
 }
 
-/* About page background - Illuminated book (Image 3) */
+/* About page background - Utilisez le fichier spécifié */
 .about-background {
-    background-image: url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=2069&auto=format&fit=crop');
+    background-image: url('../images/backgrounds/apropos-tends-livre.jpg');
 }
 
 /* Contact page background */

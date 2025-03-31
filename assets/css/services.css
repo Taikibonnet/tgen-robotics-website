@@ -1,5 +1,12 @@
 /* Styles for the Services page */
 
+/* Styles pour l'arrière-plan */
+.page-background.services-background {
+    background-image: url('../images/backgrounds/service-fast-solutions.jpg') !important;
+    opacity: 0.8 !important;
+    z-index: -10 !important;
+}
+
 /* Hero section */
 .services-hero {
     position: relative;

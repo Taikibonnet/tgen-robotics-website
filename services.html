@@ -17,67 +17,11 @@
             opacity: 0.8 !important;
             z-index: -10 !important;
         }
-        
-        /* Style pour le bouton d'administration */
-        .admin-controls {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(18, 18, 18, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            z-index: 1000;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            display: none; /* Masqué par défaut, affiché uniquement pour les admins */
-        }
-        
-        .admin-controls h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: var(--primary);
-        }
-        
-        .admin-controls button {
-            padding: 8px 15px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        
-        .admin-controls button:hover {
-            transform: translateY(-2px);
-        }
-        
-        .admin-controls button.logout {
-            background: #ff5252;
-        }
     </style>
-    <!-- Charger le script d'authentification avant le reste -->
-    <script src="assets/js/auth.js"></script>
 </head>
 <body>
-    <!-- Vérification d'accès -->
-    <script>
-        // Vérifier l'accès lors du chargement de la page
-        checkServicesAccess();
-    </script>
-    
     <!-- Background element -->
     <div class="page-background services-background"></div>
-    
-    <!-- Contrôles administrateur (visibles uniquement pour les admins) -->
-    <div class="admin-controls" id="admin-controls">
-        <h3>Contrôles administrateur</h3>
-        <button onclick="toggleServicesVisibility(true)" class="enable">Activer la page Services</button>
-        <button onclick="toggleServicesVisibility(false)" class="disable">Désactiver la page Services</button>
-        <button onclick="adminLogout()" class="logout">Déconnexion</button>
-    </div>
     
     <div class="container">
         <header>
@@ -373,13 +317,5 @@
     </footer>
     
     <script src="assets/js/main.js"></script>
-    <script>
-        // Afficher les contrôles administrateur si l'utilisateur est admin
-        document.addEventListener('DOMContentLoaded', function() {
-            if (isAdmin()) {
-                document.getElementById('admin-controls').style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>

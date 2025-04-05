@@ -137,6 +137,7 @@
             
             <div class="admin-login" id="admin-login-form">
                 <h2>Connexion administrateur</h2>
+                <input type="email" id="admin-email" placeholder="Email administrateur" value="tgen.robotics@gmail.com">
                 <input type="password" id="admin-password" placeholder="Mot de passe administrateur">
                 <button onclick="tryLogin()">Se connecter</button>
             </div>
@@ -194,12 +195,13 @@
     <script src="assets/js/auth.js"></script>
     <script>
         function tryLogin() {
+            const email = document.getElementById('admin-email').value;
             const password = document.getElementById('admin-password').value;
-            if (adminLogin(password)) {
+            if (adminLogin(email, password)) {
                 alert("Connexion réussie. Vous avez maintenant accès à la page des services.");
                 window.location.href = "services.html";
             } else {
-                alert("Mot de passe incorrect. Veuillez réessayer.");
+                alert("Identifiants incorrects. Veuillez réessayer.");
             }
         }
         

@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="assets/css/hero-background.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
-    <!-- Charger le script d'authentification pour vérifier l'accès aux services -->
-    <script src="assets/js/auth.js"></script>
 </head>
 <body>
     <!-- Background element -->
@@ -28,7 +26,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li id="services-nav-link"><a href="services.html">Services</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="catalog.html">Catalog</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -72,7 +70,7 @@
         <nav id="mobile-nav" class="mobile-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li id="services-mobile-link"><a href="services.html">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -193,7 +191,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li id="services-footer-link"><a href="services.html">Services</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="catalog.html">Catalog</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="about.html">About Us</a></li>
@@ -244,22 +242,6 @@
     <script>
         // Update login link based on authentication status
         document.addEventListener('DOMContentLoaded', function() {
-            // Vérifier l'accès à la page des services
-            if (!isAdmin() && !isServicesEnabled()) {
-                // Masquer les liens vers la page des services
-                const serviceLinks = [
-                    document.getElementById('services-nav-link'),
-                    document.getElementById('services-mobile-link'),
-                    document.getElementById('services-footer-link')
-                ];
-                
-                serviceLinks.forEach(link => {
-                    if (link) {
-                        link.style.display = 'none';
-                    }
-                });
-            }
-            
             // Check if auth utilities exist and user is logged in
             if (window.authUtils) {
                 const user = window.authUtils.getCurrentUser();

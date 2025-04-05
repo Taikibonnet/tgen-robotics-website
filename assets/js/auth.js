@@ -47,9 +47,9 @@ function toggleServicesVisibility(enable) {
 }
 
 // Fonction de connexion administrateur
-function adminLogin(password) {
-    // Mot de passe simplifié pour cet exemple - en production, utilisez un système sécurisé
-    if (password === "tgen-admin-2025") {
+function adminLogin(email, password) {
+    // Utiliser l'email et le mot de passe spécifiés
+    if (email === "tgen.robotics@gmail.com" && password === "Admin123!") {
         setCookie("admin_logged_in", "true", 1); // Connexion valide pour 1 jour
         return true;
     }

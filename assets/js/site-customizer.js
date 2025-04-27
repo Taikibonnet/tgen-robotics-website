@@ -184,41 +184,30 @@ const siteCustomizer = (function() {
         const resetButton = document.querySelector('.reset-button');
         if (resetButton) {
             resetButton.addEventListener('click', function() {
-                localStorage.removeItem(THEME_STORAGE_KEY);
-                localStorage.removeItem(LAYOUT_STORAGE_KEY);
-                localStorage.removeItem(FONT_STORAGE_KEY);
+                localStorage.setItem(THEME_STORAGE_KEY, DEFAULT_THEME);
+                localStorage.setItem(LAYOUT_STORAGE_KEY, DEFAULT_LAYOUT);
+                localStorage.setItem(FONT_STORAGE_KEY, DEFAULT_FONT);
                 applySettings();
             });
         }
     };
     
-    // Load Google Fonts
-    const loadGoogleFonts = function() {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap';
-        document.head.appendChild(link);
-    };
-    
     // Public methods
     return {
         init: function() {
-            // Load Google Fonts
-            loadGoogleFonts();
-            
-            // Create customizer HTML
+            // Create customizer
             createCustomizer();
-            
-            // Apply saved settings
-            applySettings();
             
             // Initialize event listeners
             initEventListeners();
+            
+            // Apply saved settings
+            applySettings();
         }
     };
 })();
 
-// Initialize site customizer on DOM content loaded
+// Initialize customizer on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
     siteCustomizer.init();
 });

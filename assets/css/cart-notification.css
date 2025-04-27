@@ -1,23 +1,26 @@
-/* Cart Notification Styles */
+/**
+ * Cart Notification Styles for TGen ROBOTICS
+ */
 
 .cart-notification {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
-    background-color: var(--success-color);
-    color: white;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
     padding: 15px 20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transform: translateY(100px);
     opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .cart-notification.active {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
 }
 
 .notification-content {
@@ -26,10 +29,30 @@
 }
 
 .notification-icon {
-    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .notification-message {
-    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .cart-notification {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
 }

@@ -9,44 +9,8 @@
     <link rel="stylesheet" href="assets/css/cart-notification.css">
     <link rel="stylesheet" href="assets/css/site-customizer.css">
     <link rel="stylesheet" href="assets/css/hero-background.css">
-    <link rel="stylesheet" href="assets/css/force-no-pattern.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
-    <style>
-        body {
-            color: white;
-            background-color: #121212;
-        }
-        
-        .container {
-            background-color: rgba(18, 18, 18, 0.7);
-        }
-        
-        header {
-            background-color: rgba(0, 86, 179, 0.8);
-        }
-        
-        nav ul li a {
-            color: white;
-        }
-        
-        footer {
-            background-color: rgba(0, 61, 130, 0.9);
-        }
-        
-        .feature, .news-card, .category {
-            background-color: rgba(30, 30, 30, 0.7);
-            color: white;
-        }
-        
-        .feature h3, .news-title, .category h3 {
-            color: var(--primary-color);
-        }
-        
-        .page-background.home-background {
-            opacity: 1;
-        }
-    </style>
 </head>
 <body class="theme-blue layout-boxed font-default">
     <!-- Background element -->
@@ -276,7 +240,6 @@
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/site-customizer.js"></script>
-    <script src="assets/js/custom-background.js"></script>
     <script>
         // Update login link based on authentication status
         document.addEventListener('DOMContentLoaded', function() {
@@ -291,9 +254,6 @@
                     loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
                 }
             }
-            
-            // Force apply the theme-blue class
-            document.body.classList.add('theme-blue');
         });
     </script>
 </body>

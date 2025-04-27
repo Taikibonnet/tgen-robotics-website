@@ -198,11 +198,11 @@ const siteCustomizer = (function() {
             // Create customizer
             createCustomizer();
             
-            // Apply saved settings
-            applySettings();
-            
             // Initialize event listeners
             initEventListeners();
+            
+            // Apply saved settings
+            applySettings();
         }
     };
 })();

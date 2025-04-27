@@ -9,181 +9,88 @@
     <link rel="stylesheet" href="assets/css/cart-notification.css">
     <link rel="stylesheet" href="assets/css/site-customizer.css">
     <link rel="stylesheet" href="assets/css/hero-background.css">
-    <link rel="stylesheet" href="assets/css/force-no-pattern.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
     <style>
-        body {
-            color: white;
+        /* Simple blue theme styles */
+        body.blue-theme {
             background-color: #121212;
+            color: white;
         }
         
-        .container {
-            background-color: rgba(18, 18, 18, 0.7);
-        }
-        
-        header {
+        body.blue-theme header {
             background-color: rgba(0, 86, 179, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(3, 169, 244, 0.3);
         }
         
-        header .container {
-            background-color: transparent;
+        body.blue-theme header a {
+            color: white !important;
         }
         
-        nav ul {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        nav ul li a {
-            color: white;
-            font-weight: 500;
-            font-size: 1.1rem;
-            padding: 8px 0;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, #03A9F4, #00E5FF);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after, 
-        nav ul li a.active::after {
-            width: 100%;
-        }
-        
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: #00E5FF;
-            text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
-        }
-        
-        footer {
-            background-color: rgba(0, 61, 130, 0.9);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(3, 169, 244, 0.3);
-        }
-        
-        .feature, .news-card, .category {
-            background-color: rgba(30, 30, 30, 0.7);
-            color: white;
+        body.blue-theme .category, 
+        body.blue-theme .feature, 
+        body.blue-theme .news-card {
+            background-color: #1e1e1e;
             border: 1px solid rgba(3, 169, 244, 0.2);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-        
-        .feature:hover, .news-card:hover, .category:hover {
-            border-color: rgba(0, 229, 255, 0.5);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
-        }
-        
-        .feature h3, .news-title, .category h3 {
-            color: #03A9F4;
-        }
-        
-        .page-background.home-background {
-            opacity: 1;
-        }
-        
-        .hero {
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #fff, #00E5FF);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .cta-button {
-            background: linear-gradient(to right, #03A9F4, #00E5FF);
-            border: none;
             color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
-            transition: all 0.3s ease;
         }
         
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.5);
+        body.blue-theme footer {
+            background-color: #003d82;
         }
     </style>
 </head>
-<body class="theme-blue layout-boxed font-default">
+<body class="blue-theme theme-blue">
     <!-- Background element -->
     <div class="page-background home-background"></div>
     
     <div class="container">
         <header>
-            <div class="container">
-                <div class="logo">
-                    <object type="image/svg+xml" data="assets/images/logo-v2.svg" width="200" height="70">
-                        TGen ROBOTICS
-                    </object>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="catalog.html">Catalog</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html" id="login-link">Login</a></li>
-                        <li>
-                            <a href="cart.html" class="cart-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                                <span class="cart-count">0</span>
-                            </a>
-                            <div class="mini-cart">
-                                <div class="mini-cart-header">
-                                    <h3>Your Cart</h3>
-                                </div>
-                                <div class="mini-cart-items">
-                                    <!-- Cart items will be loaded here -->
-                                </div>
-                                <div class="mini-cart-footer">
-                                    <div class="mini-cart-total-label">Total:</div>
-                                    <div class="mini-cart-total">€0.00</div>
-                                    <div class="mini-cart-buttons">
-                                        <a href="cart.html" class="button">View Cart</a>
-                                        <a href="checkout.html" class="button primary">Checkout</a>
-                                    </div>
+            <div class="logo">
+                <object type="image/svg+xml" data="assets/images/logo-v2.svg" width="200" height="70">
+                    TGen ROBOTICS
+                </object>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" id="login-link">Login</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mini-cart">
+                            <div class="mini-cart-header">
+                                <h3>Your Cart</h3>
+                            </div>
+                            <div class="mini-cart-items">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div class="mini-cart-footer">
+                                <div class="mini-cart-total-label">Total:</div>
+                                <div class="mini-cart-total">€0.00</div>
+                                <div class="mini-cart-buttons">
+                                    <a href="cart.html" class="button">View Cart</a>
+                                    <a href="checkout.html" class="button primary">Checkout</a>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
-                </nav>
-                <div id="mobile-menu-toggle" class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </header>
         
@@ -360,8 +267,6 @@
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/site-customizer.js"></script>
-    <script src="assets/js/custom-background.js"></script>
-    <script src="assets/js/force-clean-bg.js"></script>
     <script>
         // Update login link based on authentication status
         document.addEventListener('DOMContentLoaded', function() {
@@ -375,16 +280,6 @@
                     loginLink.textContent = 'My Account';
                     loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
                 }
-            }
-            
-            // Force apply the theme-blue class
-            document.body.classList.add('theme-blue');
-            
-            // Make sure the futuristic background is visible
-            const pageBackground = document.querySelector('.page-background');
-            if (pageBackground) {
-                pageBackground.style.opacity = '1';
-                pageBackground.style.visibility = 'visible';
             }
         });
     </script>

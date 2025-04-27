@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TGen Robotics Admin</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+    <script src="https://kit.fontawesome.com/cd8e39aab1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../images/logo.png" alt="TGen Robotics Logo">
+                <h2>TGen Admin</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> <span>Blog</span></a></li>
+                    <li><a href="encyclopedia.html"><i class="fas fa-robot"></i> <span>Encyclopedia</span></a></li>
+                    <li><a href="services.html"><i class="fas fa-cogs"></i> <span>Services</span></a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <a href="login.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="user-info">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user">
+                        <img src="../images/admin-avatar.jpg" alt="Admin">
+                        <span>Admin User</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-wrapper">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Robots</h3>
+                            <p class="stat-number">4</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Users</h3>
+                            <p class="stat-number">156</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Blog Posts</h3>
+                            <p class="stat-number">12</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Messages</h3>
+                            <p class="stat-number">3</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p class="activity-text">New robot <strong>TG-Scout Explorer</strong> added to encyclopedia</p>
+                                        <p class="activity-time">2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p class="activity-text">New blog post <strong>The Future of Robotics</strong> published</p>
+                                        <p class="activity-time">5 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p class="activity-text"><strong>TG-5000 Industrial Arm</strong> information updated</p>
+                                        <p class="activity-time">Yesterday</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p class="activity-text">New contact message from <strong>John Smith</strong></p>
+                                        <p class="activity-time">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions">
+                                <a href="encyclopedia.html" class="quick-action-btn">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Manage Encyclopedia</span>
+                                </a>
+                                <a href="blog.html" class="quick-action-btn">
+                                    <i class="fas fa-pen"></i>
+                                    <span>Write Blog Post</span>
+                                </a>
+                                <a href="messages.html" class="quick-action-btn">
+                                    <i class="fas fa-envelope-open"></i>
+                                    <span>Check Messages</span>
+                                </a>
+                                <a href="settings.html" class="quick-action-btn">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Update Settings</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>

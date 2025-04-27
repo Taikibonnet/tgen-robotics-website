@@ -3,146 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGen Robotics - Innovative Robotic Solutions</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="https://kit.fontawesome.com/cd8e39aab1.js" crossorigin="anonymous"></script>
+    <title>TGen ROBOTICS - Your partner in robotic solutions</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/cart-notification.css">
+    <link rel="stylesheet" href="assets/css/site-customizer.css">
+    <link rel="stylesheet" href="assets/css/hero-background.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="TGen ROBOTICS offers innovative robotic solutions for industry and individuals. Connect with the best robot manufacturers for your business or personal use.">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <!-- Background element -->
+    <div class="page-background home-background"></div>
+    
+    <div class="container">
+        <header>
             <div class="logo">
-                <img src="images/logo.png" alt="TGen Robotics Logo">
-                <h1>TGen Robotics</h1>
+                <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
+                    TGen ROBOTICS
+                </object>
             </div>
             <nav>
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="encyclopedia.html">Encyclopedia</a></li>
+                    <li><a href="catalog.html">Catalog</a></li>
                     <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html" id="login-link">Login</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="cart-count">0</span>
+                        </a>
+                        <div class="mini-cart">
+                            <div class="mini-cart-header">
+                                <h3>Your Cart</h3>
+                            </div>
+                            <div class="mini-cart-items">
+                                <!-- Cart items will be loaded here -->
+                            </div>
+                            <div class="mini-cart-footer">
+                                <div class="mini-cart-total-label">Total:</div>
+                                <div class="mini-cart-total">€0.00</div>
+                                <div class="mini-cart-buttons">
+                                    <a href="cart.html" class="button">View Cart</a>
+                                    <a href="checkout.html" class="button primary">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
-            <div class="hamburger">
+            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </div>
-    </header>
-
-    <main>
+        </header>
+        
+        <nav id="mobile-nav" class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        
         <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Next Generation Robotics Solutions</h1>
-                    <p>Empowering industries with advanced robotic technology for a more efficient and automated future.</p>
-                    <div class="hero-buttons">
-                        <a href="services.html" class="btn primary-btn">Our Services</a>
-                        <a href="contact.html" class="btn secondary-btn">Get in Touch</a>
-                    </div>
-                </div>
+            <h1 class="animated">The future of robotics is in your hands</h1>
+            <p class="animated delay-1">Connect with the best robot manufacturers and find innovative solutions for your business or personal use.</p>
+            <a href="catalog.html" class="cta-button animated delay-2">Discover our solutions</a>
+        </section>
+        
+        <section class="robot-showcase">
+            <div class="category animated delay-1">
+                <img src="/api/placeholder/400/200" alt="Industrial robot">
+                <h3>Industrial Robots</h3>
+                <p>Optimize your production lines with our cutting-edge robotic solutions.</p>
+                <a href="catalog.html?category=industrial" class="read-more">Discover <span>→</span></a>
+            </div>
+            <div class="category animated delay-2">
+                <img src="/api/placeholder/400/200" alt="Renovation robot">
+                <h3>Construction Robots</h3>
+                <p>Revolutionize your construction projects with our specialized robots.</p>
+                <a href="catalog.html?category=construction" class="read-more">Discover <span>→</span></a>
+            </div>
+            <div class="category animated delay-3">
+                <img src="/api/placeholder/400/200" alt="Domestic robot">
+                <h3>Domestic Robots</h3>
+                <p>Simplify your daily life with our robotic solutions for individuals.</p>
+                <a href="catalog.html?category=domestic" class="read-more">Discover <span>→</span></a>
             </div>
         </section>
-
+        
         <section class="features">
-            <div class="container">
-                <h2>Why Choose TGen Robotics?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Advanced Technology</h3>
-                        <p>Cutting-edge robotics solutions powered by the latest advancements in AI and machine learning.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <h3>Industry Expertise</h3>
-                        <p>Deep industry knowledge and specialized solutions tailored to your specific business needs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Reliable Support</h3>
-                        <p>Comprehensive support and maintenance services to ensure your robots operate at peak performance.</p>
-                    </div>
+            <h2>Why choose us?</h2>
+            <div class="feature-grid">
+                <div class="feature animated delay-1">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Expertise</h3>
+                    <p>Our team of experts analyzes your needs to offer you the most adapted robotic solutions.</p>
+                </div>
+                <div class="feature animated delay-2">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Partnerships</h3>
+                    <p>We collaborate with the world's best manufacturers to provide you with cutting-edge technologies.</p>
+                </div>
+                <div class="feature animated delay-3">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Customization</h3>
+                    <p>Each solution is tailored to your specific requirements and needs.</p>
+                </div>
+                <div class="feature animated delay-1">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <p>Our robots collect and analyze data to continuously optimize your processes.</p>
+                </div>
+                <div class="feature animated delay-2">
+                    <div class="feature-icon">📱</div>
+                    <h3>Connectivity</h3>
+                    <p>Control your robots remotely and receive real-time updates.</p>
+                </div>
+                <div class="feature animated delay-3">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Security</h3>
+                    <p>All our solutions comply with the strictest safety standards on the market.</p>
                 </div>
             </div>
         </section>
-
-        <section class="encyclopedia-preview">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Robot Encyclopedia</h2>
-                    <p>Explore our comprehensive collection of robots with detailed specifications and information.</p>
-                    <a href="encyclopedia.html" class="btn primary-btn">Browse Encyclopedia</a>
+        
+        <section class="news-section">
+            <h2>Robotics News</h2>
+            <div class="news-grid">
+                <div class="news-card animated delay-1">
+                    <img src="/api/placeholder/400/200" alt="New technology" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">March 12, 2025</div>
+                        <h3 class="news-title">A new generation of autonomous robots</h3>
+                        <p class="news-excerpt">Discover how AI is transforming the learning capabilities of modern robots.</p>
+                        <a href="blog.html" class="read-more">Read more <span>→</span></a>
+                    </div>
                 </div>
-                <div class="robots-preview">
-                    <div class="robot-card">
-                        <img src="images/robots/industrial-arm-1.jpg" alt="Industrial Robot Arm">
-                        <h3>Industrial Arms</h3>
-                        <p>High-precision industrial robotic arms for manufacturing and assembly tasks.</p>
+                <div class="news-card animated delay-2">
+                    <img src="/api/placeholder/400/200" alt="Human-robot collaboration" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">February 28, 2025</div>
+                        <h3 class="news-title">Human-robot collaboration: the future of work</h3>
+                        <p class="news-excerpt">How collaborative robots are revolutionizing work environments.</p>
+                        <a href="blog.html" class="read-more">Read more <span>→</span></a>
                     </div>
-                    <div class="robot-card">
-                        <img src="images/robots/placeholder.jpg" alt="Mobile Robot">
-                        <h3>Mobile Robots</h3>
-                        <p>Autonomous mobile robots designed for logistics, warehouse operations, and more.</p>
-                    </div>
-                    <div class="robot-card">
-                        <img src="images/robots/placeholder.jpg" alt="Service Robot">
-                        <h3>Service Robots</h3>
-                        <p>Interactive service robots for healthcare, hospitality, and customer service.</p>
+                </div>
+                <div class="news-card animated delay-3">
+                    <img src="/api/placeholder/400/200" alt="Construction robots" class="news-img">
+                    <div class="news-content">
+                        <div class="news-date">February 15, 2025</div>
+                        <h3 class="news-title">Robots transforming the renovation sector</h3>
+                        <p class="news-excerpt">Case study: how our robots reduced renovation costs by 30%.</p>
+                        <a href="blog.html" class="read-more">Read more <span>→</span></a>
                     </div>
                 </div>
             </div>
+            <div class="view-all-news">
+                <a href="blog.html" class="cta-button">Visit our blog</a>
+            </div>
         </section>
-    </main>
-
+    </div>
+    
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="TGen Robotics Logo">
-                    <h2>TGen Robotics</h2>
+                <div class="footer-column">
+                    <h3>TGen ROBOTICS</h3>
+                    <p>Your partner in innovative robotic solutions for industry and individuals.</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="encyclopedia.html">Encyclopedia</a></li>
+                        <li><a href="catalog.html">Catalog</a></li>
                         <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco, CA</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-envelope"></i> info@tgenrobotics.com</p>
+                <div class="footer-column">
+                    <h3>Robots</h3>
+                    <ul>
+                        <li><a href="catalog.html?category=industrial">Industrial robots</a></li>
+                        <li><a href="catalog.html?category=construction">Construction robots</a></li>
+                        <li><a href="catalog.html?category=domestic">Domestic robots</a></li>
+                        <li><a href="catalog.html?category=healthcare">Healthcare robots</a></li>
+                    </ul>
                 </div>
-                <div class="footer-social">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li><a href="mailto:tgen.robotics@gmail.com">tgen.robotics@gmail.com</a></li>
+                        <li>123 Innovation Avenue, 75001 Paris</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61574422206513" target="_blank" aria-label="Facebook">📱</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="https://www.instagram.com/tgen_robotics/" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">📺</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 TGen Robotics. All rights reserved.</p>
+            <div class="copyright">
+                © 2025 TGen ROBOTICS. All rights reserved.
             </div>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
+    
+    <!-- Add to Cart Success Message -->
+    <div id="cart-notification" class="cart-notification">
+        <div class="notification-content">
+            <div class="notification-icon">✓</div>
+            <div class="notification-message">Product added to cart!</div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/site-customizer.js"></script>
+    <script>
+        // Update login link based on authentication status
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if auth utilities exist and user is logged in
+            if (window.authUtils) {
+                const user = window.authUtils.getCurrentUser();
+                const loginLink = document.getElementById('login-link');
+                
+                if (user && loginLink) {
+                    // Change login link to account link
+                    loginLink.textContent = 'My Account';
+                    loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
+                }
+            }
+        });
+    </script>
 </body>
 </html>

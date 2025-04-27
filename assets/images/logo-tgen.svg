@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   width="200"
-   height="70"
-   viewBox="0 0 200 70"
-   fill="none"
-   version="1.1"
-   id="svg1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <g id="Logo">
-    <path
-       d="M 60,20 H 40 V 15 H 85 V 20 H 65 V 55 H 60 Z"
-       fill="#0056b3"
-       id="path1" />
-    <path
-       d="M 90,15 H 105 C 112,15 115,15 118.535,17.111 C 121.742,19 124,24 124,30 C 124,36 121.742,41 118.535,42.889 C 115,45 112,45 105,45 H 100 V 55 H 95 V 15 Z m 10,5 V 40 H 105 C 110.5,40 114,39 116,37 C 118,35 119,33 119,30 C 119,27 118,25 116,23 C 114,21 110.5,20 105,20 Z"
-       fill="#0056b3"
-       id="path3" />
-    <path
-       d="m 145,15 v 5 h -17.5 v 12.5 h 15 v 5 h -15 V 50 H 145 v 5 h -22.5 V 15 Z"
-       fill="#0056b3"
-       id="path4" />
-    <path
-       d="m 150,15 h 10 l 10,32.5 10,-32.5 h 10 v 40 h -5 V 20 l -11.25,35 h -7.5 L 155,20 v 35 h -5 z"
-       fill="#0056b3"
-       id="path5" />
-    <path
-       fill="#ff6b00"
-       d="m 43,55 c 0,0 0,0 0,0 0,2.5 -2.24,5 -5,5 H 12 c -2.761,0 -5,-2.5 -5,-5 0,0 0,0 0,0 v -35 -5 h 5 v 5 5 H 33 V 20 H 12 v 35 H 38 V 20 h 5 z"
-       id="path6" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:Arial;fill:#0056b3;fill-opacity:1;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="40"
-       y="64"
-       id="text1"><tspan
-         id="tspan1"
-         x="40"
-         y="64"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0056b3">ROBOTICS</tspan></text>
-  </g>
+<svg width="600" height="210" viewBox="0 0 600 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M33.5 28H188.5V52H123.5V182H98.5V52H33.5V28Z" fill="#0056B3"/>
+    <path d="M255.76 127.75V74.75H193.76V53.75H341.76V74.75H279.76V127.75H341.76V148.75H193.76V127.75H255.76Z" fill="#0056B3"/>
+    <path d="M382.93 148.75V53.75H474.93C491.93 53.75 505.76 58.08 516.43 66.75C527.26 75.42 532.68 87.42 532.68 102.75C532.68 118.08 527.26 130.08 516.43 138.75C505.76 147.42 491.93 151.75 474.93 151.75H382.93V148.75ZM406.93 127.75H474.93C485.76 127.75 494.09 125.08 499.93 119.75C505.76 114.25 508.68 107.08 508.68 98.25C508.68 89.42 505.76 82.42 499.93 77.25C494.09 71.92 485.76 69.25 474.93 69.25H406.93V127.75Z" fill="#0056B3"/>
+    <path d="M556.27 148.75V53.75H580.27V148.75H556.27Z" fill="#0056B3"/>
+    <path d="M40 180L66 125L92 180H40Z" fill="#FF6B00"/>
+    <path d="M550 180L576 125L602 180H550Z" fill="#FF6B00"/>
 </svg>

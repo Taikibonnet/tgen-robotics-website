@@ -127,18 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get the appropriate email field based on which one is visible
-            let email = '';
-            const loginEmail = document.getElementById('login-email');
-            const loginPhone = document.getElementById('login-phone');
-            
-            if (loginEmail && loginEmail.parentElement.style.display !== 'none') {
-                email = loginEmail.value;
-            } else if (loginPhone && loginPhone.parentElement.style.display !== 'none') {
-                email = loginPhone.value; // For simplicity, we'll treat phone as email in this demo
-            }
-            
-            const password = document.getElementById('login-password').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
             
             const result = authUtils.login(email, password);
             
@@ -151,55 +141,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 // Show error message
-                const errorDiv = document.getElementById('login-message');
+                const errorDiv = document.getElementById('login-error');
                 if (errorDiv) {
                     errorDiv.textContent = result.message;
                     errorDiv.style.display = 'block';
-                    errorDiv.classList.add('error');
                 }
-            }
-        });
-    }
-    
-    // Handle login method selection
-    const loginMethod = document.getElementById('login-method');
-    if (loginMethod) {
-        loginMethod.addEventListener('change', function() {
-            const emailField = document.getElementById('login-email').parentElement;
-            const phoneField = document.getElementById('login-phone').parentElement;
-            
-            if (this.value === 'email') {
-                emailField.style.display = 'block';
-                phoneField.style.display = 'none';
-            } else {
-                emailField.style.display = 'none';
-                phoneField.style.display = 'block';
             }
         });
     }
     
     // Handle logout
     const logoutButton = document.getElementById('logout-button');
+    
     if (logoutButton) {
         logoutButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            authUtils.logout();
-        });
-    }
-    
-    // Also handle mobile logout
-    const mobileLogoutButton = document.getElementById('admin-logout-mobile');
-    if (mobileLogoutButton) {
-        mobileLogoutButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            authUtils.logout();
-        });
-    }
-    
-    // Handle admin logout
-    const adminLogoutButton = document.getElementById('admin-logout');
-    if (adminLogoutButton) {
-        adminLogoutButton.addEventListener('click', function(e) {
             e.preventDefault();
             authUtils.logout();
         });

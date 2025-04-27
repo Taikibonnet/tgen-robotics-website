@@ -3,232 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot Encyclopedia - TGen ROBOTICS</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
-    <link rel="stylesheet" href="assets/css/encyclopedia.css">
-    <link rel="stylesheet" href="assets/css/cart.css">
-    <link rel="stylesheet" href="assets/css/cart-notification.css">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Explore our comprehensive robot encyclopedia with detailed information, specifications, images and videos of all TGen ROBOTICS models.">
+    <title>Robot Encyclopedia - TGen Robotics</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/encyclopedia.css">
+    <script src="https://kit.fontawesome.com/cd8e39aab1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <div class="logo">
-                <object type="image/svg+xml" data="assets/images/logo-tgen.svg" width="200" height="70">
-                    TGen ROBOTICS
-                </object>
+                <img src="images/logo.png" alt="TGen Robotics Logo">
+                <h1>TGen Robotics</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html" id="nav-home">Home</a></li>
-                    <li><a href="services.html" id="nav-services">Services</a></li>
-                    <li><a href="catalog.html" id="nav-catalog">Catalog</a></li>
-                    <li><a href="encyclopedia.html" id="nav-encyclopedia" class="active">Encyclopedia</a></li>
-                    <li><a href="blog.html" id="nav-blog">Blog</a></li>
-                    <li><a href="about.html" id="nav-about">About Us</a></li>
-                    <li><a href="contact.html" id="nav-contact">Contact</a></li>
-                    <li><a href="login.html" id="login-link">Login</a></li>
-                    <li>
-                        <a href="cart.html" class="cart-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <span class="cart-count">0</span>
-                        </a>
-                        <div class="mini-cart">
-                            <div class="mini-cart-header">
-                                <h3>Your Cart</h3>
-                            </div>
-                            <div class="mini-cart-items">
-                                <!-- Cart items will be loaded here -->
-                            </div>
-                            <div class="mini-cart-footer">
-                                <div class="mini-cart-total-label">Total:</div>
-                                <div class="mini-cart-total">€0.00</div>
-                                <div class="mini-cart-buttons">
-                                    <a href="cart.html" class="button">View Cart</a>
-                                    <a href="checkout.html" class="button primary">Checkout</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="active"><a href="encyclopedia.html">Encyclopedia</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
-            <div id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </header>
-        
-        <nav id="mobile-nav" class="mobile-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="encyclopedia.html">Encyclopedia</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-        
-        <div class="encyclopedia-hero">
-            <div class="hero-content">
+        </div>
+    </header>
+
+    <main>
+        <section class="encyclopedia-hero">
+            <div class="container">
                 <h1>Robot Encyclopedia</h1>
-                <p>Explore our comprehensive database of robotic models with detailed specifications, photos, and videos</p>
+                <p>Explore our comprehensive collection of robots with detailed specifications, images, and videos.</p>
             </div>
-        </div>
-        
-        <div class="encyclopedia-container">
-            <div class="encyclopedia-sidebar">
-                <div class="search-box">
-                    <input type="text" id="encyclopedia-search" placeholder="Search robots...">
-                </div>
-                
-                <div class="filter-section">
-                    <h3>Categories</h3>
-                    <ul id="encyclopedia-categories">
-                        <li data-category="all" class="active">All Robots</li>
-                        <li data-category="industrial">Industrial</li>
-                        <li data-category="construction">Construction</li>
-                        <li data-category="domestic">Domestic</li>
-                        <li data-category="healthcare">Healthcare</li>
-                        <li data-category="agriculture">Agriculture</li>
-                        <li data-category="military">Military/Defense</li>
-                        <li data-category="logistics">Logistics</li>
-                    </ul>
-                </div>
-                
-                <div class="filter-section">
-                    <h3>Features</h3>
-                    <div class="feature-filters">
-                        <label><input type="checkbox" data-feature="ai"> AI-Powered</label>
-                        <label><input type="checkbox" data-feature="autonomous"> Autonomous</label>
-                        <label><input type="checkbox" data-feature="remote"> Remote Control</label>
-                        <label><input type="checkbox" data-feature="waterproof"> Waterproof</label>
-                        <label><input type="checkbox" data-feature="voice"> Voice Recognition</label>
+        </section>
+
+        <section class="encyclopedia-filters">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="search-bar">
+                        <input type="text" id="robotSearch" placeholder="Search robots...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="categoryFilter">Category:</label>
+                            <select id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                <!-- Categories will be populated dynamically -->
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sortBy">Sort By:</label>
+                            <select id="sortBy">
+                                <option value="name">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="encyclopedia-content">
-                <div class="view-options">
-                    <button id="grid-view" class="active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></button>
-                    <button id="list-view"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></button>
-                </div>
-                
-                <div id="encyclopedia-results" class="grid-view">
-                    <!-- Robot entries will be loaded here by JavaScript -->
-                    <div class="loading-indicator">
-                        <div class="spinner"></div>
-                        <p>Loading robot data...</p>
+        </section>
+
+        <section class="encyclopedia-grid">
+            <div class="container">
+                <div id="robotsGrid" class="robots-grid">
+                    <!-- Robots will be populated dynamically -->
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-pulse"></i>
+                        <p>Loading robots...</p>
                     </div>
                 </div>
-                
-                <div id="pagination" class="pagination">
-                    <!-- Pagination controls will be added here -->
-                </div>
             </div>
-        </div>
-        
-        <!-- Robot Detail Modal -->
-        <div id="robot-detail-modal" class="modal">
+        </section>
+
+        <div id="robotModal" class="modal">
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <div id="robot-detail-content">
-                    <!-- Robot detail content will be loaded here -->
+                <span class="close-button">&times;</span>
+                <div class="modal-body">
+                    <!-- Robot details will be populated here -->
                 </div>
             </div>
         </div>
-    </div>
-    
+    </main>
+
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>TGen ROBOTICS</h3>
-                    <p>Your partner in innovative robotic solutions for industry and individuals.</p>
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="TGen Robotics Logo">
+                    <h2>TGen Robotics</h2>
                 </div>
-                <div class="footer-column">
+                <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="catalog.html">Catalog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="encyclopedia.html">Encyclopedia</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Robots</h3>
-                    <ul>
-                        <li><a href="catalog.html?category=industrial">Industrial robots</a></li>
-                        <li><a href="catalog.html?category=construction">Construction robots</a></li>
-                        <li><a href="catalog.html?category=domestic">Domestic robots</a></li>
-                        <li><a href="catalog.html?category=healthcare">Healthcare robots</a></li>
-                    </ul>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco, CA</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@tgenrobotics.com</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
-                        <li><a href="mailto:tgen.robotics@gmail.com">tgen.robotics@gmail.com</a></li>
-                        <li>123 Innovation Avenue, 75001 Paris</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61574422206513" target="_blank" aria-label="Facebook">📱</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="https://www.instagram.com/tgen_robotics/" target="_blank" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="YouTube">📺</a>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                © 2025 TGen ROBOTICS. All rights reserved.
+            <div class="footer-bottom">
+                <p>&copy; 2023 TGen Robotics. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Add to Cart Success Message -->
-    <div id="cart-notification" class="cart-notification">
-        <div class="notification-content">
-            <div class="notification-icon">✓</div>
-            <div class="notification-message">Product added to cart!</div>
-        </div>
-    </div>
-    
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/auth.js"></script>
-    <script src="assets/js/cart.js"></script>
-    <script src="assets/js/encyclopedia-data.js"></script>
-    <script src="assets/js/encyclopedia.js"></script>
-    <script>
-        // Update login link based on authentication status
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if auth utilities exist and user is logged in
-            if (window.authUtils) {
-                const user = window.authUtils.getCurrentUser();
-                const loginLink = document.getElementById('login-link');
-                
-                if (user && loginLink) {
-                    // Change login link to account link
-                    loginLink.textContent = 'My Account';
-                    loginLink.href = user.role === 'admin' ? 'admin.html' : 'account.html';
-                }
-            }
-            
-            // Set active navigation item
-            document.getElementById('nav-encyclopedia').classList.add('active');
-        });
-    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/encyclopedia.js"></script>
 </body>
 </html>
